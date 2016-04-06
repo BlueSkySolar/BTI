@@ -14,10 +14,10 @@ Tested using Python3.5
 import serial
 import time
 import struct
-import msvcrt
+# import msvcrt
 
 
-RADIO_PORT = "COM10"
+RADIO_PORT = "/dev/ttyUSB1"
 # This info is taken straight from the old BTI, 
 # and will be used to interpret received data
 DATA_INDEX = 6
@@ -94,7 +94,7 @@ def organize_data(data):
         # print(data)
         if len(data[i]) == MESSAGE_LENGTH:
             data_dict[temp[0]] = temp[1]
-    # print(data_dict)
+    print(data_dict)
     return data_dict
 
 
@@ -105,7 +105,7 @@ def display_values(data_dict):
                   ("Module 4 Voltage", '01F44')]
     for el in index_list:
         if el[1] in data_dict:
-            print("{}: {}", el[0], hex_string_to_float(data_dict[el[1]]))
+            print("{}: {}".format(el[0], hex_string_to_float(data_dict[el[1]])))
         else:
             print("{} not found in dictionary", el[1])
 
@@ -168,29 +168,34 @@ if __name__ == "__main__":
     data = []
     data.append(bytearray())
     # Not sure if while loop condition works properly atm
-    while radio.enabled:
-        if msvcrt.kbhit():
-            key = ord(msvcrt.getch())
-            if key == 27:  # ESC
-                radio.enabled = False
-        # Gets latest line sent by serial device
-        line = radio.ser.readline()
-        # Each set of data is separated by "#""
-        if b"#" in line:
-            # convert from bytearray to string
-            data[count] = data[count].decode("utf-8")
-            #print(data[count])
-            display_values(organize_data(data[count]))
+    try:
+        while radio.enabled:
+            '''
+            if msvcrt.kbhit():
+                key = ord(msvcrt.getch())
+                if key == 27:  # ESC
+                    radio.enabled = False
+            '''
+            # Gets latest line sent by serial device
+            line = radio.ser.readline()
+            # Each set of data is separated by "#""
+            if b"#" in line:
+                # convert from bytearray to string
+                data[count] = data[count].decode("utf-8")
+                #print(data[count])
+                display_values(organize_data(data[count]))
+                count += 1
+                # create new list item once "#" is found
+                data.append(bytes())
+            data[count] += line
+            '''
+            current = time.time()
+            print(current - start, current - prevtime)
             count += 1
-            # create new list item once "#" is found
-            data.append(bytes())
-        data[count] += line
-        '''
-        current = time.time()
-        print(current - start, current - prevtime)
-        count += 1
-        prevtime = current
-        '''
-        # prev = line
-    radio.ser.close()
+            prevtime = current
+            '''
+            # prev = line
+    except KeyboardInterrupt:
+        radio.enabled = False
+        radio.ser.close()
     # print(data)
