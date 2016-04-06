@@ -14,11 +14,14 @@ Tested using Python3.5
 import serial
 import time
 import struct
+import msvcrt
+
 
 RADIO_PORT = "COM10"
 # This info is taken straight from the old BTI, 
 # and will be used to interpret received data
 DATA_INDEX = 6
+INDEX_LENGTH = 5
 MESSAGE_LENGTH = 14
 SYNCH_CMD = "<=>2E002;00000000\r\n"
 MY_ID = 'E'
@@ -31,9 +34,7 @@ MESSAGE_TYPE_INDEX = 0
 SENDER_ID_INDEX = 1
 RECEIVER_ID_INDEX = 2
 COMMAND_TAG_INDEX = 3
-DATA_INDEX = 6
 DATA_LENGTH = 8
-MESSAGE_LENGTH = 14
 
 
 class serial_device:
@@ -85,6 +86,31 @@ def hex_string_to_float(hex_string):
     return result
 
 
+def organize_data(data):
+    data = data.split('\r\n')
+    data_dict = {}
+    for i in range(len(data)):
+        temp = data[i].split(';')
+        # print(data)
+        if len(data[i]) == MESSAGE_LENGTH:
+            data_dict[temp[0]] = temp[1]
+    # print(data_dict)
+    return data_dict
+
+
+def display_values(data_dict):
+    index_list = [("Module 1 Voltage", '01F41'),
+                  ("Module 2 Voltage", '01F42'),
+                  ("Module 3 Voltage", '01F43'),
+                  ("Module 4 Voltage", '01F44')]
+    for el in index_list:
+        if el[1] in data_dict:
+            print("{}: {}", el[0], hex_string_to_float(data_dict[el[1]]))
+        else:
+            print("{} not found in dictionary", el[1])
+
+
+'''
 def get_radio_data(radio):
     if not radio.reading:
         while(radio.ser.read() != b"#"):
@@ -93,6 +119,7 @@ def get_radio_data(radio):
         return
     data_read = []
     return
+
 
 def read_until(serial_device, char):
     leneol = len(char)
@@ -108,7 +135,7 @@ def read_until(serial_device, char):
         else:
             break
     return bytes(data)
-
+'''
 
 
 if __name__ == "__main__":
@@ -133,21 +160,28 @@ if __name__ == "__main__":
     '''
     # Open radio port
     radio.open_port()
+    radio.enabled = True
     prev = b" "
 
-    count=0
+    count = 0
     # each item in data represents a set of data 
     data = []
     data.append(bytearray())
     # Not sure if while loop condition works properly atm
-    while(prev):
+    while radio.enabled:
+        if msvcrt.kbhit():
+            key = ord(msvcrt.getch())
+            if key == 27:  # ESC
+                radio.enabled = False
         # Gets latest line sent by serial device
         line = radio.ser.readline()
         # Each set of data is separated by "#""
         if b"#" in line:
-            print(data[count])
+            # convert from bytearray to string
+            data[count] = data[count].decode("utf-8")
+            #print(data[count])
+            display_values(organize_data(data[count]))
             count += 1
-        if count >= len(data):
             # create new list item once "#" is found
             data.append(bytes())
         data[count] += line
@@ -157,5 +191,6 @@ if __name__ == "__main__":
         count += 1
         prevtime = current
         '''
-        prev = line
-    # print(count)
+        # prev = line
+    radio.ser.close()
+    # print(data)
