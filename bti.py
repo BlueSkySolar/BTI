@@ -14,11 +14,14 @@ Tested using Python3.5
 import serial
 import time
 import struct
-# import msvcrt
+########
+# DEFINE SERIAL PORT HERE
+# RADIO_PORT = "/dev/ttyUSB1"
+RADIO_PORT = "COM3"
+########
 
 
-RADIO_PORT = "/dev/ttyUSB1"
-# This info is taken straight from the old BTI, 
+# This info is taken from the old BTI, 
 # and will be used to interpret received data
 DATA_INDEX = 6
 INDEX_LENGTH = 5
@@ -43,6 +46,7 @@ class serial_device:
 
     Parameters:
         port (string) - port where the serial device is connected (ex. "COM3")
+
     Optional Parameters:
         baud_rate (int) - rate of information transfer (defaults to 115200)
         enabled (boolean) - if device is currently enabled
@@ -64,7 +68,8 @@ class serial_device:
 
     def open_port(self):
         self.ser = serial.Serial(self.port, self.baud_rate, self.byte_size,
-                                 self.parity, self.stop_bits, write_timeout=1.0)
+                                 self.parity, self.stop_bits, write_timeout=1.0,
+                                 timeout=1.0)
         '''
         buf = SYNCH_CMD.encode('ascii')
         print(buf)
@@ -79,6 +84,12 @@ class serial_device:
 
 
 def hex_string_to_float(hex_string):
+    '''
+    Convert a hex string to a floating point value.
+
+    Parameters:
+        hex_string - self explanatory
+    '''
     try:
         result = struct.unpack('!f', bytes.fromhex(hex_string))[0]
     except:
@@ -87,8 +98,17 @@ def hex_string_to_float(hex_string):
 
 
 def organize_data(data):
+    """
+    Parse raw data and output a dictionary with each distinct
+    line as a key value pair.
+
+    Parameters:
+        data - string containing output from radio
+    """
+    # Split lines
     data = data.split('\r\n')
     data_dict = {}
+    # Store each line as dictionary key value pair
     for i in range(len(data)):
         temp = data[i].split(';')
         # print(data)
@@ -98,11 +118,24 @@ def organize_data(data):
     return data_dict
 
 
-def display_values(data_dict):
+def display_radio_values(data_dict):
+    '''
+    Parse and print the received data.
+
+    Parameters:
+        data_dict - dictionary containing received hex values,
+                    organized with the organize_data function.
+                    Example format: {'01F42': '40D1B3D0'}
+    '''
+
+    # index_list is a temporary list storing the names and indices
+    # to be shown. The names and indices are derived from the workspace file
     index_list = [("Module 1 Voltage", '01F41'),
                   ("Module 2 Voltage", '01F42'),
                   ("Module 3 Voltage", '01F43'),
                   ("Module 4 Voltage", '01F44')]
+
+    # Print items, converting hex values to floats
     for el in index_list:
         if el[1] in data_dict:
             print("{}: {}".format(el[0], hex_string_to_float(data_dict[el[1]])))
@@ -110,17 +143,45 @@ def display_values(data_dict):
             print("{} not found in dictionary", el[1])
 
 
-'''
 def get_radio_data(radio):
-    if not radio.reading:
-        while(radio.ser.read() != b"#"):
-            continue
-        radio.firstread = True
-        return
-    data_read = []
-    return
+    """ 
+    Starts listening for data from radio and displays it.
 
+    Parameters:
+        radio - serial_device representing the radio
 
+    Press Ctrl-C to end the loop and close the radio.
+    """
+    if (radio.ser.read(1)):
+        radio.enabled = True
+    else:
+        radio.enabled = False
+        print("No data received from serial port")
+    try:
+        #data stores the received data sets
+        data = []
+        data.append(bytearray())
+        count = 0
+        while radio.enabled:
+            # Gets latest line sent by serial device
+            line = radio.ser.readline()
+            # Each data set is separated by "#""
+            if b"#" in line:
+                # convert from bytearray to string
+                data[count] = data[count].decode("utf-8")
+                #print(data[count])
+                display_radio_values(organize_data(data[count]))
+                count += 1
+                # create new list item once "#" is found
+                data.append(bytes())
+            data[count] += line
+            # Ends when Ctrl-C is pressed
+    except KeyboardInterrupt:
+        # Close radio serial port. 
+        radio.enabled = False
+        radio.ser.close()
+
+'''
 def read_until(serial_device, char):
     leneol = len(char)
     data = bytearray()
@@ -141,61 +202,7 @@ def read_until(serial_device, char):
 if __name__ == "__main__":
     # Create radio settings
     radio = serial_device(RADIO_PORT)
-
-
-    '''
-    radio.open_port()
-    test = read_until(radio.ser, b'#')
-    count = 1
-    while (len(test)>0):
-        print(count)
-        print('-------')
-        print(test)
-        test = read_until(radio.ser, b'#')
-        count += 1
-
-    radio.ser.close()
-    start = time.time()
-    prevtime = start
-    '''
     # Open radio port
     radio.open_port()
-    radio.enabled = True
-    prev = b" "
-
-    count = 0
-    # each item in data represents a set of data 
-    data = []
-    data.append(bytearray())
-    # Not sure if while loop condition works properly atm
-    try:
-        while radio.enabled:
-            '''
-            if msvcrt.kbhit():
-                key = ord(msvcrt.getch())
-                if key == 27:  # ESC
-                    radio.enabled = False
-            '''
-            # Gets latest line sent by serial device
-            line = radio.ser.readline()
-            # Each set of data is separated by "#""
-            if b"#" in line:
-                # convert from bytearray to string
-                data[count] = data[count].decode("utf-8")
-                #print(data[count])
-                display_values(organize_data(data[count]))
-                count += 1
-                # create new list item once "#" is found
-                data.append(bytes())
-            data[count] += line
-            '''
-            current = time.time()
-            print(current - start, current - prevtime)
-            count += 1
-            prevtime = current
-            '''
-            # prev = line
-    except KeyboardInterrupt:
-        radio.enabled = False
-        radio.ser.close()
-    # print(data)
+    # Start listening and displaying data
+    get_radio_data(radio)
