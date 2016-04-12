@@ -18,6 +18,7 @@ This program reads and displays information sent to a computer's serial port fro
 * Design the GUI
 * Create the GUI (using PyQt?)
 * Decide on and implement a method of permanently storing the data
+* Add support for serial devices other than the radio (maybe)
 
 ## Contributing
 
