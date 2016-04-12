@@ -7,7 +7,7 @@ This program reads and displays information sent to a computer's serial port fro
 * PySerial
 * PyQt (probably)
 
-## Status
+### Status
 
 ##### Completed Features:
 * Connect to a serial device and read the output
@@ -20,7 +20,7 @@ This program reads and displays information sent to a computer's serial port fro
 * Decide on and implement a method of permanently storing the data
 * Add support for serial devices other than the radio (maybe)
 
-## Contributing
+### Contributing
 
 For now, Github is probably the easiest way for us to collaborate on this project. (We could create a Blue Sky organization page to have a centralized location to share the code perhaps?)
 
