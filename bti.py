@@ -8,6 +8,8 @@ receiving data from serial devices.
 import serial
 import time
 import struct
+import dicts
+
 ########
 # DEFINE SERIAL PORT HERE
 # RADIO_PORT = "/dev/ttyUSB1"
@@ -124,13 +126,14 @@ def display_radio_values(data_dict):
 
     # index_list is a temporary list storing the names and indices
     # to be shown. The names and indices are derived from the workspace file
+    '''
     index_list = [("Module 1 Voltage", '01F41'),
                   ("Module 2 Voltage", '01F42'),
                   ("Module 3 Voltage", '01F43'),
                   ("Module 4 Voltage", '01F44')]
-
+    '''
     # Print items, converting hex values to floats
-    for el in index_list:
+    for el in dicts.name_dict.items:
         if el[1] in data_dict:
             print("{}: {}".format(el[0], hex_string_to_float(data_dict[el[1]])))
         else:

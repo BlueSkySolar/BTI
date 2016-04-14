@@ -7,6 +7,27 @@ This program reads and displays information sent to a computer's serial port fro
 * PySerial
 * PyQt (probably)
 
+
+### Contributing
+
+Git:
+[Quick Git Tutorial if anyone needs it](https://try.github.io/). There are also lots of resources available online if you need help, just google stuff.
+
+We could look into creating a Blue Sky organization page to have a centralized place for strategy code.
+
+##### Getting Started
+This assumes that you have Python 3 and pip already installed
+1. Install PySerial: `pip install pyserial`
+2. Install PyQt4 (The steps vary depending on operating system)
+3. Clone the repository:  `git clone git://github.com/jerli/BTI.git`
+
+##### How BTI works
+
+The serial data sent to us from the radio on the car is received in the format displayed in [this format](radio_data.txt). The code in bti.py is able to parse this data into a dictionary as seen in radio_example.txt, but we still need to match all of the hex values with their corresponding data type by looking at the workspace file in the old BTI program.
+
+We should then be able to display real-time data from the most up to date dictionary in the GUI.
+
+
 ### Status
 
 ##### Completed Features:
@@ -19,17 +40,3 @@ This program reads and displays information sent to a computer's serial port fro
 * Create the GUI (using PyQt?)
 * Decide on and implement a method of permanently storing the data
 * Add support for serial devices other than the radio (maybe)
-
-### Contributing
-
-For now, Github is probably the easiest way for us to collaborate on this project. (We could create a Blue Sky organization page to have a centralized location to share the code perhaps?)
-
-[Quick Git Tutorial if anyone needs it](https://try.github.io/). There are also lots of resources available online if you need help, just google stuff.
-
-##### Getting Started
-1. Get Python 3 and pip. Let me know if you need any help with this step (or google it). Development may be more convenient on Linux/Mac but Windows should work as well.
-2. Install PySerial: `pip install pyserial`
-3. Install binary packages for [SIP](https://www.riverbankcomputing.com/software/sip/download) and [PyQt](https://www.riverbankcomputing.com/software/pyqt/download5)
-4. Clone the repository:  `git clone git://github.com/jerli/BTI.git`
-
-...to be continued
