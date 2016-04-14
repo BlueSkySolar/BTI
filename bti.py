@@ -1,14 +1,8 @@
 """
-BTI Radio Data Receiver
-For Blue Sky Solar Racing at the University of Toronto
+BTI Module
 
-By:
-    Jerry Li
-
-Dependencies:
-    PySerial
-
-Tested using Python3.5
+This file contains the functions necessary for connecting with and
+receiving data from serial devices.
 """
 
 import serial
