@@ -17,6 +17,7 @@ We could look into creating a Blue Sky organization page to have a centralized p
 
 ##### Getting Started
 This assumes that you have Python 3 and pip already installed
+
 1. Install PySerial: `pip install pyserial`
 2. Install PyQt4 (The steps vary depending on operating system)
 3. Clone the repository:  `git clone git://github.com/jerli/BTI.git`
