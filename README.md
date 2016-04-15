@@ -24,10 +24,13 @@ This assumes that you have Python 3 and pip already installed
 
 ##### How BTI works
 
-The serial data sent to us from the radio on the car is received in the format displayed in [this format](radio_data.txt). The code in bti.py is able to parse this data into a dictionary as seen in radio_example.txt, but we still need to match all of the hex values with their corresponding data type by looking at the workspace file in the old BTI program.
+The serial data sent to us from the radio on the car is received in the format displayed in [this format](radio_data.txt). The code in bti.py is able to parse this data into a dictionary as seen in radio_example.txt, but we still need to match all of the hex values with their corresponding data type by looking at the workspace file in the old BTI program. We should then be able to display real-time data from the most up to date dictionary in the GUI.
 
-We should then be able to display real-time data from the most up to date dictionary in the GUI.
-
+Essentially:
+1. Receive data from radio(done)
+2. Parse data into dictionary (mostly done)
+3. Display latest data with real-time updates in a GUI (not done)
+4. Store data somewhere, ex. a database (not done)
 
 ### Status
 
@@ -40,4 +43,4 @@ We should then be able to display real-time data from the most up to date dictio
 * Design the GUI
 * Create the GUI (using PyQt?)
 * Decide on and implement a method of permanently storing the data
-* Add support for serial devices other than the radio (maybe)
+* (maybe) Add support for serial devices other than the radio
