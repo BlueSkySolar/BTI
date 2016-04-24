@@ -1,9 +1,10 @@
-#we need to finish this
+# we need to finish this
 name_dict = {
-    "Module 1 Voltage": '01F41',
-    "Module 2 Voltage": '01F42',
-    "Module 3 Voltage": '01F43',
-    "Module 4 Voltage": '01F44'}
+    "Module 1 Voltage (V)": '01F41',
+    "Module 2 Voltage (V)": '01F42',
+    "Module 3 Voltage (V)": '01F43',
+    "Module 4 Voltage (V)": '01F44',
+    "Avg Module Voltage (V)": '01F24'}
 
 
 test_dict = {
