@@ -17,7 +17,7 @@ RADIO_PORT = "COM3"
 ########
 
 
-# This info is taken from the old BTI, 
+# This info is taken from the old BTI,
 # and will be used to interpret received data
 DATA_INDEX = 6
 INDEX_LENGTH = 5
@@ -124,16 +124,10 @@ def display_radio_values(data_dict):
                     Example format: {'01F42': '40D1B3D0'}
     '''
 
-    # index_list is a temporary list storing the names and indices
-    # to be shown. The names and indices are derived from the workspace file
-    '''
-    index_list = [("Module 1 Voltage", '01F41'),
-                  ("Module 2 Voltage", '01F42'),
-                  ("Module 3 Voltage", '01F43'),
-                  ("Module 4 Voltage", '01F44')]
-    '''
-    # Print items, converting hex values to floats
+    # Using name_dict in dicts.py, we can correspond the received
+    # hex values to data values whe want to display
     for el in dicts.name_dict.items:
+        # Print items, converting hex values to floats
         if el[1] in data_dict:
             print("{}: {}".format(el[0], hex_string_to_float(data_dict[el[1]])))
         else:
@@ -149,7 +143,7 @@ def get_radio_data(radio):
 
     Press Ctrl-C to end the loop and close the radio.
     """
-    if (radio.ser.read(1)):
+    if radio.ser.read(1):
         radio.enabled = True
     else:
         radio.enabled = False
@@ -174,7 +168,7 @@ def get_radio_data(radio):
             data[count] += line
             # Ends when Ctrl-C is pressed
     except KeyboardInterrupt:
-        # Close radio serial port. 
+        # Close radio serial port.
         radio.enabled = False
         radio.ser.close()
 
