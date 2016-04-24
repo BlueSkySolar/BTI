@@ -5,20 +5,22 @@ This program reads and displays information sent to a computer's serial port fro
 
 ##### Dependencies
 * PySerial
-* PyQt (probably)
-* (either PyQtGraph or matplotlib)
+* PyQt 
+* PyQtGraph
 
 ### Contributing
 
 Git:
-[Quick Git Tutorial if anyone needs it](https://try.github.io/). There are also lots of resources available online if you need help, just google stuff.
+[Quick Git Tutorial if anyone needs it](https://try.github.io/). There are also lots of resources available online if you need help, or ask in the group chat.
 
 ##### Getting Started
-This assumes that you have Python 3 and pip already installed
+Python 3 will be used. A virtual environment manager like [conda](http://conda.pydata.org/docs/download.html) may be helpful.
 
-1. Install PySerial: `pip install pyserial`
-2. Install PyQt4 (The steps vary depending on operating system)
-3. Clone the repository:  `git clone https://github.com/BlueSkySolar/BTI.git`
+1. Clone the repository:  `git clone https://github.com/BlueSkySolar/BTI.git`
+2. Install PySerial: `pip install pyserial`
+3. Install PyQt4 (The steps vary depending on operating system) (if using conda `conda install pyqt`)
+4. Install PyQtGraph `pip install pyqtgraph`
+
 
 ##### How BTI works
 
@@ -40,6 +42,6 @@ Basically:
 ##### TODO:
 * Finish figuring out what each received hex string  line represents
 * Design the GUI
-* Create the GUI (using PyQt) This includes displaying all of the data, including a few plots.
+* Create the GUI (Qt Designer for layout, export to PyQt) This includes displaying all of the data, including a few plots.
 * Decide on and implement a method of permanently storing the data
 * ???
