@@ -38,7 +38,7 @@ Basically:
 * Parse the output from the radio (currently stored in a dictionary)
 
 ##### TODO:
-* Finish figuring out what each received hex string  linerepresents
+* Finish figuring out what each received hex string  line represents
 * Design the GUI
 * Create the GUI (using PyQt) This includes displaying all of the data, including a few plots.
 * Decide on and implement a method of permanently storing the data
