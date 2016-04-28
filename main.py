@@ -29,6 +29,8 @@ def main():
 
 
 #def update():
+    #dict = getlatestDict()
+    #addnewpointstoplot()
 
 
 
