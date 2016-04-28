@@ -172,17 +172,14 @@ def get_radio_data(radio):
         radio.enabled = False
         radio.ser.close()
 
-def get_radio_dict(radio):
-    if radio.ser.read(1):
-        radio.enabled = True
-    else:
-        radio.enabled = False
-        print("No data received from serial port")
-        return {}
 
-    if radio.enabled == True:
+def get_radio_dict(radio):
+    if radio.enabled:
         data = radio.ser.read_until('#')
         return organize_data(data)
+    else:
+        print("Radio not enabled")
+        return {}
 
 '''
 def read_until(serial_device, char):
