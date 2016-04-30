@@ -8,7 +8,8 @@ import sys
 from PyQt4 import QtGui, QtCore
 from btiplottest_ui import Ui_MainWindow
 import bti
-
+import pyqtgraph as pg
+from collections import deque
 
 
 def main():
@@ -25,14 +26,18 @@ def main():
     p.setLabel('left', 'Avg Module Voltage', units='V')
     p.setLabel('bottom', 'Time', units='s')
 
+    time = QtCore.QTime
+    time.start()
+    data = deque()
+
+    timer = QtCore.QTimer()
+    timer.timeout.connect(update)
+    timer.start(0)
+
     QtGui.QApplication.instance().exec_()
 
-
-#def update():
-    #dict = getlatestDict()
-    #addnewpointstoplot()
-
-
+def update():
+    global p,
 
 if __name__ == '__main__':
     main()
