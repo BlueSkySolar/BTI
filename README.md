@@ -5,7 +5,7 @@ This program reads and displays information sent to a computer's serial port fro
 
 ##### Dependencies
 * PySerial
-* PyQt 
+* PyQt4 
 * PyQtGraph
 
 ### Contributing
@@ -16,11 +16,16 @@ Git:
 ##### Getting Started
 Python 3 will be used. A virtual environment manager like [conda](http://conda.pydata.org/docs/download.html) may be helpful.
 
+###### On Windows, you can install [WinPython](http://winpython.github.io/), which will include all of the required modules.
 1. Clone the repository:  `git clone https://github.com/BlueSkySolar/BTI.git`
 2. Install PySerial: `pip install pyserial`
 3. Install PyQt4 (The steps vary depending on operating system) (if using conda `conda install pyqt`)
 4. Install PyQtGraph `pip install pyqtgraph`
 
+### How to run (temporary)
+1. Near the top of the bti.py file, set RADIO_PORT to the port where the input will be received
+2. Run bti.py to receive live data updates printed to the shell
+3. Run main.py to view a test live-plot, click start listening to start plotting.
 
 ##### How BTI works
 
