@@ -46,7 +46,7 @@ Basically:
 
 ##### TODO:
 * Finish figuring out what each received hex string  line represents
-* Design the GUI
-* Create the GUI (Qt Designer for layout, export to PyQt) This includes displaying all of the data, including a few plots.
+* Design/Create the GUI (Qt Designer for layout, export to PyQt) This includes displaying all of the data, including a few plots.
+* Code required funtionality
 * Decide on and implement a method of permanently storing the data
 * ???
