@@ -24,7 +24,7 @@ Python 3 will be used. A virtual environment manager like [conda](http://conda.p
 
 ### How to run (temporary)
 1. Near the top of the bti.py file, set RADIO_PORT to the port where the input will be received
-2. Run bti.py to receive live data updates printed to the shell
+2. Run bti.py to receive live data updates printed to the shell (not all data will be displayed; only those which have been implemented in dicts.py
 3. Run main.py to view a test live-plot, click start listening to start plotting.
 
 ##### How BTI works
