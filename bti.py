@@ -135,7 +135,7 @@ def display_radio_values(data_dict):
 
 
 def get_radio_data(radio):
-    """ 
+    """
     Starts listening for data from radio and displays it.
 
     Parameters:
@@ -176,10 +176,19 @@ def get_radio_data(radio):
 def get_radio_dict(radio):
     if radio.enabled:
         data = radio.ser.read_until('#')
-        return organize_data(data)
+        return get_value_dict(organize_data(data))
     else:
         print("Radio not enabled")
         return {}
+
+def get_value_dict(in_dict):
+    '''
+     Interprets the dictionary returned via the radio sensor and supplies an interpreted dictionary.
+    '''
+    output = {}
+    for tup in in_dict.items():
+        output[tup[0]] = hex_string_to_float(tup[1])
+    return output
 
 '''
 def read_until(serial_device, char):
