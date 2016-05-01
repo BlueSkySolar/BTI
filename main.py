@@ -2,6 +2,9 @@
 The GUI
 
 Currently in the progress of testing plotting with PyQtGraph
+
+Code is kind of messy for now, we will move to a more organized
+object-oriented approach soon.
 '''
 
 import sys
@@ -18,6 +21,7 @@ ui = None
 win = None
 p = None
 time = None
+radio = None
 x = []
 y = []
 
@@ -46,14 +50,23 @@ def makeUI(): #this method is so jank it hurts my soul
     QtGui.QApplication.instance().exec_()
 
 def start_listening():
+    global radio, time
+    #start timer
     time = QtCore.QTime()
     time.start()
-
+    
+    #connect to radio
+    if radio:
+        radio.enabled = False
+        radio.ser.close()
+        radio = None
+        return
+    
     radio = bti.serial_device(bti.RADIO_PORT)
     radio.open_port()
     if radio.enabled:
         radio.enabled = False
-    if radio.ser.read(1):
+    elif radio.ser.read(1):
         radio.enabled = True
     else:
         radio.enabled = False
