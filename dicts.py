@@ -4,7 +4,12 @@ name_dict = {
     "Module 2 Voltage (V)": '01F42',
     "Module 3 Voltage (V)": '01F43',
     "Module 4 Voltage (V)": '01F44',
-    "Avg Module Voltage (V)": '01F24'}
+    "Avg Module Voltage (V)": '01F24',
+    "Module 1 Temp (deg C)": '01F81',
+    "Batt Curr High (A)": '0CF21',
+    "EM_BATT Temp (deg C)": '0CF3A',
+    "EM_ARR Temp (deg C)": '0BFFA'
+    }
 
 
 test_dict = {

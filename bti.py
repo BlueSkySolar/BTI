@@ -126,6 +126,7 @@ def display_radio_values(data_dict):
 
     # Using name_dict in dicts.py, we can correspond the received
     # hex values to data values whe want to display
+    print('Sample Data ---------')
     for el in dicts.name_dict.items():
         # Print items, converting hex values to floats
         if el[1] in data_dict:
