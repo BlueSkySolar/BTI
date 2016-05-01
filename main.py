@@ -9,6 +9,7 @@ from PyQt4 import QtGui, QtCore
 from btiplottest_ui import Ui_MainWindow
 import bti
 import pyqtgraph as pg
+import numpy as np
 from collections import deque
 import datetime #for text data outputs
 
@@ -25,6 +26,12 @@ def makeUI():
     p.setLabel('left', 'Avg Module Voltage', units='V')
     p.setLabel('bottom', 'Time', units='s')
 
+    x = np.arange(1000)
+    y = np.random.normal(size=(3, 1000))
+    for i in range(3):
+        p.plot(x, y[i], pen=(i, 3))
+
+    '''
     time = QtCore.QTime
     time.start()
     data = deque()
@@ -32,7 +39,7 @@ def makeUI():
     timer = QtCore.QTimer()
     timer.timeout.connect(update)
     timer.start(0)
-
+    '''
     QtGui.QApplication.instance().exec_()
 
 #def update():
