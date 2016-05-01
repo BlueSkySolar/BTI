@@ -41,15 +41,14 @@ def makeUI(): #this method is so jank it hurts my soul
     button = ui.pushButton
     button.clicked.connect(start_listening)
 
-
-    time = QtCore.QTime()
-    time.start()
-
     
     #start_listening(radio)
     QtGui.QApplication.instance().exec_()
 
 def start_listening():
+    time = QtCore.QTime()
+    time.start()
+
     radio = bti.serial_device(bti.RADIO_PORT)
     radio.open_port()
     if radio.enabled:
