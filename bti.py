@@ -9,6 +9,7 @@ import serial
 import time
 import struct
 import dicts
+import datetime
 
 ########
 # DEFINE SERIAL PORT HERE
@@ -183,6 +184,18 @@ def get_value_dict(in_dict):
         if tup[1] in in_dict:
             output[tup[0]] = hex_string_to_float(in_dict[tup[1]])
     return output
+
+def file_output(input_dict):
+    '''
+    Prints the input dictionary out to a text file.
+    Current format is
+    YYYY-MM-DD HH:MM:SS || Key: Value | Key: Value ...
+    '''
+    output_file = open("output.txt", "a")
+    output_file.write("%s|| "%datetime.datetime.now())
+    for key in input_dict.keys():
+        output_file.write("%s: %s | " %(key,input_dict[key]))
+    output_file.write("\n")
 
 
 if __name__ == "__main__":
