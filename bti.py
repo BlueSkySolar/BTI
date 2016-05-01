@@ -110,7 +110,7 @@ def organize_data(data):
         # print(data)
         if len(data[i]) == MESSAGE_LENGTH:
             data_dict[temp[0]] = temp[1]
-    print(data_dict)
+    #print(data_dict)
     return data_dict
 
 
@@ -126,7 +126,7 @@ def display_radio_values(data_dict):
 
     # Using name_dict in dicts.py, we can correspond the received
     # hex values to data values whe want to display
-    for el in dicts.name_dict.items:
+    for el in dicts.name_dict.items():
         # Print items, converting hex values to floats
         if el[1] in data_dict:
             print("{}: {}".format(el[0], hex_string_to_float(data_dict[el[1]])))
@@ -149,23 +149,8 @@ def get_radio_data(radio):
         radio.enabled = False
         print("No data received from serial port")
     try:
-        #data stores the received data sets
-        data = []
-        data.append(bytearray())
-        count = 0
         while radio.enabled:
-            # Gets latest line sent by serial device
-            line = radio.ser.readline()
-            # Each data set is separated by "#""
-            if b"#" in line:
-                # convert from bytearray to string
-                data[count] = data[count].decode("utf-8")
-                #print(data[count])
-                display_radio_values(organize_data(data[count]))
-                count += 1
-                # create new list item once "#" is found
-                data.append(bytes())
-            data[count] += line
+                display_radio_values(get_radio_dict(radio))
             # Ends when Ctrl-C is pressed
     except KeyboardInterrupt:
         # Close radio serial port.
@@ -174,29 +159,29 @@ def get_radio_data(radio):
 
 
 def get_radio_dict(radio):
+    '''
+    return the most recent set of raw data received from the 
+    radio in a dictionary
+    '''
+
     if radio.enabled:
-        data = radio.ser.read_until('#')
-        return organize_data(data)
+        data = radio.ser.read_until(b'#')
+        return organize_data(data.decode("utf-8"))
     else:
         print("Radio not enabled")
         return {}
 
-'''
-def read_until(serial_device, char):
-    leneol = len(char)
-    data = bytearray()
-    curr = serial_device.read(1)
-    print(curr)
-    while True:
-        if curr:
-            data += curr
-            print("1", data)
-            if data[-leneol:] == curr:
-                break
-        else:
-            break
-    return bytes(data)
-'''
+
+def get_value_dict(in_dict):
+    '''
+     Interprets the dictionary returned via the radio sensor and supplies an interpreted dictionary.
+    '''
+    output = {}
+    for tup in dicts.name_dict.items():
+        # Print items, converting hex values to floats
+        if tup[1] in in_dict:
+            output[tup[0]] = hex_string_to_float(in_dict[tup[1]])
+    return output
 
 
 if __name__ == "__main__":

@@ -9,48 +9,88 @@ from PyQt4 import QtGui, QtCore
 from btiplottest_ui import Ui_MainWindow
 import bti
 import pyqtgraph as pg
-import numpy as np
-from collections import deque
+#import numpy as np
+#from collections import deque
 import datetime #for text data outputs
 
-def makeUI():
-    app = QtGui.QApplication(sys.argv)
+app = None
+ui = None
+win = None
+p = None
+time = None
+x = []
+y = []
 
+def makeUI(): #this method is so jank it hurts my soul
+    global app, ui, win, p, time
+
+    app = QtGui.QApplication(sys.argv) #QtGui object
+
+    #Setting up window stuff
     win = QtGui.QMainWindow()
     win.setWindowTitle('pyqtgraph example: ScatterPlotSpeedTest')
     ui = Ui_MainWindow()
     ui.setupUi(win)
     win.show()
 
+    #setup actual plot
     p = ui.plot
     p.setLabel('left', 'Avg Module Voltage', units='V')
     p.setLabel('bottom', 'Time', units='s')
 
-    x = np.arange(1000)
-    y = np.random.normal(size=(3, 1000))
-    for i in range(3):
-        p.plot(x, y[i], pen=(i, 3))
+    button = ui.pushButton
+    button.clicked.connect(start_listening)
+
 
     time = QtCore.QTime()
     time.start()
 
+    
+    #start_listening(radio)
     QtGui.QApplication.instance().exec_()
 
-def update():
-    dict = getlatestDict()
-    #addnewpointstoplot()
+def start_listening():
+    radio = bti.serial_device(bti.RADIO_PORT)
+    radio.open_port()
+    if radio.enabled:
+        radio.enabled = False
+    if radio.ser.read(1):
+        radio.enabled = True
+    else:
+        radio.enabled = False
+        print("No data received from serial port")
 
-def fileOutput(inputDict):
+    try:
+        while radio.enabled:
+            update_graph(radio)
+            QtCore.QCoreApplication.processEvents()
+    except KeyboardInterrupt:
+        # Close radio serial port.
+        radio.enabled = False
+        radio.ser.close()
+
+def update_graph(radio):
+    global x, y, p, time
+    data = bti.get_value_dict(bti.get_radio_dict(radio))
+    if "Avg Module Voltage (V)" in data:
+        x.append(time.elapsed())
+        y.append(data["Avg Module Voltage (V)"])
+
+        p.plot(x, y)
+
+
+def file_output(input_dict):
     '''
     Prints the input dictionary out to a text file.
     Current format is
     YYYY-MM-DD HH:MM:SS || Key: Value | Key: Value ...
     '''
-    outputFile = open("output.txt", "a")
-    outputFile.write("%s|| "%datetime.datetime.now())
-    for key in inputDict.keys():
-        outputFile.write("%s: %s | " %(key,inputDict[key]))
-    outputFile.write("\n")
+    output_file = open("output.txt", "a")
+    output_file.write("%s|| "%datetime.datetime.now())
+    for key in input_dict.keys():
+        output_file.write("%s: %s | " %(key,input_dict[key]))
+    output_file.write("\n")
 
 if __name__ == '__main__':
     makeUI()
+
