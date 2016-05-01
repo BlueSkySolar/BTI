@@ -31,19 +31,13 @@ def makeUI():
     for i in range(3):
         p.plot(x, y[i], pen=(i, 3))
 
-    '''
-    time = QtCore.QTime
+    time = QtCore.QTime()
     time.start()
-    data = deque()
 
-    timer = QtCore.QTimer()
-    timer.timeout.connect(update)
-    timer.start(0)
-    '''
     QtGui.QApplication.instance().exec_()
 
-#def update():
-    #dict = getlatestDict()
+def update():
+    dict = getlatestDict()
     #addnewpointstoplot()
 
 def fileOutput(inputDict):
