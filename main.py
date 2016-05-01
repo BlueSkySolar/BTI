@@ -13,21 +13,33 @@ import numpy as np
 from collections import deque
 import datetime #for text data outputs
 
-def makeUI():
-    app = QtGui.QApplication(sys.argv)
+app = None;
+ui = None;
+win = None;
+p = None;
 
+def makeUI(): #this method is so jank it hurts my soul
+    global app, ui, win, p
+
+    app = QtGui.QApplication(sys.argv) #QtGui object
+
+    #Setting up window stuff
     win = QtGui.QMainWindow()
     win.setWindowTitle('pyqtgraph example: ScatterPlotSpeedTest')
     ui = Ui_MainWindow()
     ui.setupUi(win)
     win.show()
 
+    #setup actual plot
     p = ui.plot
     p.setLabel('left', 'Avg Module Voltage', units='V')
     p.setLabel('bottom', 'Time', units='s')
 
-    x = np.arange(1000)
-    y = np.random.normal(size=(3, 1000))
+    #getting random crap from numpy
+    #x = np.arange(1000)
+    x = [1,2,3,4,5,6,7,8,9]
+    #y = np.random.normal(size=(3, 1000))
+    y = [[5,5,5,5,5,5,5,5,5],[6,6,6,6,6,6,6,6,6],[8,8,8,8,8,8,8,8,8]]
     for i in range(3):
         p.plot(x, y[i], pen=(i, 3))
 
@@ -42,21 +54,27 @@ def makeUI():
     '''
     QtGui.QApplication.instance().exec_()
 
+def updateGraph(inputDict):
+    '''
+    Takes in the dictionary and adds it to
+    '''
+
 #def update():
     #dict = getlatestDict()
     #addnewpointstoplot()
 
-def fileOutput(inputDict):
+def file_output(input_dict):
     '''
     Prints the input dictionary out to a text file.
     Current format is
     YYYY-MM-DD HH:MM:SS || Key: Value | Key: Value ...
     '''
-    outputFile = open("output.txt", "a")
-    outputFile.write("%s|| "%datetime.datetime.now())
-    for key in inputDict.keys():
-        outputFile.write("%s: %s | " %(key,inputDict[key]))
-    outputFile.write("\n")
+    output_file = open("output.txt", "a")
+    output_file.write("%s|| "%datetime.datetime.now())
+    for key in input_dict.keys():
+        output_file.write("%s: %s | " %(key,input_dict[key]))
+    output_file.write("\n")
 
 if __name__ == '__main__':
     makeUI()
+
