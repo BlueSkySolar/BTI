@@ -43,10 +43,11 @@ Basically:
 ##### Completed Features:
 * Connect to a serial device and read the output
 * Parse the output from the radio (currently stored in a dictionary)
+* Saving parsed radio output dictionary to a text file. (Formatting may change)
 
 ##### TODO:
 * Finish figuring out what each received hex string  line represents
+* Work out actual program flow
 * Design/Create the GUI (Qt Designer for layout, export to PyQt) This includes displaying all of the data, including a few plots.
 * Code required funtionality
-* Decide on and implement a method of permanently storing the data
 * ???
