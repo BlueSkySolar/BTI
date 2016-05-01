@@ -21,6 +21,7 @@ Python 3 will be used. A virtual environment manager like [conda](http://conda.p
 3. Install PyQt4 (The steps vary depending on operating system) (if using conda `conda install pyqt`)
 4. Install PyQtGraph `pip install pyqtgraph`
 
+###### On Windows, you can install [WinPython](http://winpython.github.io/), which will include all of the required modules.
 
 ##### How BTI works
 
