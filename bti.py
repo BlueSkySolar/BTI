@@ -152,7 +152,9 @@ def get_radio_data(radio):
         print("No data received from serial port")
     try:
         while radio.enabled:
-                display_radio_values(get_radio_dict(radio))
+                data_dict = get_radio_dict(radio)
+                display_radio_values(data_dict)
+                file_output(data_dict)
             # Ends when Ctrl-C is pressed
     except KeyboardInterrupt:
         # Close radio serial port.
