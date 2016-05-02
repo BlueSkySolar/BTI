@@ -137,7 +137,7 @@ def display_radio_values(data_dict):
 
 
 def get_radio_data(radio):
-    """ 
+    """
     Starts listening for data from radio and displays it.
 
     Parameters:
@@ -154,7 +154,8 @@ def get_radio_data(radio):
         while radio.enabled:
                 data_dict = get_radio_dict(radio)
                 display_radio_values(data_dict)
-                file_output(data_dict)
+                file_output(data_dict, "raw_output.txt")
+                file_output(get_value_dict(data_dict), "mapped_output.txt")
             # Ends when Ctrl-C is pressed
     except KeyboardInterrupt:
         # Close radio serial port.
@@ -164,7 +165,7 @@ def get_radio_data(radio):
 
 def get_radio_dict(radio):
     '''
-    return the most recent set of raw data received from the 
+    return the most recent set of raw data received from the
     radio in a dictionary
     '''
 
@@ -187,18 +188,17 @@ def get_value_dict(in_dict):
             output[tup[0]] = hex_string_to_float(in_dict[tup[1]])
     return output
 
-def file_output(input_dict):
+def file_output(input_dict, output_name):
     '''
     Prints the input dictionary out to a text file.
     Current format is
     YYYY-MM-DD HH:MM:SS || Key: Value | Key: Value ...
     '''
-    output_file = open("output.txt", "a")
+    output_file = open(output_name, "a")
     output_file.write("%s|| "%datetime.datetime.now())
     for key in input_dict.keys():
         output_file.write("%s: %s | " %(key,input_dict[key]))
     output_file.write("\n")
-
 
 if __name__ == "__main__":
     # Create radio settings

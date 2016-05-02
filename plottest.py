@@ -16,6 +16,7 @@ import pyqtgraph as pg
 #from collections import deque
 import datetime #for text data outputs
 
+GRAPH_POINT_LIMIT = 100
 app = None
 ui = None
 win = None
@@ -45,7 +46,7 @@ def makeUI(): #this method is so jank it hurts my soul
     button = ui.pushButton
     button.clicked.connect(start_listening)
 
-    
+
     #start_listening(radio)
     QtGui.QApplication.instance().exec_()
 
@@ -54,14 +55,14 @@ def start_listening():
     #start timer
     time = QtCore.QTime()
     time.start()
-    
+
     #connect to radio
     if radio:
         radio.enabled = False
         radio.ser.close()
         radio = None
         return
-    
+
     radio = bti.serial_device(bti.RADIO_PORT)
     radio.open_port()
     if radio.enabled:
@@ -85,19 +86,22 @@ def update_graph(radio):
     global x, y, p, time
     data = bti.get_value_dict(bti.get_radio_dict(radio))
     if "Avg Module Voltage (V)" in data:
+        while(len(x) >= GRAPH_POINT_LIMIT):
+            x = x[1:]
+            y = y[1:]
         x.append(time.elapsed())
         y.append(data["Avg Module Voltage (V)"])
 
         p.plot(x, y)
 
 
-def file_output(input_dict):
+def file_output(input_dict, output_name):
     '''
     Prints the input dictionary out to a text file.
     Current format is
     YYYY-MM-DD HH:MM:SS || Key: Value | Key: Value ...
     '''
-    output_file = open("output.txt", "a")
+    output_file = open(output_name, "a")
     output_file.write("%s|| "%datetime.datetime.now())
     for key in input_dict.keys():
         output_file.write("%s: %s | " %(key,input_dict[key]))
