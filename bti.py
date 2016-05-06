@@ -10,6 +10,7 @@ import time
 import struct
 import dicts
 import datetime
+import os
 
 ########
 # DEFINE SERIAL PORT HERE
@@ -194,7 +195,12 @@ def file_output(input_dict, output_name):
     Current format is
     YYYY-MM-DD HH:MM:SS || Key: Value | Key: Value ...
     '''
-    output_file = open(output_name, "a")
+    folder_path = "/" + datetime.datetime.now().strftime("%B") + "_" +  datetime.datetime.today().day
+
+    if not os.path.exists(folder_path):
+        os.chdir(folder_path)
+
+    output_file = open(folder_path + "/" + output_name, "a")
     output_file.write("%s|| "%datetime.datetime.now())
     for key in input_dict.keys():
         output_file.write("%s: %s | " %(key,input_dict[key]))
