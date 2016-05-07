@@ -195,12 +195,12 @@ def file_output(input_dict, output_name):
     Current format is
     YYYY-MM-DD HH:MM:SS || Key: Value | Key: Value ...
     '''
-    folder_path = "/" + datetime.datetime.now().strftime("%B") + "_" +  datetime.datetime.today().day
+    folder_path = "/" + datetime.datetime.now().strftime("%B") + "_" +  str(datetime.datetime.today().day)
 
     if not os.path.exists(folder_path):
-        os.chdir(folder_path)
+        os.makedirs(os.getcwd() + folder_path)
 
-    output_file = open(folder_path + "/" + output_name, "a")
+    output_file = open(os.getcwd() + folder_path + "/" + "BTI_output_" + output_name, "a")
     output_file.write("%s|| "%datetime.datetime.now())
     for key in input_dict.keys():
         output_file.write("%s: %s | " %(key,input_dict[key]))
