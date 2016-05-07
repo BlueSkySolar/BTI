@@ -196,7 +196,7 @@ def file_output(input_dict, output_name):
     '''
     folder_path = "/" + datetime.datetime.now().strftime("%B") + "_" +  str(datetime.datetime.today().day)
 
-    if not os.path.exists(folder_path):
+    if not os.path.exists(os.getcwd() + folder_path):
         os.makedirs(os.getcwd() + folder_path)
 
     output_file = open(os.getcwd() + folder_path + "/" + "BTI_output_" + output_name, "a")
