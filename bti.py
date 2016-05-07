@@ -14,8 +14,8 @@ import os
 
 ########
 # DEFINE SERIAL PORT HERE
-# RADIO_PORT = "/dev/ttyUSB1"
-RADIO_PORT = "COM3"
+RADIO_PORT = "/dev/ttyUSB1"
+#RADIO_PORT = "COM3"
 ########
 
 
