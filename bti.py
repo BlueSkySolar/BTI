@@ -14,7 +14,7 @@ import os
 
 ########
 # DEFINE SERIAL PORT HERE
-RADIO_PORT = "/dev/ttyUSB1"
+RADIO_PORT = "/dev/ttyUSB0"
 #RADIO_PORT = "COM3"
 ########
 
@@ -66,8 +66,7 @@ class serial_device:
 
     def open_port(self):
         self.ser = serial.Serial(self.port, self.baud_rate, self.byte_size,
-                                 self.parity, self.stop_bits, write_timeout=1.0,
-                                 timeout=1.0)
+                                 self.parity, self.stop_bits, timeout=1.0)
         '''
         buf = SYNCH_CMD.encode('ascii')
         print(buf)
