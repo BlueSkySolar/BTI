@@ -33,6 +33,7 @@ y1 = [[],[],[],[],[],[],[],[],[]] # panel power values
 x2 = []
 y2 = [] # variable naming will improve in the future when we start using objects lol 
 
+
 def makeUI():  # this method is so jank it hurts my soul
     global app, ui, win, p_power, p_array, time, power_text, array_text
 
@@ -136,6 +137,8 @@ def update(radio):
         p_array.plot(x2, y2, name=arr_bus_v + " vs " + arr_bus_i)
     else:
         arr_string = "Arr Bus Current N/A"
+    if "EM_ARR Temp (deg C)" in data:
+        arr_string += "EM_ARR Temp (deg C)" + " : " + str(data["EM_ARR Temp (deg C)"]) + "\n"
     array_text.setPlainText(arr_string)
 
     bti.file_output(data, "plottest.txt")

@@ -8,7 +8,7 @@ name_dict = {
     #"Module 1 Temp (deg C)": '01F81',
     #"Batt Curr High (A)": '0CF21',
     #"EM_BATT Temp (deg C)": '0CF3A',
-    #"EM_ARR Temp (deg C)": '0BFFA',
+    "EM_ARR Temp (deg C)": '0BFFA',
     'Panel 0 Power (W)': '0BF61',
     'Panel 1 Power (W)': '0BF65',
     'Panel 2 Power (W)': '0BF69',
