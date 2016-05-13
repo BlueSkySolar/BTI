@@ -7,6 +7,8 @@
 # WARNING! All changes made in this file will be lost!
 
 from PyQt4 import QtCore, QtGui
+from pyqtgraph import PlotWidget
+
 
 try:
     _fromUtf8 = QtCore.QString.fromUtf8
@@ -25,43 +27,43 @@ except AttributeError:
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName(_fromUtf8("MainWindow"))
-        MainWindow.resize(671, 531)
+        MainWindow.resize(1006, 796)
         font = QtGui.QFont()
         font.setFamily(_fromUtf8("Arial"))
         MainWindow.setFont(font)
         self.centralwidget = QtGui.QWidget(MainWindow)
         self.centralwidget.setObjectName(_fromUtf8("centralwidget"))
         self.pushButton = QtGui.QPushButton(self.centralwidget)
-        self.pushButton.setGeometry(QtCore.QRect(30, 10, 611, 23))
+        self.pushButton.setGeometry(QtCore.QRect(45, 15, 916, 34))
         self.pushButton.setObjectName(_fromUtf8("pushButton"))
         self.array_plot = PlotWidget(self.centralwidget)
-        self.array_plot.setGeometry(QtCore.QRect(30, 60, 291, 261))
+        self.array_plot.setGeometry(QtCore.QRect(45, 90, 436, 391))
         sizePolicy = QtGui.QSizePolicy(QtGui.QSizePolicy.Fixed, QtGui.QSizePolicy.Expanding)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.array_plot.sizePolicy().hasHeightForWidth())
         self.array_plot.setSizePolicy(sizePolicy)
         self.array_plot.setObjectName(_fromUtf8("array_plot"))
-        self.battery_plot = PlotWidget(self.centralwidget)
-        self.battery_plot.setGeometry(QtCore.QRect(350, 60, 291, 261))
+        self.power_plot = PlotWidget(self.centralwidget)
+        self.power_plot.setGeometry(QtCore.QRect(525, 90, 436, 391))
         sizePolicy = QtGui.QSizePolicy(QtGui.QSizePolicy.Fixed, QtGui.QSizePolicy.Expanding)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.battery_plot.sizePolicy().hasHeightForWidth())
-        self.battery_plot.setSizePolicy(sizePolicy)
-        self.battery_plot.setObjectName(_fromUtf8("battery_plot"))
+        sizePolicy.setHeightForWidth(self.power_plot.sizePolicy().hasHeightForWidth())
+        self.power_plot.setSizePolicy(sizePolicy)
+        self.power_plot.setObjectName(_fromUtf8("power_plot"))
         self.label = QtGui.QLabel(self.centralwidget)
-        self.label.setGeometry(QtCore.QRect(350, 40, 81, 16))
+        self.label.setGeometry(QtCore.QRect(525, 60, 121, 24))
         self.label.setObjectName(_fromUtf8("label"))
         self.label_2 = QtGui.QLabel(self.centralwidget)
-        self.label_2.setGeometry(QtCore.QRect(30, 40, 81, 16))
+        self.label_2.setGeometry(QtCore.QRect(45, 60, 121, 25))
         self.label_2.setObjectName(_fromUtf8("label_2"))
         self.array_text = QtGui.QTextBrowser(self.centralwidget)
-        self.array_text.setGeometry(QtCore.QRect(30, 340, 291, 141))
+        self.array_text.setGeometry(QtCore.QRect(45, 510, 436, 211))
         self.array_text.setObjectName(_fromUtf8("array_text"))
-        self.battery_text = QtGui.QTextBrowser(self.centralwidget)
-        self.battery_text.setGeometry(QtCore.QRect(350, 340, 291, 141))
-        self.battery_text.setObjectName(_fromUtf8("battery_text"))
+        self.power_text = QtGui.QTextBrowser(self.centralwidget)
+        self.power_text.setGeometry(QtCore.QRect(525, 510, 436, 211))
+        self.power_text.setObjectName(_fromUtf8("power_text"))
         MainWindow.setCentralWidget(self.centralwidget)
         self.statusbar = QtGui.QStatusBar(MainWindow)
         self.statusbar.setObjectName(_fromUtf8("statusbar"))
@@ -73,7 +75,6 @@ class Ui_MainWindow(object):
     def retranslateUi(self, MainWindow):
         MainWindow.setWindowTitle(_translate("MainWindow", "BTI Plot Test", None))
         self.pushButton.setText(_translate("MainWindow", "Start Listening (settings in bti.py)", None))
-        self.label.setText(_translate("MainWindow", "Batteries I-V Plot", None))
-        self.label_2.setText(_translate("MainWindow", "Array I-V Plot", None))
+        self.label.setText(_translate("MainWindow", "Panel Power Plot", None))
+        self.label_2.setText(_translate("MainWindow", "Array Bus I-V Plot", None))
 
-from pyqtgraph import PlotWidget

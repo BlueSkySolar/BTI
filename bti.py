@@ -14,8 +14,8 @@ import os
 
 ########
 # DEFINE SERIAL PORT HERE
-RADIO_PORT = "/dev/ttyUSB0"
-#RADIO_PORT = "COM3"
+#RADIO_PORT = "/dev/ttyUSB0"
+RADIO_PORT = "COM3"
 ########
 
 
@@ -194,7 +194,7 @@ def file_output(input_dict, output_name):
     Current format is
     YYYY-MM-DD HH:MM:SS || Key: Value | Key: Value ...
     '''
-    folder_path = "/" + datetime.datetime.now().strftime("%B") + "_" +  str(datetime.datetime.today().day)
+    folder_path = "/" + datetime.datetime.now().strftime("%B") + "_" + str(datetime.datetime.today().day)
 
     if not os.path.exists(os.getcwd() + folder_path):
         os.makedirs(os.getcwd() + folder_path)
