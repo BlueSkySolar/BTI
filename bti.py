@@ -11,6 +11,7 @@ import struct
 import dicts
 import datetime
 import os
+import csv
 from collections import OrderedDict
 
 ########
@@ -220,6 +221,10 @@ def csv_output(input_dict, output_name):
 
     output_file = open(os.getcwd() + folder_path + "/" + "BTI_output_" + output_name, "a")
     csv_output = csv.writer(output_file)
+
+    if os.path.getsize(os.getcwd() + folder_path + "/" + "BTI_output_" + output_name) == 0:
+        csv_output.writerow(["time"].append(list(input_dict.keys())))
+
     csv_output.writerow([datetime.datetime.now()].append(list(input_dict.values())))
 
 
