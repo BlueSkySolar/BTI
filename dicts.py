@@ -1,28 +1,32 @@
 # we need to finish this
-name_dict = {
-    #"Module 1 Voltage (V)": '01F41',
-    #"Module 2 Voltage (V)": '01F42',
-    #"Module 3 Voltage (V)": '01F43',
-    #"Module 4 Voltage (V)": '01F44',
-    #"Avg Module Voltage (V)": '01F24',
-    #"Module 1 Temp (deg C)": '01F81',
-    #"Batt Curr High (A)": '0CF21',
-    #"EM_BATT Temp (deg C)": '0CF3A',
-    "EM_ARR Temp (deg C)": '0BFFA',
-    'Panel 0 Power (W)': '0BF61',
-    'Panel 1 Power (W)': '0BF65',
-    'Panel 2 Power (W)': '0BF69',
-    'Panel 3 Power (W)': '0BF6D',
-    'Panel 4 Power (W)': '0BF71',
-    'Panel 5 Power (W)': '0BF75',
-    'Panel 6 Power (W)': '0BF79',
-    'Panel 7 Power (W)': '0BF7D',
-    'Panel 8 Power (W)': '0BF81',
-    'Panel 9 Power (W)': '0BF85',
-    'Arr Bus Voltage (V)': '0BFE2',
-    'Arr Bus Current (A)': '0BFE3'
-}
+from collections import OrderedDict
 
+ 
+name_dict = OrderedDict((
+    # ("Module 1 Voltage (V)", '01F41'),
+    # ("Module 2 Voltage (V)", '01F42'),
+    # ("Module 3 Voltage (V)", '01F43'),
+    # ("Module 4 Voltage (V)", '01F44'),
+    ("Avg Module Voltage (V)", '01F24'),
+    # ("Module 1 Temp (deg C)", '01F81'),
+    ("Avg Module Temp (deg C)", '01F27'),
+    ("Batt Curr High (A)", '0CF21'),
+    ("EM_BATT Temp (deg C)", '0CF3A'),
+    ("EM_ARR Temp (deg C)", '0BFFA'),
+    ("Panel 0 Power (W)", '0BF61'),
+    ("Panel 1 Power (W)", '0BF65'),
+    ("Panel 2 Power (W)", '0BF69'),
+    ("Panel 3 Power (W)", '0BF6D'),
+    ("Panel 4 Power (W)", '0BF71'),
+    ("Panel 5 Power (W)", '0BF75'),
+    ("Panel 6 Power (W)", '0BF79'),
+    ("Panel 7 Power (W)", '0BF7D'),
+    ("Panel 8 Power (W)", '0BF81'),
+    ("Panel 9 Power (W)", '0BF85'),
+    ("Arr Bus Voltage (V)", '0BFE2'),
+    ("Arr Bus Current (A)", '0BFE3'),
+    ("Vehicle Speed (km/h)", '0AF41')
+))
 
 test_dict = {
     '03F96': '00000000',
