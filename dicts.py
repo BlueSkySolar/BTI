@@ -199,13 +199,6 @@ name_dict = OrderedDict((
     ('Panel7 Voltage (V)', '0BF7C'),
     ('Panel8 Voltage (V)', '0BF80'),
     ('Panel9 Voltage (V)', '0BF84'),
-    ('local_sw_version', '05F09'),
-    ('Phone GPS Lat (deg)', '00F40'),
-    ('Phone GPS Lon (deg)', '00F41'),
-    ('Garmin GPS Lat (deg)', '0EF00'),
-    ('Garmin GPS Lon (deg)', '0EF01'),
-    ('Wind Magnitude (m/s)', '0EF02'),
-    ('Wind Direction (deg)', '0EF03'),
     ('LF Tire Pressure (psi)', '00F60'),
     ('RF Tire Pressure (psi)', '00F61'),
     ('LR Tire Pressure (psi)', '00F62'),
@@ -279,8 +272,7 @@ name_dict = OrderedDict((
     ('Set 2 Acc X (Gs)', '06F32'),
     ('Set 2 Acc Y (Gs)', '06F33'),
     ('Set 2 Acc Z (Gs)', '06F34'),
-    ('Set 2 Mag Heading (deg)', '06F63'),
-
+    ('Set 2 Mag Heading (deg)', '06F63')
 ))
 
 test_dict = {
