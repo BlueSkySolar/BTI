@@ -128,7 +128,7 @@ def display_radio_values(data_dict):
 
     # Using name_dict in dicts.py, we can correspond the received
     # hex values to data values whe want to display
-    print('Sample Data ---------')
+    # print('Sample Data ---------')
     for el in dicts.name_dict.items():
         # Print items, converting hex values to floats
         if el[1] in data_dict:
@@ -156,7 +156,9 @@ def get_radio_data(radio):
                 data_dict = get_radio_dict(radio)
                 display_radio_values(data_dict)
                 file_output(data_dict, "raw_output.txt")
-                file_output(get_value_dict(data_dict), "mapped_output.txt")
+                file_output(get_value_dict(data_dict), "parsed_output.txt")
+                csv_output(data_dict, "raw_output.csv")
+                csv_output(get_value_dict(data_dict), "parsed_output.txt")
             # Ends when Ctrl-C is pressed
     except KeyboardInterrupt:
         # Close radio serial port.
