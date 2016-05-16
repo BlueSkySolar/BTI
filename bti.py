@@ -11,6 +11,7 @@ import struct
 import dicts
 import datetime
 import os
+from collections import OrderedDict
 
 ########
 # DEFINE SERIAL PORT HERE
@@ -104,7 +105,7 @@ def organize_data(data):
     """
     # Split lines
     data = data.split('\r\n')
-    data_dict = {}
+    data_dict = OrderedDict()
     # Store each line as dictionary key value pair
     for i in range(len(data)):
         temp = data[i].split(';')
@@ -181,7 +182,7 @@ def get_value_dict(in_dict):
     '''
      Interprets the dictionary returned via the radio sensor and supplies an interpreted dictionary.
     '''
-    output = {}
+    output = OrderedDict()
     for tup in dicts.name_dict.items():
         # Print items, converting hex values to floats
         if tup[1] in in_dict:
