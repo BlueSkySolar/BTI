@@ -206,6 +206,22 @@ def file_output(input_dict, output_name):
         output_file.write("%s: %s | " %(key,input_dict[key]))
     output_file.write("\n")
 
+def csv_output(input_dict, output_name):
+    '''
+    Prints the input dictionary out to a CSV file.
+    Formatting of columns is timestamp | each key
+    '''
+    folder_path = "/" + datetime.datetime.now().strftime("%B") + "_" + str(datetime.datetime.today().day)
+
+    if not os.path.exists(os.getcwd() + folder_path):
+        os.makedirs(os.getcwd() + folder_path)
+
+    output_file = open(os.getcwd() + folder_path + "/" + "BTI_output_" + output_name, "a")
+    csv_output = csv.writer(output_file)
+    csv_output.writerow([datetime.datetime.now()].append(list(input_dict.values())))
+
+
+
 if __name__ == "__main__":
     # Create radio settings
     radio = serial_device(RADIO_PORT)
