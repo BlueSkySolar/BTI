@@ -16,8 +16,8 @@ from collections import OrderedDict
 
 ########
 # DEFINE SERIAL PORT HERE
-#RADIO_PORT = "/dev/ttyUSB0"
-RADIO_PORT = "COM3"
+RADIO_PORT = "/dev/ttyUSB0"
+#RADIO_PORT = "COM3"
 ########
 
 
@@ -223,9 +223,14 @@ def csv_output(input_dict, output_name):
     csv_output = csv.writer(output_file)
 
     if os.path.getsize(os.getcwd() + folder_path + "/" + "BTI_output_" + output_name) == 0:
-        csv_output.writerow(["time"].append(list(input_dict.keys())))
+        l = ["time"]
+        l.extend(input_dict.keys())
+        print(l)
+        csv_output.writerow(l)
 
-    csv_output.writerow([datetime.datetime.now()].append(list(input_dict.values())))
+    l = [datetime.datetime.now()]
+    l.extend(input_dict.values())
+    csv_output.writerow(l)
 
 
 
