@@ -221,7 +221,7 @@ def csv_output(input_dict, output_name):
     if not os.path.exists(os.getcwd() + folder_path):
         os.makedirs(os.getcwd() + folder_path)
 
-    output_file = open(os.getcwd() + folder_path + "/" + "BTI_output_" + output_name, CSV_OUTPUT_TYPE)
+    output_file = open(os.getcwd() + folder_path + "/" + "BTI_output_" + output_name, CSV_OUTPUT_TYPE, newline = '')
     csv_output = csv.writer(output_file)
 
     if os.path.getsize(os.getcwd() + folder_path + "/" + "BTI_output_" + output_name) == 0:
