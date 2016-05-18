@@ -39,6 +39,7 @@ RECEIVER_ID_INDEX = 2
 COMMAND_TAG_INDEX = 3
 DATA_LENGTH = 8
 OUTPUT_NAME = None
+CSV_OUTPUT_TYPE = None
 
 
 class serial_device:
@@ -220,7 +221,7 @@ def csv_output(input_dict, output_name):
     if not os.path.exists(os.getcwd() + folder_path):
         os.makedirs(os.getcwd() + folder_path)
 
-    output_file = open(os.getcwd() + folder_path + "/" + "BTI_output_" + output_name, "a")
+    output_file = open(os.getcwd() + folder_path + "/" + "BTI_output_" + output_name, CSV_OUTPUT_TYPE)
     csv_output = csv.writer(output_file)
 
     if os.path.getsize(os.getcwd() + folder_path + "/" + "BTI_output_" + output_name) == 0:
@@ -234,16 +235,15 @@ def csv_output(input_dict, output_name):
     output_file.close()
 
 def get_port_and_name():
-    global RADIO_PORT, OUTPUT_NAME
+    global RADIO_PORT, OUTPUT_NAME, CSV_OUTPUT_TYPE
     OUTPUT_NAME = input("Specify output name: ")
-    print(OUTPUT_NAME)
     sys = int(input("1 if linux, 2 if windows: "))
-    print(sys)
     if sys == 1:
         RADIO_PORT = "/dev/ttyUSB" + input("Specify port 1-8: ")
+        CSV_OUTPUT_TYPE = "a"
     else:
         RADIO_PORT = "COM" + input("Specify port: ")
-    print(RADIO_PORT)
+        CSV_OUTPUT_TYPE = "wb"
     return
 
 
