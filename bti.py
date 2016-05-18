@@ -221,7 +221,7 @@ def csv_output(input_dict, output_name):
     if not os.path.exists(os.getcwd() + folder_path):
         os.makedirs(os.getcwd() + folder_path)
 
-    output_file = open(os.getcwd() + folder_path + "/" + "BTI_output_" + output_name, CSV_OUTPUT_TYPE, newline = '')
+    output_file = open(os.getcwd() + folder_path + "/" + "BTI_output_" + output_name, 'a', newline = '')
     csv_output = csv.writer(output_file)
 
     if os.path.getsize(os.getcwd() + folder_path + "/" + "BTI_output_" + output_name) == 0:
@@ -240,10 +240,8 @@ def get_port_and_name():
     sys = int(input("1 if linux, 2 if windows: "))
     if sys == 1:
         RADIO_PORT = "/dev/ttyUSB" + input("Specify port 1-8: ")
-        CSV_OUTPUT_TYPE = "a"
     else:
         RADIO_PORT = "COM" + input("Specify port: ")
-        CSV_OUTPUT_TYPE = "wb"
     return
 
 
