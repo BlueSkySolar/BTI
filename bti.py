@@ -159,7 +159,7 @@ def get_radio_data(radio):
                 file_output(data_dict, "raw_output.txt")
                 file_output(get_value_dict(data_dict), "parsed_output.txt")
                 csv_output(data_dict, "raw_output.csv")
-                csv_output(get_value_dict(data_dict), "parsed_output.txt")
+                csv_output(get_value_dict(data_dict), "parsed_output.csv")
             # Ends when Ctrl-C is pressed
     except KeyboardInterrupt:
         # Close radio serial port.
@@ -225,12 +225,12 @@ def csv_output(input_dict, output_name):
     if os.path.getsize(os.getcwd() + folder_path + "/" + "BTI_output_" + output_name) == 0:
         l = ["time"]
         l.extend(input_dict.keys())
-        print(l)
         csv_output.writerow(l)
 
     l = [datetime.datetime.now()]
     l.extend(input_dict.values())
     csv_output.writerow(l)
+    output_file.close()
 
 
 
