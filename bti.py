@@ -16,7 +16,7 @@ from collections import OrderedDict
 
 ########
 # DEFINE SERIAL PORT HERE
-RADIO_PORT = "/dev/ttyUSB0"
+#RADIO_PORT = "/dev/ttyUSB0"
 #RADIO_PORT = "COM3"
 ########
 
@@ -38,6 +38,7 @@ SENDER_ID_INDEX = 1
 RECEIVER_ID_INDEX = 2
 COMMAND_TAG_INDEX = 3
 DATA_LENGTH = 8
+OUTPUT_NAME = None
 
 
 class serial_device:
@@ -156,10 +157,10 @@ def get_radio_data(radio):
         while radio.enabled:
                 data_dict = get_radio_dict(radio)
                 display_radio_values(data_dict)
-                file_output(data_dict, "raw_output.txt")
-                file_output(get_value_dict(data_dict), "parsed_output.txt")
-                csv_output(data_dict, "raw_output.csv")
-                csv_output(get_value_dict(data_dict), "parsed_output.csv")
+                file_output(data_dict, OUTPUT_NAME + "_RAW.txt")
+                file_output(get_value_dict(data_dict), OUTPUT_NAME + "_PARSED.txt")
+                csv_output(data_dict, OUTPUT_NAME + "_RAW.csv")
+                csv_output(get_value_dict(data_dict), OUTPUT_NAME + "_PARSED.csv")
             # Ends when Ctrl-C is pressed
     except KeyboardInterrupt:
         # Close radio serial port.
@@ -232,9 +233,22 @@ def csv_output(input_dict, output_name):
     csv_output.writerow(l)
     output_file.close()
 
+def get_port_and_name():
+    global RADIO_PORT, OUTPUT_NAME
+    OUTPUT_NAME = input("Specify output name: ")
+    print(OUTPUT_NAME)
+    sys = int(input("1 if linux, 2 if windows: "))
+    print(sys)
+    if sys == 1:
+        RADIO_PORT = "/dev/ttyUSB" + input("Specify port 1-8: ")
+    else:
+        RADIO_PORT = "COM" + input("Specify port: ")
+    print(RADIO_PORT)
+    return
 
 
 if __name__ == "__main__":
+    get_port_and_name()
     # Create radio settings
     radio = serial_device(RADIO_PORT)
     # Open radio port
