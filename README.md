@@ -51,3 +51,8 @@ Basically:
 * Design/Create the GUI (Qt Designer for layout, export to PyQt) This includes displaying all of the data, including a few plots.
 * Code required funtionality
 * ???
+* 
+
+##### Currently Working on:
+* Buffering Values
+* Handling NULL dictionary values
