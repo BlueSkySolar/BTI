@@ -266,13 +266,11 @@ name_dict = OrderedDict((
     ('Set 2 Acc X (Gs)', '06F32'),
     ('Set 2 Acc Y (Gs)', '06F33'),
     ('Set 2 Acc Z (Gs)', '06F34'),
-    ('Set 2 Mag Heading (deg)', '06F63')
-    ('Phone GPS Lat (deg)', '00F40'),
-    ('Phone GPS Lon (deg)', '00F41'),
+    ('Set 2 Mag Heading (deg)', '06F63'),
     ('Garmin GPS Lat (deg)', '0EF00'),
     ('Garmin GPS Lon (deg)', '0EF01'),
     ('Wind Magnitude (m/s)', '0EF02'),
-    ('Wind Direction (deg)', '0EF03'),
+    ('Wind Direction (deg)', '0EF03')
 ))
 
 test_dict = {
