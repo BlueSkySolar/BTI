@@ -157,11 +157,12 @@ def get_radio_data(radio):
     try:
         while radio.enabled:
                 data_dict = get_radio_dict(radio)
+                parsed_dict = get_value_dict(data_dict)
                 display_radio_values(data_dict)
                 file_output(data_dict, OUTPUT_NAME + "_RAW.txt")
-                file_output(get_value_dict(data_dict), OUTPUT_NAME + "_PARSED.txt")
+                file_output(parsed_dict, OUTPUT_NAME + "_PARSED.txt")
                 csv_output(data_dict, OUTPUT_NAME + "_RAW.csv")
-                csv_output(get_value_dict(data_dict), OUTPUT_NAME + "_PARSED.csv")
+                csv_output(parsed_dict, OUTPUT_NAME + "_PARSED.csv")
             # Ends when Ctrl-C is pressed
     except KeyboardInterrupt:
         # Close radio serial port.
@@ -192,6 +193,8 @@ def get_value_dict(in_dict):
         # Print items, converting hex values to floats
         if tup[1] in in_dict:
             output[tup[0]] = hex_string_to_float(in_dict[tup[1]])
+        else:
+            output[tup[0]] = None
     return output
 
 def file_output(input_dict, output_name):

@@ -5,8 +5,6 @@ from collections import OrderedDict
 name_dict = OrderedDict((
     ('Frame Time (s)', '00F22'),
     ('Sampling Rate (Hz)', '00F23'),
-    ('Current Stint Time (s)', '00F25'),
-    ('Previous Stint Time (s)', '00F28'),
     ('Vehicle Speed (km/h)', '0AF41'),
     ('Target1 Speed (km/h)', '0AF83'),
     ('Target2 Speed (km/h)', '0AF84'),
@@ -199,10 +197,6 @@ name_dict = OrderedDict((
     ('Panel7 Voltage (V)', '0BF7C'),
     ('Panel8 Voltage (V)', '0BF80'),
     ('Panel9 Voltage (V)', '0BF84'),
-    ('LF Tire Pressure (psi)', '00F60'),
-    ('RF Tire Pressure (psi)', '00F61'),
-    ('LR Tire Pressure (psi)', '00F62'),
-    ('RR Tire Pressure (psi)', '00F63'),
     ('MPPT0 Panel Voltage (V)', '0BF64'),
     ('MPPT0 Panel Power (W)', '0BF65'),
     ('MPPT0 Battery Voltage (V)', '0BF66'),
@@ -273,6 +267,12 @@ name_dict = OrderedDict((
     ('Set 2 Acc Y (Gs)', '06F33'),
     ('Set 2 Acc Z (Gs)', '06F34'),
     ('Set 2 Mag Heading (deg)', '06F63')
+    ('Phone GPS Lat (deg)', '00F40'),
+    ('Phone GPS Lon (deg)', '00F41'),
+    ('Garmin GPS Lat (deg)', '0EF00'),
+    ('Garmin GPS Lon (deg)', '0EF01'),
+    ('Wind Magnitude (m/s)', '0EF02'),
+    ('Wind Direction (deg)', '0EF03'),
 ))
 
 test_dict = {
