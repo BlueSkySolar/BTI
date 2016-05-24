@@ -6,6 +6,7 @@ receiving data from serial devices.
 """
 
 import serial
+from serial.tools import list_ports
 import time
 import struct
 import dicts
@@ -40,7 +41,7 @@ COMMAND_TAG_INDEX = 3
 DATA_LENGTH = 8
 OUTPUT_NAME = None
 CSV_OUTPUT_TYPE = None
-
+RADIO_PORT = None
 
 class serial_device:
     """
@@ -239,20 +240,42 @@ def csv_output(input_dict, output_name):
 
 def get_port_and_name():
     global RADIO_PORT, OUTPUT_NAME, CSV_OUTPUT_TYPE
+    
+    #Detect radio port
+    for el in list_ports.comports():
+        try:
+            test = serial_device(el.device)
+            test.open_port()
+            reset = test.ser.readline()
+            line = test.ser.readline()
+            if len(line) == 16:
+                RADIO_PORT = el.device
+                #print(len(test.ser.readline()))
+            test.ser.close()
+        except serial.SerialException:
+            pass
+    if not RADIO_PORT:
+        print("radio port not found")
+        return
+
     OUTPUT_NAME = input("Specify output name: ")
-    sys = int(input("1 if linux, 2 if windows: "))
-    if sys == 1:
-        RADIO_PORT = "/dev/ttyUSB" + input("Specify port 1-8: ")
-    else:
-        RADIO_PORT = "COM" + input("Specify port: ")
+    #sys = int(input("1 if linux, 2 if windows: "))
+    #if sys == 1:
+    #    RADIO_PORT = "/dev/ttyUSB" + input("Specify port 1-8: ")
+    #else:
+    #    RADIO_PORT = "COM" + input("Specify port: ")
+    
     return
+    
 
 
 if __name__ == "__main__":
     get_port_and_name()
     # Create radio settings
-    radio = serial_device(RADIO_PORT)
-    # Open radio port
-    radio.open_port()
-    # Start listening and displaying data
-    get_radio_data(radio)
+    if RADIO_PORT:
+        radio = serial_device(RADIO_PORT)
+        # Open radio port
+        radio.open_port()
+        # Start listening and displaying data
+        get_radio_data(radio)
+            
