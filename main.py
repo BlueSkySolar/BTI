@@ -26,7 +26,8 @@ class MainWindow(QtGui.QMainWindow, window_class):
         self.radio = None
         self.filename = None
         self.times = []
-        # button event handlers wil go here
+        self.tables = []
+
         self.pushButton.clicked.connect(self.start_listening)
 
         # set up plots by looping through widget items
@@ -43,6 +44,10 @@ class MainWindow(QtGui.QMainWindow, window_class):
                         units = units.split(',')
                         plot_item = plot(next_child, len(names), names, units)
                         self.plots.append(plot_item)
+                    elif type(next_child) == QtGui.QTableWidget:
+                        #append each table widget to a list
+                        self.tables.append(next_child)
+                        
                         
         print(self.plots)
         
@@ -116,8 +121,13 @@ class MainWindow(QtGui.QMainWindow, window_class):
 
                 else:
                     plot.data[i].append(0.0)
-        
-    
+                    
+        #go through each table and update the value corresponding to the row title
+        for table in self.tables:
+            for row in table.rowCount:
+                item = QTableWidgetItem(data[table.horizontalHeaderItem(row)])
+                table.setItem(row,0,item)
+            
     
     
 class plot:

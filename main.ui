@@ -863,7 +863,7 @@
       <item>
        <widget class="QPushButton" name="pushButton">
         <property name="text">
-         <string>PushButton</string>
+         <string>Start / Stop</string>
         </property>
        </widget>
       </item>
