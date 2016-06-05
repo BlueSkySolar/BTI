@@ -992,6 +992,9 @@
           </item>
           <item>
            <widget class="QTableWidget" name="tableWidget_13">
+            <property name="accessibleDescription">
+             <string>colour</string>
+            </property>
             <attribute name="horizontalHeaderStretchLastSection">
              <bool>true</bool>
             </attribute>
@@ -1175,6 +1178,9 @@
           </item>
           <item>
            <widget class="QTableWidget" name="tableWidget_10">
+            <property name="accessibleDescription">
+             <string>colour</string>
+            </property>
             <attribute name="horizontalHeaderStretchLastSection">
              <bool>true</bool>
             </attribute>
@@ -1262,6 +1268,9 @@
           </item>
           <item>
            <widget class="QTableWidget" name="tableWidget_11">
+            <property name="accessibleDescription">
+             <string>colour</string>
+            </property>
             <attribute name="horizontalHeaderStretchLastSection">
              <bool>true</bool>
             </attribute>
@@ -1345,6 +1354,9 @@
           </item>
           <item>
            <widget class="QTableWidget" name="tableWidget_9">
+            <property name="accessibleDescription">
+             <string>colour</string>
+            </property>
             <attribute name="horizontalHeaderStretchLastSection">
              <bool>true</bool>
             </attribute>
@@ -1428,6 +1440,9 @@
           </item>
           <item>
            <widget class="QTableWidget" name="tableWidget_12">
+            <property name="accessibleDescription">
+             <string>colour</string>
+            </property>
             <attribute name="horizontalHeaderStretchLastSection">
              <bool>true</bool>
             </attribute>

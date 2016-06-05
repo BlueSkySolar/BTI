@@ -126,14 +126,27 @@ class MainWindow(QtGui.QMainWindow, window_class):
         #go through each table and update the value corresponding to the row title
         for table in self.tables:
             for row in range(table.rowCount()):
+                
+                # all bool tables in BMS C have the accessibleDescription 
+                # of 'colour', which is used to know whether or not to fill 
+                # the cell with colour indicators
+                if table.accessibleDescription() == 'colour':
+                    table.setItem(row,0,QtGui.QWidgetItem())
+                    if data[table.verticalHeaderItem(row).text()] = True:
+                        table.item(row,0).setBackground(QtGui.QColor(0,255,0))
+                    elif data[table.verticalHeaderItem(row).text()] = False:
+                        table.item(row,0).setBackground(QtGui.QColor(255,0,0))
+                    else:
+                        pass
+                        
                 # Since some values in the BTI have repeated names, 
                 # we can use the accessibleName value in a table to
                 # access the unique keys of each value without changing the 
                 # original name
-                item = QtGui.QTableWidgetItem(str(data[table.accessibleName()+ 
+                else:
+                    item = QtGui.QTableWidgetItem(str(data[table.accessibleName()+ 
                                                    table.verticalHeaderItem(row).text()]))
-                table.setItem(row,0,item)
-            
+                    table.setItem(row,0,item)     
     
     
 class plot:
