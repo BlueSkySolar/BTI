@@ -192,10 +192,19 @@ def get_value_dict(in_dict):
     output = OrderedDict()
     for tup in dicts.name_dict.items():
         # Print items, converting hex values to floats
-        if tup[1] in in_dict:
-            output[tup[0]] = hex_string_to_float(in_dict[tup[1]])
+        if isinstance(tup[1], str):
+            if tup[1] in in_dict:
+                output[tup[0]] = hex_string_to_float(in_dict[tup[1]])
+            else:
+                output[tup[0]] = None
         else:
-            output[tup[0]] = None
+            if tup[1][0] in in_dict:
+                if in_dict[tup[1][0]] == tup[1][1]:
+                    output[tup[0]] = True
+                else:
+                    output[tup[0]] = False
+            else:
+                output[tup[0]] = None
     return output
 
 def file_output(input_dict, output_name):
@@ -224,11 +233,12 @@ def csv_output(input_dict, output_name):
 
     if not os.path.exists(os.getcwd() + folder_path):
         os.makedirs(os.getcwd() + folder_path)
-
-    output_file = open(os.getcwd() + folder_path + "/" + "BTI_output_" + output_name, 'a', newline = '')
+    file_path = os.getcwd() + folder_path + "/" + "BTI_output_" + output_name + ".csv"
+    
+    output_file = open(file_path, 'a', newline = '')
     csv_output = csv.writer(output_file)
 
-    if os.path.getsize(os.getcwd() + folder_path + "/" + "BTI_output_" + output_name) == 0:
+    if os.path.getsize(file_path) == 0:
         l = ["time"]
         l.extend(input_dict.keys())
         csv_output.writerow(l)

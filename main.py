@@ -7,6 +7,7 @@ from PyQt4 import QtGui, QtCore, uic
 import dicts
 import bti
 import pyqtgraph as pg
+
 pg.setConfigOption('background', 'w')
 pg.setConfigOption('foreground', 'k')
 
@@ -49,8 +50,6 @@ class MainWindow(QtGui.QMainWindow, window_class):
                         #append each table widget to a list
                         self.tables.append(next_child)
                         
-                        
-        print(self.plots)
         
     def start_listening(self):
         '''start receiving data'''
@@ -66,7 +65,6 @@ class MainWindow(QtGui.QMainWindow, window_class):
         
         # ask for filename
         self.filename = QtGui.QInputDialog.getText(self, 'Input', "Enter a filename for this session's saved data")
-        print(self.filename)
         if not self.filename:
             return
             
@@ -77,15 +75,26 @@ class MainWindow(QtGui.QMainWindow, window_class):
         # detect radio_port
         radio_port = bti.get_radio_port()
         if not radio_port:
-            self.statusBar().showMessage("No Port Found")
-            return
-        else:
-            self.statusBar().showMessage("Connected to " + radio_port)
+            temp = QtGui.QInputDialog.getText(self, 'Port Not Found!', "Cancel, or enter a port manually")
+            if temp[1]:
+                radio_port = temp[0]
+            else:
+                self.statusBar().showMessage("Radio Port Not Found")
+                return
 
         #connect to radio
-        self.radio = bti.serial_device(radio_port)
-        self.radio.open_port()
-        self.radio.enabled = True
+        try:
+            self.radio = bti.serial_device(radio_port)
+            self.radio.open_port()
+            self.radio.enabled = True
+            if self.radio.ser.read(1):
+                self.statusBar().showMessage("Connected to " + radio_port)
+            else:
+                self.radio.enabled = False
+                self.radio.ser.close()
+                return
+        except:
+            self.statusBar().showMessage("Radio Port Not Found")
         
         try:
             while self.radio:
@@ -109,12 +118,12 @@ class MainWindow(QtGui.QMainWindow, window_class):
 
         # update all plots
         for plot in self.plots:
+            plot.plot.clear()
             for i in range(len(plot.names)):
                 if plot.names[i] in data and data[plot.names[i]]:
                     if len(plot.data[i]) >= GRAPH_LIMIT:
                         plot.data[i] = plot.data[i][1:]
                     plot.data[i].append(data[plot.names[i]])
-                    plot.plot.clear()
                     if len(plot.plot.plotItem.legend.items) != len(plot.names):
                         plot.plot.plot(self.times, plot.data[i], pen=(i, len(plot.names)), name=plot.names[i])
                     else:
@@ -129,12 +138,18 @@ class MainWindow(QtGui.QMainWindow, window_class):
                 # Since some values in the BTI have repeated names, 
                 # we can use the accessibleName value in a table to
                 # access the unique keys of each value without changing the 
-                # original name
+                # original name (accessibleName should be blank for others)
                 item = QtGui.QTableWidgetItem(str(data[table.accessibleName()+ 
                                                    table.verticalHeaderItem(row).text()]))
                 table.setItem(row,0,item)
             
-    
+    def closeEvent(self, *args, **kwargs):
+        super(QtGui.QMainWindow, self).closeEvent(*args, **kwargs)
+        if self.radio:
+            if self.radio.enabled:
+                self.radio.enabled = False
+                self.radio.ser.close()
+                self.radio = None
     
 class plot:
     '''Stores plot-related variables'''
@@ -158,7 +173,6 @@ class plot:
         self.hex_keys = []
         for el in names:
             self.hex_keys.append(dicts.name_dict[el])
-        print(self.hex_keys)
         self.data = []
         for i in range(len(self.names)):
             self.data.append([])
