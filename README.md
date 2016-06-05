@@ -23,36 +23,21 @@ Python 3 will be used. A virtual environment manager like [conda](http://conda.p
 4. Install PyQtGraph `pip install pyqtgraph`
 
 ### How to run (temporary)
-1. Near the top of the bti.py file, set RADIO_PORT to the port where the input will be received
-2. Run bti.py to receive live data updates printed to the shell (not all data will be displayed; only those which have been implemented in dicts.py
-3. Run plottest.py to view a test live-plot, click start listening to start plotting.
-
+1. Run main.py
+2. Press the button to start/stop receiving data while the radio is connected
+(Executables coming soon)
 ##### How BTI works
 
 The serial data sent to us from the radio on the car is received in the format displayed in [this format](radio_data.txt). The code in bti.py is able to parse this data into a dictionary as seen in [radio_example](radio_example.txt), but we still need to match all of the hex values with their corresponding data type by looking at the [workspace file](legacy_workspace_file.txt) in the old BTI program. We should then be able to display real-time data with proper labeling in the GUI.
-
-Basically:
-
-1. Receive data from radio(done)
-2. Parse data (mostly done)
-3. Display latest data with real-time updates in a GUI (not done)
-4. Store data somewhere, ex. a database (not done)
 
 ### Status
 
 ##### Completed Features:
 * Connect to a serial device and read the output
 * Parse the output from the radio (currently stored in a dictionary)
-* Saving parsed radio output dictionary to a text file. (Formatting may change)
-
-##### TODO:
-* Finish figuring out what each received hex string  line represents
-* Work out actual program flow
-* Design/Create the GUI (Qt Designer for layout, export to PyQt) This includes displaying all of the data, including a few plots.
-* Code required funtionality
-* ???
-* 
+* Saving parsed radio output dictionary to a text file or CSV file. (Formatting may change)
+* Structure and basic display functionality of the GUI
 
 ##### Currently Working on:
-* Buffering Values
-* Handling NULL dictionary values
+* Completing the GUI
+* Fixing bugs with regards to how to deal with received non-float values
