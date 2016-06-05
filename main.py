@@ -11,7 +11,7 @@ pg.setConfigOption('background', 'w')
 pg.setConfigOption('foreground', 'k')
 
 
-GRAPH_LIMIT = 20
+GRAPH_LIMIT = 100
 FILE_NAME = "test"
 time = None
 
