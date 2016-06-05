@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>731</width>
-    <height>695</height>
+    <width>1440</width>
+    <height>851</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -18,35 +18,173 @@
     <item>
      <widget class="QTabWidget" name="tabWidget">
       <property name="currentIndex">
-       <number>0</number>
+       <number>1</number>
       </property>
-      <widget class="QWidget" name="tab">
+      <widget class="QWidget" name="bmsA">
        <attribute name="title">
-        <string>Tab 1</string>
+        <string>BMS A</string>
        </attribute>
-       <layout class="QHBoxLayout" name="horizontalLayout_2">
+       <layout class="QHBoxLayout" name="horizontalLayout_2" stretch="0,0,0,1">
         <item>
          <widget class="QWidget" name="widget_2" native="true">
           <layout class="QVBoxLayout" name="verticalLayout">
            <item>
             <widget class="QLabel" name="name">
              <property name="text">
-              <string>TextLabel</string>
+              <string>DEV0</string>
              </property>
             </widget>
            </item>
            <item>
-            <widget class="PlotWidget" name="graphicsView">
-             <property name="frameShadow">
-              <enum>QFrame::Sunken</enum>
-             </property>
-             <property name="lineWidth">
-              <number>7</number>
+            <widget class="QTableWidget" name="DEV0">
+             <attribute name="horizontalHeaderStretchLastSection">
+              <bool>true</bool>
+             </attribute>
+             <row>
+              <property name="text">
+               <string>Module 0 Voltage (V)</string>
+              </property>
+             </row>
+             <row>
+              <property name="text">
+               <string>Module 1 Voltage (V)</string>
+              </property>
+             </row>
+             <row>
+              <property name="text">
+               <string>Module 2 Voltage (V)</string>
+              </property>
+             </row>
+             <row>
+              <property name="text">
+               <string>Module 3 Voltage (V)</string>
+              </property>
+             </row>
+             <row>
+              <property name="text">
+               <string>Module 4 Voltage (V)</string>
+              </property>
+             </row>
+             <row>
+              <property name="text">
+               <string>Module 5 Voltage (V)</string>
+              </property>
+             </row>
+             <row>
+              <property name="text">
+               <string>Module 6 Voltage (V)</string>
+              </property>
+             </row>
+             <row>
+              <property name="text">
+               <string>Module 7 Voltage (V)</string>
+              </property>
+             </row>
+             <row>
+              <property name="text">
+               <string>Module 8 Voltage (V)</string>
+              </property>
+             </row>
+             <row>
+              <property name="text">
+               <string>Module 9 Voltage (V)</string>
+              </property>
+             </row>
+             <row>
+              <property name="text">
+               <string>Module 10 Voltage (V)</string>
+              </property>
+             </row>
+             <row>
+              <property name="text">
+               <string>Module 11 Voltage (V)</string>
+              </property>
+             </row>
+             <column>
+              <property name="text">
+               <string>Value</string>
+              </property>
+             </column>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="label">
+             <property name="text">
+              <string>DEV1</string>
              </property>
             </widget>
            </item>
            <item>
-            <widget class="QListView" name="listView"/>
+            <widget class="QTableWidget" name="DEV1">
+             <attribute name="horizontalHeaderStretchLastSection">
+              <bool>true</bool>
+             </attribute>
+             <row>
+              <property name="text">
+               <string>Module 12 Voltage (V)</string>
+              </property>
+             </row>
+             <row>
+              <property name="text">
+               <string>Module 13 Voltage (V)</string>
+              </property>
+             </row>
+             <row>
+              <property name="text">
+               <string>Module 14 Voltage (V)</string>
+              </property>
+             </row>
+             <row>
+              <property name="text">
+               <string>Module 15 Voltage (V)</string>
+              </property>
+             </row>
+             <row>
+              <property name="text">
+               <string>Module 16 Voltage (V)</string>
+              </property>
+             </row>
+             <row>
+              <property name="text">
+               <string>Module 17 Voltage (V)</string>
+              </property>
+             </row>
+             <row>
+              <property name="text">
+               <string>Module 18 Voltage (V)</string>
+              </property>
+             </row>
+             <row>
+              <property name="text">
+               <string>Module 19 Voltage (V)</string>
+              </property>
+             </row>
+             <row>
+              <property name="text">
+               <string>Module 20 Voltage (V)</string>
+              </property>
+             </row>
+             <row>
+              <property name="text">
+               <string>Module 21 Voltage (V)</string>
+              </property>
+             </row>
+             <row>
+              <property name="text">
+               <string>Module 22 Voltage (V)</string>
+              </property>
+             </row>
+             <row>
+              <property name="text">
+               <string>Module 23 Voltage (V)</string>
+              </property>
+             </row>
+             <column>
+              <property name="text">
+               <string>Value</string>
+              </property>
+             </column>
+            </widget>
            </item>
           </layout>
          </widget>
@@ -57,25 +195,229 @@
            <item>
             <widget class="QLabel" name="name_3">
              <property name="text">
-              <string>TextLabel</string>
+              <string>DEV2</string>
              </property>
             </widget>
            </item>
            <item>
-            <widget class="PlotWidget" name="graphicsView_3">
-             <property name="frameShadow">
-              <enum>QFrame::Sunken</enum>
-             </property>
-             <property name="lineWidth">
-              <number>7</number>
+            <widget class="QTableWidget" name="DEV2">
+             <attribute name="horizontalHeaderStretchLastSection">
+              <bool>true</bool>
+             </attribute>
+             <row>
+              <property name="text">
+               <string>Module 24 Voltage (V)</string>
+              </property>
+             </row>
+             <row>
+              <property name="text">
+               <string>Module 25 Voltage (V)</string>
+              </property>
+             </row>
+             <row>
+              <property name="text">
+               <string>Module 26 Voltage (V)</string>
+              </property>
+             </row>
+             <row>
+              <property name="text">
+               <string>Module 27 Voltage (V)</string>
+              </property>
+             </row>
+             <row>
+              <property name="text">
+               <string>Module 28 Voltage (V)</string>
+              </property>
+             </row>
+             <row>
+              <property name="text">
+               <string>Module 29 Voltage (V)</string>
+              </property>
+             </row>
+             <row>
+              <property name="text">
+               <string>Module 30 Voltage (V)</string>
+              </property>
+             </row>
+             <row>
+              <property name="text">
+               <string>Module 31 Voltage (V)</string>
+              </property>
+             </row>
+             <row>
+              <property name="text">
+               <string>Module 32 Voltage (V)</string>
+              </property>
+             </row>
+             <row>
+              <property name="text">
+               <string>Module 33 Voltage (V)</string>
+              </property>
+             </row>
+             <row>
+              <property name="text">
+               <string>Module 34 Voltage (V)</string>
+              </property>
+             </row>
+             <row>
+              <property name="text">
+               <string>Module 35 Voltage (V)</string>
+              </property>
+             </row>
+             <column>
+              <property name="text">
+               <string>Value</string>
+              </property>
+             </column>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="label_2">
+             <property name="text">
+              <string>DEV3</string>
              </property>
             </widget>
            </item>
            <item>
-            <widget class="QListView" name="listView_3"/>
+            <widget class="QTableWidget" name="DEV3">
+             <attribute name="horizontalHeaderStretchLastSection">
+              <bool>true</bool>
+             </attribute>
+             <row>
+              <property name="text">
+               <string>Module 36 Voltage (V)</string>
+              </property>
+             </row>
+             <column>
+              <property name="text">
+               <string>Value</string>
+              </property>
+             </column>
+            </widget>
            </item>
           </layout>
          </widget>
+        </item>
+        <item>
+         <layout class="QVBoxLayout" name="verticalLayout_14">
+          <item>
+           <widget class="QLabel" name="label_14">
+            <property name="text">
+             <string>DEV0 Summary</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QTableWidget" name="tableWidget_3">
+            <attribute name="horizontalHeaderStretchLastSection">
+             <bool>true</bool>
+            </attribute>
+            <row>
+             <property name="text">
+              <string>Total Stack Voltage (V)</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>Max Module Voltage (V)</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>Ave Module Voltage (V)</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>Min Module Voltage (V)</string>
+             </property>
+            </row>
+            <column>
+             <property name="text">
+              <string>Value</string>
+             </property>
+            </column>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="label_15">
+            <property name="text">
+             <string>DEV1 Summary</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QTableWidget" name="tableWidget_2">
+            <attribute name="horizontalHeaderStretchLastSection">
+             <bool>true</bool>
+            </attribute>
+            <row>
+             <property name="text">
+              <string>Total Stack Voltage (V)</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>Max Module Voltage (V)</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>Ave Module Voltage (V)</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>Min Module Voltage (V)</string>
+             </property>
+            </row>
+            <column>
+             <property name="text">
+              <string>Value</string>
+             </property>
+            </column>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="label_16">
+            <property name="text">
+             <string>DEV 2 Summary</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QTableWidget" name="tableWidget_4">
+            <attribute name="horizontalHeaderStretchLastSection">
+             <bool>true</bool>
+            </attribute>
+            <row>
+             <property name="text">
+              <string>Total Stack Voltage (V)</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>Max Module Voltage (V)</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>Ave Module Voltage (V)</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>Min Module Voltage (V)</string>
+             </property>
+            </row>
+            <column>
+             <property name="text">
+              <string>Value</string>
+             </property>
+            </column>
+           </widget>
+          </item>
+         </layout>
         </item>
         <item>
          <widget class="QWidget" name="widget" native="true">
@@ -83,15 +425,30 @@
            <item>
             <widget class="QLabel" name="name_2">
              <property name="text">
-              <string>TextLabel</string>
+              <string>Total Bus Voltage</string>
              </property>
             </widget>
            </item>
            <item>
-            <widget class="QGraphicsView" name="graphicsView_2"/>
+            <widget class="QGraphicsView" name="totalBusVoltage">
+             <property name="accessibleName">
+              <string>Total Bus Voltage (V)</string>
+             </property>
+            </widget>
            </item>
            <item>
-            <widget class="QListView" name="listView_2"/>
+            <widget class="QLabel" name="label_3">
+             <property name="text">
+              <string>Module Voltages</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QGraphicsView" name="moduleVoltages">
+             <property name="accessibleName">
+              <string>DEV0 Max Module Voltage (V),DEV0 Ave Module Voltage (V),DEV0 Min Module Voltage(V)</string>
+             </property>
+            </widget>
            </item>
           </layout>
          </widget>
@@ -100,10 +457,379 @@
        <zorder>widget_2</zorder>
        <zorder>widget</zorder>
        <zorder>widget_3</zorder>
+       <zorder>horizontalLayoutWidget_4</zorder>
       </widget>
-      <widget class="QWidget" name="tab_2">
+      <widget class="QWidget" name="bmsB">
        <attribute name="title">
-        <string>Tab 2</string>
+        <string>BMS B</string>
+       </attribute>
+       <layout class="QGridLayout" name="gridLayout">
+        <item row="0" column="0">
+         <layout class="QVBoxLayout" name="verticalLayout_13">
+          <item>
+           <widget class="QLabel" name="label_11">
+            <property name="text">
+             <string>DEV0</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QTableWidget" name="bDEV0">
+            <attribute name="horizontalHeaderStretchLastSection">
+             <bool>true</bool>
+            </attribute>
+            <attribute name="verticalHeaderStretchLastSection">
+             <bool>true</bool>
+            </attribute>
+            <row>
+             <property name="text">
+              <string>Module 0 Temp (deg C)</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>Module 1 Temp (deg C)</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>Module 2 Temp (deg C)</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>Module 3 Temp (deg C)</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>Module 4 Temp (deg C)</string>
+             </property>
+            </row>
+            <column>
+             <property name="text">
+              <string>Value</string>
+             </property>
+            </column>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="label_12">
+            <property name="text">
+             <string>DEV1</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QTableWidget" name="bDEV1">
+            <attribute name="horizontalHeaderStretchLastSection">
+             <bool>true</bool>
+            </attribute>
+            <attribute name="verticalHeaderStretchLastSection">
+             <bool>true</bool>
+            </attribute>
+            <row>
+             <property name="text">
+              <string>Module 5 Temp (deg C)</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>Module 6 Temp (deg C)</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>Module 7 Temp (deg C)</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>Module 8 Temp (deg C)</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>Module 9 Temp (deg C)</string>
+             </property>
+            </row>
+            <column>
+             <property name="text">
+              <string>Value</string>
+             </property>
+            </column>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="label_13">
+            <property name="text">
+             <string>DEV2</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QTableWidget" name="bDEV2">
+            <attribute name="horizontalHeaderStretchLastSection">
+             <bool>true</bool>
+            </attribute>
+            <attribute name="verticalHeaderStretchLastSection">
+             <bool>true</bool>
+            </attribute>
+            <row>
+             <property name="text">
+              <string>Module 10 Temp (deg C)</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>Module 11 Temp (deg C)</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>Module 12 Temp (deg C)</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>Module 13 Temp (deg C)</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>Module 14 Temp (deg C)</string>
+             </property>
+            </row>
+            <column>
+             <property name="text">
+              <string>Value</string>
+             </property>
+            </column>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item row="0" column="1">
+         <layout class="QVBoxLayout" name="verticalLayout_12">
+          <item>
+           <widget class="QTableWidget" name="tableWidget">
+            <attribute name="horizontalHeaderStretchLastSection">
+             <bool>true</bool>
+            </attribute>
+            <attribute name="verticalHeaderStretchLastSection">
+             <bool>true</bool>
+            </attribute>
+            <row>
+             <property name="text">
+              <string>Aux Temp 0 (deg C)</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>Aux Temp 1 (deg C)</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>Aux Temp 2 (deg C)</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>Aux Temp 3 (deg C)</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>Aux Temp 4 (deg C)</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>Aux Temp 5 (deg C)</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>Max Module Temp (deg C)</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>Ave Module Temp (deg C)</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>Min Module Temp (deg C)</string>
+             </property>
+            </row>
+            <column>
+             <property name="text">
+              <string>Value</string>
+             </property>
+            </column>
+           </widget>
+          </item>
+          <item>
+           <widget class="QTableWidget" name="tableWidget_6">
+            <attribute name="horizontalHeaderStretchLastSection">
+             <bool>true</bool>
+            </attribute>
+            <attribute name="verticalHeaderStretchLastSection">
+             <bool>true</bool>
+            </attribute>
+            <row>
+             <property name="text">
+              <string>Aux Temp 0 (deg C)</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>Aux Temp 1 (deg C)</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>Aux Temp 2 (deg C)</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>Aux Temp 3 (deg C)</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>Aux Temp 4 (deg C)</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>Aux Temp 5 (deg C)</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>Max Module Temp (deg C)</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>Ave Module Temp (deg C)</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>Min Module Temp (deg C)</string>
+             </property>
+            </row>
+            <column>
+             <property name="text">
+              <string>Value</string>
+             </property>
+            </column>
+           </widget>
+          </item>
+          <item>
+           <widget class="QTableWidget" name="tableWidget_7">
+            <attribute name="horizontalHeaderStretchLastSection">
+             <bool>true</bool>
+            </attribute>
+            <attribute name="verticalHeaderStretchLastSection">
+             <bool>true</bool>
+            </attribute>
+            <row>
+             <property name="text">
+              <string>Aux Temp 0 (deg C)</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>Aux Temp 1 (deg C)</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>Aux Temp 2 (deg C)</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>Aux Temp 3 (deg C)</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>Aux Temp 4 (deg C)</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>Aux Temp 5 (deg C)</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>Max Module Temp (deg C)</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>Ave Module Temp (deg C)</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>Min Module Temp (deg C)</string>
+             </property>
+            </row>
+            <column>
+             <property name="text">
+              <string>Value</string>
+             </property>
+            </column>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item row="0" column="2">
+         <layout class="QVBoxLayout" name="verticalLayout_11">
+          <item>
+           <widget class="QLabel" name="label_10">
+            <property name="text">
+             <string>Aux Temperatures</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QGraphicsView" name="auxTemp">
+            <property name="accessibleName">
+             <string>DEV0 Aux Temp 0 (deg C),DEV0 Aux Temp 1 (deg C),DEV0 Aux Temp 2 (deg C),DEV0 Aux Temp 3 (deg C),DEV0 Aux Temp 4 (deg C)</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="label_17">
+            <property name="text">
+             <string>Module Temperatures</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QGraphicsView" name="moduleTemp">
+            <property name="accessibleDescription">
+             <string>DEV 0 Max Module Temp (deg C),DEV 0 Ave Module Temp (deg C),DEV 0 Min Module Temp (deg C)</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="bmsC">
+       <attribute name="title">
+        <string>BMS C</string>
        </attribute>
       </widget>
      </widget>
@@ -152,8 +878,8 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>731</width>
-     <height>21</height>
+     <width>1440</width>
+     <height>22</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuFile">
@@ -177,13 +903,6 @@
    </property>
   </action>
  </widget>
- <customwidgets>
-  <customwidget>
-   <class>PlotWidget</class>
-   <extends>QGraphicsView</extends>
-   <header>pyqtgraph</header>
-  </customwidget>
- </customwidgets>
  <resources/>
  <connections/>
 </ui>
