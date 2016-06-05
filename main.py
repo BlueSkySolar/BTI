@@ -11,7 +11,7 @@ pg.setConfigOption('background', 'w')
 pg.setConfigOption('foreground', 'k')
 
 
-GRAPH_LIMIT = 100
+GRAPH_LIMIT = 20
 FILE_NAME = "test"
 time = None
 
@@ -31,7 +31,6 @@ class MainWindow(QtGui.QMainWindow, window_class):
 
         # set up plots by looping through widget items
         self.plots = []
-        # does not loop through all tabs properly yet
         tabs = [self.bmsA, self.bmsB]
         for tab in tabs:
             for child in tab.children():
@@ -44,15 +43,14 @@ class MainWindow(QtGui.QMainWindow, window_class):
                         units = units.split(',')
                         plot_item = plot(next_child, len(names), names, units)
                         self.plots.append(plot_item)
-                        #next_child.setLabel('bottom', 'Time', units='s')
-                        #next_child.setLabel('left', units[0], units=units[1])
-                        #next_child.setTitle(next_child.accessibleName())
+                        
         print(self.plots)
         
     def start_listening(self):
-        # stop listening if button pressed while running
+        '''start receiving data'''
         global time
         if self.radio:
+            # stop listening if button pressed while running
             self.radio.enabled = False
             self.radio.ser.close()
             time = None
@@ -84,39 +82,46 @@ class MainWindow(QtGui.QMainWindow, window_class):
         self.radio.enabled = True
         
         try:
-            while self.radio.enabled:
+            while self.radio:
                 self.update()
                 QtCore.QCoreApplication.processEvents()
         except KeyboardInterrupt:
             self.radio.enabled = False
             self.radio.ser.close()
+            self.radio = None
     
     def update(self):
+        '''update everything with up-to-date values'''
         data = bti.get_value_dict(bti.get_radio_dict(self.radio))
         bti.csv_output(data, self.filename[0])
         
+        # update current time while
+        # keeping array under limit # of items
         if len(self.times) >= GRAPH_LIMIT:
             self.times = self.times[1:]
         self.times.append(time.elapsed())
 
+        # update all plots
         for plot in self.plots:
             for i in range(len(plot.names)):
                 if plot.names[i] in data and data[plot.names[i]]:
                     if len(plot.data[i]) >= GRAPH_LIMIT:
                         plot.data[i] = plot.data[i][1:]
                     plot.data[i].append(data[plot.names[i]])
-                    print(plot.data[i], self.times)
-                    if len(plot.data[i]) == 1:
+                    plot.plot.clear()
+                    if len(plot.plot.plotItem.legend.items) != len(plot.names):
                         plot.plot.plot(self.times, plot.data[i], pen=(i, len(plot.names)), name=plot.names[i])
                     else:
                         plot.plot.plot(self.times, plot.data[i], pen=(i, len(plot.names)))
+
                 else:
                     plot.data[i].append(0.0)
-        pass
+        
     
     
     
 class plot:
+    '''Stores plot-related variables'''
     def __init__(self, plot, num_values, names, units):
         '''
         Intialize plot object
