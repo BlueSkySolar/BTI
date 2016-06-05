@@ -266,7 +266,22 @@ def get_port_and_name():
     #    RADIO_PORT = "COM" + input("Specify port: ")
     
     return
-    
+
+def get_radio_port():
+    port = None
+    for el in list_ports.comports():
+        try:
+            test = serial_device(el.device)
+            test.open_port()
+            reset = test.ser.readline()
+            line = test.ser.readline()
+            if len(line) == 16:
+                port = el.device
+                #print(len(test.ser.readline()))
+            test.ser.close()
+        except serial.SerialException:
+            pass
+    return port
 
 
 if __name__ == "__main__":

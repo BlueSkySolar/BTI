@@ -18,7 +18,7 @@
     <item>
      <widget class="QTabWidget" name="tabWidget">
       <property name="currentIndex">
-       <number>1</number>
+       <number>0</number>
       </property>
       <widget class="QWidget" name="bmsA">
        <attribute name="title">
@@ -430,9 +430,12 @@
             </widget>
            </item>
            <item>
-            <widget class="QGraphicsView" name="totalBusVoltage">
+            <widget class="PlotWidget" name="totalBusVoltage">
              <property name="accessibleName">
               <string>Total Bus Voltage (V)</string>
+             </property>
+             <property name="accessibleDescription">
+              <string>Voltage,V</string>
              </property>
             </widget>
            </item>
@@ -444,9 +447,12 @@
             </widget>
            </item>
            <item>
-            <widget class="QGraphicsView" name="moduleVoltages">
+            <widget class="PlotWidget" name="moduleVoltages">
              <property name="accessibleName">
-              <string>DEV0 Max Module Voltage (V),DEV0 Ave Module Voltage (V),DEV0 Min Module Voltage(V)</string>
+              <string>DEV0 Max Module Voltage (V),DEV0 Ave Module Voltage (V),DEV0 Min Module Voltage (V)</string>
+             </property>
+             <property name="accessibleDescription">
+              <string>Voltage,V</string>
              </property>
             </widget>
            </item>
@@ -457,7 +463,6 @@
        <zorder>widget_2</zorder>
        <zorder>widget</zorder>
        <zorder>widget_3</zorder>
-       <zorder>horizontalLayoutWidget_4</zorder>
       </widget>
       <widget class="QWidget" name="bmsB">
        <attribute name="title">
@@ -803,9 +808,12 @@
            </widget>
           </item>
           <item>
-           <widget class="QGraphicsView" name="auxTemp">
+           <widget class="PlotWidget" name="auxTemp">
             <property name="accessibleName">
              <string>DEV0 Aux Temp 0 (deg C),DEV0 Aux Temp 1 (deg C),DEV0 Aux Temp 2 (deg C),DEV0 Aux Temp 3 (deg C),DEV0 Aux Temp 4 (deg C)</string>
+            </property>
+            <property name="accessibleDescription">
+             <string>Tempurature,deg C</string>
             </property>
            </widget>
           </item>
@@ -817,9 +825,12 @@
            </widget>
           </item>
           <item>
-           <widget class="QGraphicsView" name="moduleTemp">
-            <property name="accessibleDescription">
+           <widget class="PlotWidget" name="moduleTemp">
+            <property name="accessibleName">
              <string>DEV 0 Max Module Temp (deg C),DEV 0 Ave Module Temp (deg C),DEV 0 Min Module Temp (deg C)</string>
+            </property>
+            <property name="accessibleDescription">
+             <string>Temperature,deg C</string>
             </property>
            </widget>
           </item>
@@ -879,7 +890,7 @@
      <x>0</x>
      <y>0</y>
      <width>1440</width>
-     <height>22</height>
+     <height>21</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuFile">
@@ -903,6 +914,13 @@
    </property>
   </action>
  </widget>
+ <customwidgets>
+  <customwidget>
+   <class>PlotWidget</class>
+   <extends>QGraphicsView</extends>
+   <header>pyqtgraph</header>
+  </customwidget>
+ </customwidgets>
  <resources/>
  <connections/>
 </ui>
