@@ -101,7 +101,7 @@ class MainWindow(QtGui.QMainWindow, window_class):
             ####################### temporarily saving raw data for testing
             with open("raw_data.txt", "a") as text_file:
                 temp = self.radio.ser.read_until(b'#')
-                text_file.write(self.radio.ser.read_until(b'#').decode("utf-8")
+                text_file.write(self.radio.ser.read_until(b'#').decode("utf-8"))
             #######################
             while self.radio:
                 self.update()
