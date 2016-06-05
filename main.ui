@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1440</width>
-    <height>851</height>
+    <width>1053</width>
+    <height>695</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -18,7 +18,7 @@
     <item>
      <widget class="QTabWidget" name="tabWidget">
       <property name="currentIndex">
-       <number>1</number>
+       <number>2</number>
       </property>
       <widget class="QWidget" name="bmsA">
        <attribute name="title">
@@ -869,6 +869,738 @@
        <attribute name="title">
         <string>BMS C</string>
        </attribute>
+       <layout class="QGridLayout" name="gridLayout_3" columnstretch="1,0,0,0,0">
+        <item row="0" column="0">
+         <layout class="QVBoxLayout" name="verticalLayout_6">
+          <item>
+           <widget class="QTableWidget" name="tableWidget_8">
+            <attribute name="horizontalHeaderStretchLastSection">
+             <bool>true</bool>
+            </attribute>
+            <row>
+             <property name="text">
+              <string>bms_batt_map</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>bms_batt_map_1</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>bms_batt_map_2</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>bms_bal_word</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>bms_bal_word_2</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>Critical Voltage High (V)</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>Critical Voltage Low (V)</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>Balancing Threshold (V)</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>Critical Temp (deg C)</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>Cooling Threshold High (deg C)</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>Cooling Threshold Low (deg C)</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>bms_curr_wa_error_rate</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>bms_peak_wa_error_rate</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>bms_curr_crc_error_rate</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>bms_peak_crc_error_rate</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>bms_curr_dis_error_rate</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>bms_peak_dis_error_rate</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>bms_curr_dev_errors</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>bms_hold_dev_errors</string>
+             </property>
+            </row>
+            <column>
+             <property name="text">
+              <string>Value</string>
+             </property>
+            </column>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item row="0" column="4">
+         <layout class="QVBoxLayout" name="verticalLayout_5">
+          <item>
+           <widget class="QLabel" name="label_5">
+            <property name="text">
+             <string>bms_hold_dev_errors</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QTableWidget" name="tableWidget_13">
+            <attribute name="horizontalHeaderStretchLastSection">
+             <bool>true</bool>
+            </attribute>
+            <row>
+             <property name="text">
+              <string>0.DIS_DEV0_ERROR</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>1.DIS_DEV1_ERROR</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>2.DIS_DEV2_ERROR</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>3.DIS_DEV3_ERROR</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>4.DIS_DEV4_ERROR</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>5.DIS_DEV5_ERROR</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>6.DIS_DEV6_ERROR</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>7.DIS_DEV7_ERROR</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>8.CRC_DEV0_ERROR</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>9.CRC_DEV1_ERROR</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>10.CRC_DEV2_ERROR</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>11.CRC_DEV3_ERROR</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>12.CRC_DEV4_ERROR</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>13.CRC_DEV5_ERROR</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>14.CRC_DEV6_ERROR</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>15.CRC_DEV7_ERROR</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>16.WA_DEV0_ERROR</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>17.WA_DEV1_ERROR</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>18.WA_DEV2_ERROR</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>19.WA_DEV3_ERROR</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>20.WA_DEV4_ERROR</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>21.WA_DEV5_ERROR</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>22.WA_DEV6_ERROR</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>23.WA_DEV7_ERROR</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>24.INIT_DEV0_ERROR</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>25.INIT_DEV1_ERROR</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>26.INIT_DEV2_ERROR</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>27.INIT_DEV3_ERROR</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>28.INIT_DEV4_ERROR</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>29.INIT_DEV5_ERROR</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>30.INIT_DEV6_ERROR</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>31.INIT_DEV7_ERROR</string>
+             </property>
+            </row>
+            <column>
+             <property name="text">
+              <string>Value</string>
+             </property>
+            </column>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item row="0" column="1">
+         <layout class="QVBoxLayout" name="verticalLayout_8">
+          <item>
+           <widget class="QLabel" name="label_6">
+            <property name="text">
+             <string>bms_batt_map</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QTableWidget" name="tableWidget_10">
+            <attribute name="horizontalHeaderStretchLastSection">
+             <bool>true</bool>
+            </attribute>
+            <attribute name="verticalHeaderStretchLastSection">
+             <bool>false</bool>
+            </attribute>
+            <row>
+             <property name="text">
+              <string>0.BATT EN</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>1.BATT EN</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>2.BATT EN</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>3.BATT EN</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>4.BATT EN</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>5.BATT EN</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>6.BATT EN</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>7.BATT EN</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>8.BATT EN</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>9.BATT EN</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>10.BATT EN</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>11.BATT EN</string>
+             </property>
+            </row>
+            <column>
+             <property name="text">
+              <string>Value</string>
+             </property>
+            </column>
+            <item row="0" column="0">
+             <property name="text">
+              <string/>
+             </property>
+            </item>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="label_7">
+            <property name="text">
+             <string>bms_batt_map</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QTableWidget" name="tableWidget_11">
+            <attribute name="horizontalHeaderStretchLastSection">
+             <bool>true</bool>
+            </attribute>
+            <row>
+             <property name="text">
+              <string>12.BATT EN</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>13.BATT EN</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>14.BATT EN</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>15.BATT EN</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>16.BATT EN</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>17.BATT EN</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>18.BATT EN</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>19.BATT EN</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>20.BATT EN</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>21.BATT EN</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>22.BATT EN</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>23.BATT EN</string>
+             </property>
+            </row>
+            <column>
+             <property name="text">
+              <string>Value</string>
+             </property>
+            </column>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item row="0" column="2">
+         <layout class="QVBoxLayout" name="verticalLayout_7">
+          <item>
+           <widget class="QLabel" name="label_8">
+            <property name="text">
+             <string>bms_batt_map</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QTableWidget" name="tableWidget_9">
+            <attribute name="horizontalHeaderStretchLastSection">
+             <bool>true</bool>
+            </attribute>
+            <row>
+             <property name="text">
+              <string>24.BATT EN</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>25.BATT EN</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>26.BATT EN</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>27.BATT EN</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>28.BATT EN</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>29.BATT EN</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>30.BATT EN</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>31.BATT EN</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>32.BATT EN</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>33.BATT EN</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>34.BATT EN</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>35.BATT EN</string>
+             </property>
+            </row>
+            <column>
+             <property name="text">
+              <string>Value</string>
+             </property>
+            </column>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item row="0" column="3">
+         <layout class="QVBoxLayout" name="verticalLayout_9">
+          <item>
+           <widget class="QLabel" name="label_4">
+            <property name="text">
+             <string>bms_curr_dev_errors</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QTableWidget" name="tableWidget_12">
+            <attribute name="horizontalHeaderStretchLastSection">
+             <bool>true</bool>
+            </attribute>
+            <row>
+             <property name="text">
+              <string>0.DIS_DEV0_ERROR</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>1.DIS_DEV1_ERROR</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>2.DIS_DEV2_ERROR</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>3.DIS_DEV3_ERROR</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>4.DIS_DEV4_ERROR</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>5.DIS_DEV5_ERROR</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>6.DIS_DEV6_ERROR</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>7.DIS_DEV7_ERROR</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>8.CRC_DEV0_ERROR</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>9.CRC_DEV1_ERROR</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>10.CRC_DEV2_ERROR</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>11.CRC_DEV3_ERROR</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>12.CRC_DEV4_ERROR</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>13.CRC_DEV5_ERROR</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>14.CRC_DEV6_ERROR</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>15.CRC_DEV7_ERROR</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>16.WA_DEV0_ERROR</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>17.WA_DEV1_ERROR</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>18.WA_DEV2_ERROR</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>19.WA_DEV3_ERROR</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>20.WA_DEV4_ERROR</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>21.WA_DEV5_ERROR</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>22.WA_DEV6_ERROR</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>23.WA_DEV7_ERROR</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>24.INIT_DEV0_ERROR</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>25.INIT_DEV1_ERROR</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>26.INIT_DEV2_ERROR</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>27.INIT_DEV3_ERROR</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>28.INIT_DEV4_ERROR</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>29.INIT_DEV5_ERROR</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>30.INIT_DEV6_ERROR</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>31.INIT_DEV7_ERROR</string>
+             </property>
+            </row>
+            <column>
+             <property name="text">
+              <string>Value</string>
+             </property>
+            </column>
+           </widget>
+          </item>
+         </layout>
+        </item>
+       </layout>
       </widget>
      </widget>
     </item>
@@ -916,8 +1648,8 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1440</width>
-     <height>21</height>
+     <width>1053</width>
+     <height>22</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuFile">
