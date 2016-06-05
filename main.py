@@ -34,7 +34,8 @@ class MainWindow(QtGui.QMainWindow, window_class):
 
         # set up plots by looping through widget items
         self.plots = []
-        tabs = [self.bmsA, self.bmsB]
+        # ADD NEW TABS TO THIS LIST
+        tabs = [self.bmsA, self.bmsB, self.bmsC]
         for tab in tabs:
             for child in tab.children():
                 for next_child in child.children():
@@ -135,13 +136,27 @@ class MainWindow(QtGui.QMainWindow, window_class):
         #go through each table and update the value corresponding to the row title
         for table in self.tables:
             for row in range(table.rowCount()):
-                # Since some values in the BTI have repeated names, 
-                # we can use the accessibleName value in a table to
-                # access the unique keys of each value without changing the 
-                # original name (accessibleName should be blank for others)
-                item = QtGui.QTableWidgetItem(str(data[table.accessibleName()+ 
-                                                   table.verticalHeaderItem(row).text()]))
-                table.setItem(row,0,item)
+                
+                # all bool tables in BMS C have the accessibleDescription 
+                # of 'colour', which is used to know whether or not to fill 
+                # the cell with colour indicators
+                if table.accessibleDescription() == 'colour':
+                    table.setItem(row,0,QtGui.QTableWidgetItem(""))
+                    if data[table.accessibleName() + 
+                            table.verticalHeaderItem(row).text()] == True:
+                        table.item(row,0).setBackground(QtGui.QColor(0,255,0))
+                    elif data[table.verticalHeaderItem(row).text()] == False:
+                        table.item(row,0).setBackground(QtGui.QColor(255,0,0))
+                    else:
+                        pass
+                else:        
+                    # Since some values in the BTI have repeated names, 
+                    # we can use the accessibleName value in a table to
+                    # access the unique keys of each value without changing the 
+                    # original name (accessibleName should be blank for others)
+                    item = QtGui.QTableWidgetItem(str(data[table.accessibleName()+ 
+                                                       table.verticalHeaderItem(row).text()]))
+                    table.setItem(row,0,item)
             
     def closeEvent(self, *args, **kwargs):
         super(QtGui.QMainWindow, self).closeEvent(*args, **kwargs)
