@@ -29,6 +29,7 @@ class MainWindow(QtGui.QMainWindow, window_class):
         self.tables = []
 
         self.pushButton.clicked.connect(self.start_listening)
+        self.statusBar().showMessage("Not Connected")
 
         # set up plots by looping through widget items
         self.plots = []
@@ -124,8 +125,13 @@ class MainWindow(QtGui.QMainWindow, window_class):
                     
         #go through each table and update the value corresponding to the row title
         for table in self.tables:
-            for row in table.rowCount:
-                item = QTableWidgetItem(data[table.horizontalHeaderItem(row)])
+            for row in range(table.rowCount()):
+                # Since some values in the BTI have repeated names, 
+                # we can use the accessibleName value in a table to
+                # access the unique keys of each value without changing the 
+                # original name
+                item = QtGui.QTableWidgetItem(str(data[table.accessibleName()+ 
+                                                   table.verticalHeaderItem(row).text()]))
                 table.setItem(row,0,item)
             
     

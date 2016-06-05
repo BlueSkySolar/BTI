@@ -18,7 +18,7 @@
     <item>
      <widget class="QTabWidget" name="tabWidget">
       <property name="currentIndex">
-       <number>0</number>
+       <number>1</number>
       </property>
       <widget class="QWidget" name="bmsA">
        <attribute name="title">
@@ -299,125 +299,136 @@
          </widget>
         </item>
         <item>
-         <layout class="QVBoxLayout" name="verticalLayout_14">
-          <item>
-           <widget class="QLabel" name="label_14">
-            <property name="text">
-             <string>DEV0 Summary</string>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QTableWidget" name="tableWidget_3">
-            <attribute name="horizontalHeaderStretchLastSection">
-             <bool>true</bool>
-            </attribute>
-            <row>
+         <widget class="QWidget" name="widget_4" native="true">
+          <layout class="QVBoxLayout" name="verticalLayout_14">
+           <item>
+            <widget class="QLabel" name="label_14">
              <property name="text">
-              <string>Total Stack Voltage (V)</string>
+              <string>DEV0 Summary</string>
              </property>
-            </row>
-            <row>
+            </widget>
+           </item>
+           <item>
+            <widget class="QTableWidget" name="tableWidget_3">
+             <property name="accessibleName">
+              <string>DEV0 </string>
+             </property>
+             <attribute name="horizontalHeaderStretchLastSection">
+              <bool>true</bool>
+             </attribute>
+             <row>
+              <property name="text">
+               <string>Total Stack Voltage (V)</string>
+              </property>
+             </row>
+             <row>
+              <property name="text">
+               <string>Max Module Voltage (V)</string>
+              </property>
+             </row>
+             <row>
+              <property name="text">
+               <string>Ave Module Voltage (V)</string>
+              </property>
+             </row>
+             <row>
+              <property name="text">
+               <string>Min Module Voltage (V)</string>
+              </property>
+             </row>
+             <column>
+              <property name="text">
+               <string>Value</string>
+              </property>
+             </column>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="label_15">
              <property name="text">
-              <string>Max Module Voltage (V)</string>
+              <string>DEV1 Summary</string>
              </property>
-            </row>
-            <row>
+            </widget>
+           </item>
+           <item>
+            <widget class="QTableWidget" name="tableWidget_2">
+             <property name="accessibleName">
+              <string>DEV1 </string>
+             </property>
+             <attribute name="horizontalHeaderStretchLastSection">
+              <bool>true</bool>
+             </attribute>
+             <row>
+              <property name="text">
+               <string>Total Stack Voltage (V)</string>
+              </property>
+             </row>
+             <row>
+              <property name="text">
+               <string>Max Module Voltage (V)</string>
+              </property>
+             </row>
+             <row>
+              <property name="text">
+               <string>Ave Module Voltage (V)</string>
+              </property>
+             </row>
+             <row>
+              <property name="text">
+               <string>Min Module Voltage (V)</string>
+              </property>
+             </row>
+             <column>
+              <property name="text">
+               <string>Value</string>
+              </property>
+             </column>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="label_16">
              <property name="text">
-              <string>Ave Module Voltage (V)</string>
+              <string>DEV 2 Summary</string>
              </property>
-            </row>
-            <row>
-             <property name="text">
-              <string>Min Module Voltage (V)</string>
+            </widget>
+           </item>
+           <item>
+            <widget class="QTableWidget" name="tableWidget_4">
+             <property name="accessibleName">
+              <string>DEV2 </string>
              </property>
-            </row>
-            <column>
-             <property name="text">
-              <string>Value</string>
-             </property>
-            </column>
-           </widget>
-          </item>
-          <item>
-           <widget class="QLabel" name="label_15">
-            <property name="text">
-             <string>DEV1 Summary</string>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QTableWidget" name="tableWidget_2">
-            <attribute name="horizontalHeaderStretchLastSection">
-             <bool>true</bool>
-            </attribute>
-            <row>
-             <property name="text">
-              <string>Total Stack Voltage (V)</string>
-             </property>
-            </row>
-            <row>
-             <property name="text">
-              <string>Max Module Voltage (V)</string>
-             </property>
-            </row>
-            <row>
-             <property name="text">
-              <string>Ave Module Voltage (V)</string>
-             </property>
-            </row>
-            <row>
-             <property name="text">
-              <string>Min Module Voltage (V)</string>
-             </property>
-            </row>
-            <column>
-             <property name="text">
-              <string>Value</string>
-             </property>
-            </column>
-           </widget>
-          </item>
-          <item>
-           <widget class="QLabel" name="label_16">
-            <property name="text">
-             <string>DEV 2 Summary</string>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QTableWidget" name="tableWidget_4">
-            <attribute name="horizontalHeaderStretchLastSection">
-             <bool>true</bool>
-            </attribute>
-            <row>
-             <property name="text">
-              <string>Total Stack Voltage (V)</string>
-             </property>
-            </row>
-            <row>
-             <property name="text">
-              <string>Max Module Voltage (V)</string>
-             </property>
-            </row>
-            <row>
-             <property name="text">
-              <string>Ave Module Voltage (V)</string>
-             </property>
-            </row>
-            <row>
-             <property name="text">
-              <string>Min Module Voltage (V)</string>
-             </property>
-            </row>
-            <column>
-             <property name="text">
-              <string>Value</string>
-             </property>
-            </column>
-           </widget>
-          </item>
-         </layout>
+             <attribute name="horizontalHeaderStretchLastSection">
+              <bool>true</bool>
+             </attribute>
+             <row>
+              <property name="text">
+               <string>Total Stack Voltage (V)</string>
+              </property>
+             </row>
+             <row>
+              <property name="text">
+               <string>Max Module Voltage (V)</string>
+              </property>
+             </row>
+             <row>
+              <property name="text">
+               <string>Ave Module Voltage (V)</string>
+              </property>
+             </row>
+             <row>
+              <property name="text">
+               <string>Min Module Voltage (V)</string>
+              </property>
+             </row>
+             <column>
+              <property name="text">
+               <string>Value</string>
+              </property>
+             </column>
+            </widget>
+           </item>
+          </layout>
+         </widget>
         </item>
         <item>
          <widget class="QWidget" name="widget" native="true">
@@ -460,6 +471,7 @@
          </widget>
         </item>
        </layout>
+       <zorder>widget_4</zorder>
        <zorder>widget_2</zorder>
        <zorder>widget</zorder>
        <zorder>widget_3</zorder>
@@ -470,371 +482,386 @@
        </attribute>
        <layout class="QGridLayout" name="gridLayout">
         <item row="0" column="0">
-         <layout class="QVBoxLayout" name="verticalLayout_13">
-          <item>
-           <widget class="QLabel" name="label_11">
-            <property name="text">
-             <string>DEV0</string>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QTableWidget" name="bDEV0">
-            <attribute name="horizontalHeaderStretchLastSection">
-             <bool>true</bool>
-            </attribute>
-            <attribute name="verticalHeaderStretchLastSection">
-             <bool>true</bool>
-            </attribute>
-            <row>
+         <widget class="QWidget" name="widget_5" native="true">
+          <layout class="QVBoxLayout" name="verticalLayout_13">
+           <item>
+            <widget class="QLabel" name="label_11">
              <property name="text">
-              <string>Module 0 Temp (deg C)</string>
+              <string>DEV0</string>
              </property>
-            </row>
-            <row>
+            </widget>
+           </item>
+           <item>
+            <widget class="QTableWidget" name="bDEV0">
+             <attribute name="horizontalHeaderStretchLastSection">
+              <bool>true</bool>
+             </attribute>
+             <attribute name="verticalHeaderStretchLastSection">
+              <bool>true</bool>
+             </attribute>
+             <row>
+              <property name="text">
+               <string>Module 0 Temp (deg C)</string>
+              </property>
+             </row>
+             <row>
+              <property name="text">
+               <string>Module 1 Temp (deg C)</string>
+              </property>
+             </row>
+             <row>
+              <property name="text">
+               <string>Module 2 Temp (deg C)</string>
+              </property>
+             </row>
+             <row>
+              <property name="text">
+               <string>Module 3 Temp (deg C)</string>
+              </property>
+             </row>
+             <row>
+              <property name="text">
+               <string>Module 4 Temp (deg C)</string>
+              </property>
+             </row>
+             <column>
+              <property name="text">
+               <string>Value</string>
+              </property>
+             </column>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="label_12">
              <property name="text">
-              <string>Module 1 Temp (deg C)</string>
+              <string>DEV1</string>
              </property>
-            </row>
-            <row>
+            </widget>
+           </item>
+           <item>
+            <widget class="QTableWidget" name="bDEV1">
+             <attribute name="horizontalHeaderStretchLastSection">
+              <bool>true</bool>
+             </attribute>
+             <attribute name="verticalHeaderStretchLastSection">
+              <bool>true</bool>
+             </attribute>
+             <row>
+              <property name="text">
+               <string>Module 5 Temp (deg C)</string>
+              </property>
+             </row>
+             <row>
+              <property name="text">
+               <string>Module 6 Temp (deg C)</string>
+              </property>
+             </row>
+             <row>
+              <property name="text">
+               <string>Module 7 Temp (deg C)</string>
+              </property>
+             </row>
+             <row>
+              <property name="text">
+               <string>Module 8 Temp (deg C)</string>
+              </property>
+             </row>
+             <row>
+              <property name="text">
+               <string>Module 9 Temp (deg C)</string>
+              </property>
+             </row>
+             <column>
+              <property name="text">
+               <string>Value</string>
+              </property>
+             </column>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="label_13">
              <property name="text">
-              <string>Module 2 Temp (deg C)</string>
+              <string>DEV2</string>
              </property>
-            </row>
-            <row>
-             <property name="text">
-              <string>Module 3 Temp (deg C)</string>
-             </property>
-            </row>
-            <row>
-             <property name="text">
-              <string>Module 4 Temp (deg C)</string>
-             </property>
-            </row>
-            <column>
-             <property name="text">
-              <string>Value</string>
-             </property>
-            </column>
-           </widget>
-          </item>
-          <item>
-           <widget class="QLabel" name="label_12">
-            <property name="text">
-             <string>DEV1</string>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QTableWidget" name="bDEV1">
-            <attribute name="horizontalHeaderStretchLastSection">
-             <bool>true</bool>
-            </attribute>
-            <attribute name="verticalHeaderStretchLastSection">
-             <bool>true</bool>
-            </attribute>
-            <row>
-             <property name="text">
-              <string>Module 5 Temp (deg C)</string>
-             </property>
-            </row>
-            <row>
-             <property name="text">
-              <string>Module 6 Temp (deg C)</string>
-             </property>
-            </row>
-            <row>
-             <property name="text">
-              <string>Module 7 Temp (deg C)</string>
-             </property>
-            </row>
-            <row>
-             <property name="text">
-              <string>Module 8 Temp (deg C)</string>
-             </property>
-            </row>
-            <row>
-             <property name="text">
-              <string>Module 9 Temp (deg C)</string>
-             </property>
-            </row>
-            <column>
-             <property name="text">
-              <string>Value</string>
-             </property>
-            </column>
-           </widget>
-          </item>
-          <item>
-           <widget class="QLabel" name="label_13">
-            <property name="text">
-             <string>DEV2</string>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QTableWidget" name="bDEV2">
-            <attribute name="horizontalHeaderStretchLastSection">
-             <bool>true</bool>
-            </attribute>
-            <attribute name="verticalHeaderStretchLastSection">
-             <bool>true</bool>
-            </attribute>
-            <row>
-             <property name="text">
-              <string>Module 10 Temp (deg C)</string>
-             </property>
-            </row>
-            <row>
-             <property name="text">
-              <string>Module 11 Temp (deg C)</string>
-             </property>
-            </row>
-            <row>
-             <property name="text">
-              <string>Module 12 Temp (deg C)</string>
-             </property>
-            </row>
-            <row>
-             <property name="text">
-              <string>Module 13 Temp (deg C)</string>
-             </property>
-            </row>
-            <row>
-             <property name="text">
-              <string>Module 14 Temp (deg C)</string>
-             </property>
-            </row>
-            <column>
-             <property name="text">
-              <string>Value</string>
-             </property>
-            </column>
-           </widget>
-          </item>
-         </layout>
-        </item>
-        <item row="0" column="1">
-         <layout class="QVBoxLayout" name="verticalLayout_12">
-          <item>
-           <widget class="QTableWidget" name="tableWidget">
-            <attribute name="horizontalHeaderStretchLastSection">
-             <bool>true</bool>
-            </attribute>
-            <attribute name="verticalHeaderStretchLastSection">
-             <bool>true</bool>
-            </attribute>
-            <row>
-             <property name="text">
-              <string>Aux Temp 0 (deg C)</string>
-             </property>
-            </row>
-            <row>
-             <property name="text">
-              <string>Aux Temp 1 (deg C)</string>
-             </property>
-            </row>
-            <row>
-             <property name="text">
-              <string>Aux Temp 2 (deg C)</string>
-             </property>
-            </row>
-            <row>
-             <property name="text">
-              <string>Aux Temp 3 (deg C)</string>
-             </property>
-            </row>
-            <row>
-             <property name="text">
-              <string>Aux Temp 4 (deg C)</string>
-             </property>
-            </row>
-            <row>
-             <property name="text">
-              <string>Aux Temp 5 (deg C)</string>
-             </property>
-            </row>
-            <row>
-             <property name="text">
-              <string>Max Module Temp (deg C)</string>
-             </property>
-            </row>
-            <row>
-             <property name="text">
-              <string>Ave Module Temp (deg C)</string>
-             </property>
-            </row>
-            <row>
-             <property name="text">
-              <string>Min Module Temp (deg C)</string>
-             </property>
-            </row>
-            <column>
-             <property name="text">
-              <string>Value</string>
-             </property>
-            </column>
-           </widget>
-          </item>
-          <item>
-           <widget class="QTableWidget" name="tableWidget_6">
-            <attribute name="horizontalHeaderStretchLastSection">
-             <bool>true</bool>
-            </attribute>
-            <attribute name="verticalHeaderStretchLastSection">
-             <bool>true</bool>
-            </attribute>
-            <row>
-             <property name="text">
-              <string>Aux Temp 0 (deg C)</string>
-             </property>
-            </row>
-            <row>
-             <property name="text">
-              <string>Aux Temp 1 (deg C)</string>
-             </property>
-            </row>
-            <row>
-             <property name="text">
-              <string>Aux Temp 2 (deg C)</string>
-             </property>
-            </row>
-            <row>
-             <property name="text">
-              <string>Aux Temp 3 (deg C)</string>
-             </property>
-            </row>
-            <row>
-             <property name="text">
-              <string>Aux Temp 4 (deg C)</string>
-             </property>
-            </row>
-            <row>
-             <property name="text">
-              <string>Aux Temp 5 (deg C)</string>
-             </property>
-            </row>
-            <row>
-             <property name="text">
-              <string>Max Module Temp (deg C)</string>
-             </property>
-            </row>
-            <row>
-             <property name="text">
-              <string>Ave Module Temp (deg C)</string>
-             </property>
-            </row>
-            <row>
-             <property name="text">
-              <string>Min Module Temp (deg C)</string>
-             </property>
-            </row>
-            <column>
-             <property name="text">
-              <string>Value</string>
-             </property>
-            </column>
-           </widget>
-          </item>
-          <item>
-           <widget class="QTableWidget" name="tableWidget_7">
-            <attribute name="horizontalHeaderStretchLastSection">
-             <bool>true</bool>
-            </attribute>
-            <attribute name="verticalHeaderStretchLastSection">
-             <bool>true</bool>
-            </attribute>
-            <row>
-             <property name="text">
-              <string>Aux Temp 0 (deg C)</string>
-             </property>
-            </row>
-            <row>
-             <property name="text">
-              <string>Aux Temp 1 (deg C)</string>
-             </property>
-            </row>
-            <row>
-             <property name="text">
-              <string>Aux Temp 2 (deg C)</string>
-             </property>
-            </row>
-            <row>
-             <property name="text">
-              <string>Aux Temp 3 (deg C)</string>
-             </property>
-            </row>
-            <row>
-             <property name="text">
-              <string>Aux Temp 4 (deg C)</string>
-             </property>
-            </row>
-            <row>
-             <property name="text">
-              <string>Aux Temp 5 (deg C)</string>
-             </property>
-            </row>
-            <row>
-             <property name="text">
-              <string>Max Module Temp (deg C)</string>
-             </property>
-            </row>
-            <row>
-             <property name="text">
-              <string>Ave Module Temp (deg C)</string>
-             </property>
-            </row>
-            <row>
-             <property name="text">
-              <string>Min Module Temp (deg C)</string>
-             </property>
-            </row>
-            <column>
-             <property name="text">
-              <string>Value</string>
-             </property>
-            </column>
-           </widget>
-          </item>
-         </layout>
+            </widget>
+           </item>
+           <item>
+            <widget class="QTableWidget" name="bDEV2">
+             <attribute name="horizontalHeaderStretchLastSection">
+              <bool>true</bool>
+             </attribute>
+             <attribute name="verticalHeaderStretchLastSection">
+              <bool>true</bool>
+             </attribute>
+             <row>
+              <property name="text">
+               <string>Module 10 Temp (deg C)</string>
+              </property>
+             </row>
+             <row>
+              <property name="text">
+               <string>Module 11 Temp (deg C)</string>
+              </property>
+             </row>
+             <row>
+              <property name="text">
+               <string>Module 12 Temp (deg C)</string>
+              </property>
+             </row>
+             <row>
+              <property name="text">
+               <string>Module 13 Temp (deg C)</string>
+              </property>
+             </row>
+             <row>
+              <property name="text">
+               <string>Module 14 Temp (deg C)</string>
+              </property>
+             </row>
+             <column>
+              <property name="text">
+               <string>Value</string>
+              </property>
+             </column>
+            </widget>
+           </item>
+          </layout>
+         </widget>
         </item>
         <item row="0" column="2">
-         <layout class="QVBoxLayout" name="verticalLayout_11">
-          <item>
-           <widget class="QLabel" name="label_10">
-            <property name="text">
-             <string>Aux Temperatures</string>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="PlotWidget" name="auxTemp">
-            <property name="accessibleName">
-             <string>DEV0 Aux Temp 0 (deg C),DEV0 Aux Temp 1 (deg C),DEV0 Aux Temp 2 (deg C),DEV0 Aux Temp 3 (deg C),DEV0 Aux Temp 4 (deg C)</string>
-            </property>
-            <property name="accessibleDescription">
-             <string>Tempurature,deg C</string>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QLabel" name="label_17">
-            <property name="text">
-             <string>Module Temperatures</string>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="PlotWidget" name="moduleTemp">
-            <property name="accessibleName">
-             <string>DEV 0 Max Module Temp (deg C),DEV 0 Ave Module Temp (deg C),DEV 0 Min Module Temp (deg C)</string>
-            </property>
-            <property name="accessibleDescription">
-             <string>Temperature,deg C</string>
-            </property>
-           </widget>
-          </item>
-         </layout>
+         <widget class="QWidget" name="widget_7" native="true">
+          <layout class="QVBoxLayout" name="widget_6">
+           <item>
+            <widget class="QLabel" name="label_10">
+             <property name="text">
+              <string>Aux Temperatures</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="PlotWidget" name="auxTemp">
+             <property name="accessibleName">
+              <string>DEV0 Aux Temp 0 (deg C),DEV0 Aux Temp 1 (deg C),DEV0 Aux Temp 2 (deg C),DEV0 Aux Temp 3 (deg C),DEV0 Aux Temp 4 (deg C)</string>
+             </property>
+             <property name="accessibleDescription">
+              <string>Tempurature,deg C</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="label_17">
+             <property name="text">
+              <string>Module Temperatures</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="PlotWidget" name="moduleTemp">
+             <property name="accessibleName">
+              <string>DEV0 Max Module Temp (deg C),DEV0 Ave Module Temp (deg C),DEV0 Min Module Temp (deg C)</string>
+             </property>
+             <property name="accessibleDescription">
+              <string>Temperature,deg C</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item row="0" column="1">
+         <widget class="QWidget" name="widget_8" native="true">
+          <layout class="QVBoxLayout" name="verticalLayout_12">
+           <item>
+            <widget class="QTableWidget" name="tableWidget">
+             <property name="accessibleName">
+              <string>DEV0 </string>
+             </property>
+             <attribute name="horizontalHeaderStretchLastSection">
+              <bool>true</bool>
+             </attribute>
+             <attribute name="verticalHeaderStretchLastSection">
+              <bool>true</bool>
+             </attribute>
+             <row>
+              <property name="text">
+               <string>Aux Temp 0 (deg C)</string>
+              </property>
+             </row>
+             <row>
+              <property name="text">
+               <string>Aux Temp 1 (deg C)</string>
+              </property>
+             </row>
+             <row>
+              <property name="text">
+               <string>Aux Temp 2 (deg C)</string>
+              </property>
+             </row>
+             <row>
+              <property name="text">
+               <string>Aux Temp 3 (deg C)</string>
+              </property>
+             </row>
+             <row>
+              <property name="text">
+               <string>Aux Temp 4 (deg C)</string>
+              </property>
+             </row>
+             <row>
+              <property name="text">
+               <string>Aux Temp 5 (deg C)</string>
+              </property>
+             </row>
+             <row>
+              <property name="text">
+               <string>Max Module Temp (deg C)</string>
+              </property>
+             </row>
+             <row>
+              <property name="text">
+               <string>Ave Module Temp (deg C)</string>
+              </property>
+             </row>
+             <row>
+              <property name="text">
+               <string>Min Module Temp (deg C)</string>
+              </property>
+             </row>
+             <column>
+              <property name="text">
+               <string>Value</string>
+              </property>
+             </column>
+            </widget>
+           </item>
+           <item>
+            <widget class="QTableWidget" name="tableWidget_6">
+             <property name="accessibleName">
+              <string>DEV1 </string>
+             </property>
+             <attribute name="horizontalHeaderStretchLastSection">
+              <bool>true</bool>
+             </attribute>
+             <attribute name="verticalHeaderStretchLastSection">
+              <bool>true</bool>
+             </attribute>
+             <row>
+              <property name="text">
+               <string>Aux Temp 0 (deg C)</string>
+              </property>
+             </row>
+             <row>
+              <property name="text">
+               <string>Aux Temp 1 (deg C)</string>
+              </property>
+             </row>
+             <row>
+              <property name="text">
+               <string>Aux Temp 2 (deg C)</string>
+              </property>
+             </row>
+             <row>
+              <property name="text">
+               <string>Aux Temp 3 (deg C)</string>
+              </property>
+             </row>
+             <row>
+              <property name="text">
+               <string>Aux Temp 4 (deg C)</string>
+              </property>
+             </row>
+             <row>
+              <property name="text">
+               <string>Aux Temp 5 (deg C)</string>
+              </property>
+             </row>
+             <row>
+              <property name="text">
+               <string>Max Module Temp (deg C)</string>
+              </property>
+             </row>
+             <row>
+              <property name="text">
+               <string>Ave Module Temp (deg C)</string>
+              </property>
+             </row>
+             <row>
+              <property name="text">
+               <string>Min Module Temp (deg C)</string>
+              </property>
+             </row>
+             <column>
+              <property name="text">
+               <string>Value</string>
+              </property>
+             </column>
+            </widget>
+           </item>
+           <item>
+            <widget class="QTableWidget" name="tableWidget_7">
+             <property name="accessibleName">
+              <string>DEV2 </string>
+             </property>
+             <attribute name="horizontalHeaderStretchLastSection">
+              <bool>true</bool>
+             </attribute>
+             <attribute name="verticalHeaderStretchLastSection">
+              <bool>true</bool>
+             </attribute>
+             <row>
+              <property name="text">
+               <string>Aux Temp 0 (deg C)</string>
+              </property>
+             </row>
+             <row>
+              <property name="text">
+               <string>Aux Temp 1 (deg C)</string>
+              </property>
+             </row>
+             <row>
+              <property name="text">
+               <string>Aux Temp 2 (deg C)</string>
+              </property>
+             </row>
+             <row>
+              <property name="text">
+               <string>Aux Temp 3 (deg C)</string>
+              </property>
+             </row>
+             <row>
+              <property name="text">
+               <string>Aux Temp 4 (deg C)</string>
+              </property>
+             </row>
+             <row>
+              <property name="text">
+               <string>Aux Temp 5 (deg C)</string>
+              </property>
+             </row>
+             <row>
+              <property name="text">
+               <string>Max Module Temp (deg C)</string>
+              </property>
+             </row>
+             <row>
+              <property name="text">
+               <string>Ave Module Temp (deg C)</string>
+              </property>
+             </row>
+             <row>
+              <property name="text">
+               <string>Min Module Temp (deg C)</string>
+              </property>
+             </row>
+             <column>
+              <property name="text">
+               <string>Value</string>
+              </property>
+             </column>
+            </widget>
+           </item>
+          </layout>
+         </widget>
         </item>
        </layout>
       </widget>
