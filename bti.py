@@ -278,7 +278,7 @@ def get_port_and_name():
     return
 
 def get_radio_port():
-    port = None
+    port = ""
     for el in list_ports.comports():
         try:
             test = serial_device(el.device)

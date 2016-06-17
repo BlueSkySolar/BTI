@@ -75,13 +75,12 @@ class MainWindow(QtGui.QMainWindow, window_class):
         
         # detect radio_port
         radio_port = bti.get_radio_port()
-        if not radio_port:
-            temp = QtGui.QInputDialog.getText(self, 'Port Not Found!', "Cancel, or enter a port manually")
-            if temp[1]:
-                radio_port = temp[0]
-            else:
-                self.statusBar().showMessage("Radio Port Not Found")
-                return
+        temp = QtGui.QInputDialog.getText(self, 'Enter Serial Port', "Port:", text = radio_port)
+        if temp[1]:
+            radio_port = temp[0]
+        else:
+            self.statusBar().showMessage("Radio Port Not Found")
+            return
 
         #connect to radio
         try:
@@ -93,6 +92,7 @@ class MainWindow(QtGui.QMainWindow, window_class):
             else:
                 self.radio.enabled = False
                 self.radio.ser.close()
+                self.radio = None
                 return
         except:
             self.statusBar().showMessage("Radio Port Not Found")
@@ -103,7 +103,7 @@ class MainWindow(QtGui.QMainWindow, window_class):
                 temp = self.radio.ser.read_until(b'#')
                 text_file.write(self.radio.ser.read_until(b'#').decode("utf-8"))
             #######################
-            while self.radio:
+            while self.radio.enabled:
                 self.update()
                 QtCore.QCoreApplication.processEvents()
         except KeyboardInterrupt:
