@@ -283,11 +283,11 @@ def get_radio_port():
         try:
             test = serial_device(el.device)
             test.open_port()
-            reset = test.ser.readline()
-            line = test.ser.readline()
-            if len(line) == 16:
-                port = el.device
-                #print(len(test.ser.readline()))
+            if test.ser.readline():
+                line = test.ser.readline()
+                if len(line) == 16:
+                    port = el.device
+                    #print(len(test.ser.readline()))
             test.ser.close()
         except serial.SerialException:
             pass

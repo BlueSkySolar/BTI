@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1319</width>
-    <height>695</height>
+    <width>1204</width>
+    <height>877</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -18,7 +18,7 @@
     <item>
      <widget class="QTabWidget" name="tabWidget">
       <property name="currentIndex">
-       <number>2</number>
+       <number>6</number>
       </property>
       <widget class="QWidget" name="bmsA">
        <attribute name="title">
@@ -480,8 +480,8 @@
        <attribute name="title">
         <string>BMS B</string>
        </attribute>
-       <layout class="QGridLayout" name="gridLayout">
-        <item row="0" column="0">
+       <layout class="QHBoxLayout" name="horizontalLayout_5">
+        <item>
          <widget class="QWidget" name="widget_5" native="true">
           <layout class="QVBoxLayout" name="verticalLayout_13">
            <item>
@@ -628,47 +628,7 @@
           </layout>
          </widget>
         </item>
-        <item row="0" column="2">
-         <widget class="QWidget" name="widget_7" native="true">
-          <layout class="QVBoxLayout" name="widget_6">
-           <item>
-            <widget class="QLabel" name="label_10">
-             <property name="text">
-              <string>Aux Temperatures</string>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="PlotWidget" name="auxTemp">
-             <property name="accessibleName">
-              <string>DEV0 Aux Temp 0 (deg C),DEV0 Aux Temp 1 (deg C),DEV0 Aux Temp 2 (deg C),DEV0 Aux Temp 3 (deg C),DEV0 Aux Temp 4 (deg C)</string>
-             </property>
-             <property name="accessibleDescription">
-              <string>Tempurature,deg C</string>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="QLabel" name="label_17">
-             <property name="text">
-              <string>Module Temperatures</string>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="PlotWidget" name="moduleTemp">
-             <property name="accessibleName">
-              <string>DEV0 Max Module Temp (deg C),DEV0 Ave Module Temp (deg C),DEV0 Min Module Temp (deg C)</string>
-             </property>
-             <property name="accessibleDescription">
-              <string>Temperature,deg C</string>
-             </property>
-            </widget>
-           </item>
-          </layout>
-         </widget>
-        </item>
-        <item row="0" column="1">
+        <item>
          <widget class="QWidget" name="widget_8" native="true">
           <layout class="QVBoxLayout" name="verticalLayout_12">
            <item>
@@ -863,14 +823,352 @@
           </layout>
          </widget>
         </item>
+        <item>
+         <widget class="QWidget" name="widget_7" native="true">
+          <layout class="QVBoxLayout" name="widget_6">
+           <item>
+            <widget class="QLabel" name="label_10">
+             <property name="text">
+              <string>Aux Temperatures</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="PlotWidget" name="auxTemp">
+             <property name="accessibleName">
+              <string>DEV0 Aux Temp 0 (deg C),DEV0 Aux Temp 1 (deg C),DEV0 Aux Temp 2 (deg C),DEV0 Aux Temp 3 (deg C),DEV0 Aux Temp 4 (deg C)</string>
+             </property>
+             <property name="accessibleDescription">
+              <string>Tempurature,deg C</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="label_17">
+             <property name="text">
+              <string>Module Temperatures</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="PlotWidget" name="moduleTemp">
+             <property name="accessibleName">
+              <string>DEV0 Max Module Temp (deg C),DEV0 Ave Module Temp (deg C),DEV0 Min Module Temp (deg C)</string>
+             </property>
+             <property name="accessibleDescription">
+              <string>Temperature,deg C</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
        </layout>
       </widget>
       <widget class="QWidget" name="bmsC">
        <attribute name="title">
         <string>BMS C</string>
        </attribute>
-       <layout class="QGridLayout" name="gridLayout_3" columnstretch="1,0,0,0,0">
-        <item row="0" column="2">
+       <layout class="QHBoxLayout" name="horizontalLayout_4">
+        <item>
+         <widget class="QWidget" name="widget_11" native="true">
+          <layout class="QVBoxLayout" name="verticalLayout_6">
+           <item>
+            <widget class="QLabel" name="label_44">
+             <property name="text">
+              <string/>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QTableWidget" name="tableWidget_8">
+             <attribute name="horizontalHeaderStretchLastSection">
+              <bool>true</bool>
+             </attribute>
+             <row>
+              <property name="text">
+               <string>bms_batt_map</string>
+              </property>
+             </row>
+             <row>
+              <property name="text">
+               <string>bms_batt_map_1</string>
+              </property>
+             </row>
+             <row>
+              <property name="text">
+               <string>bms_batt_map_2</string>
+              </property>
+             </row>
+             <row>
+              <property name="text">
+               <string>bms_bal_word</string>
+              </property>
+             </row>
+             <row>
+              <property name="text">
+               <string>bms_bal_word_2</string>
+              </property>
+             </row>
+             <row>
+              <property name="text">
+               <string>Critical Voltage High (V)</string>
+              </property>
+             </row>
+             <row>
+              <property name="text">
+               <string>Critical Voltage Low (V)</string>
+              </property>
+             </row>
+             <row>
+              <property name="text">
+               <string>Balancing Threshold (V)</string>
+              </property>
+             </row>
+             <row>
+              <property name="text">
+               <string>Critical Temp (deg C)</string>
+              </property>
+             </row>
+             <row>
+              <property name="text">
+               <string>Cooling Threshold High (deg C)</string>
+              </property>
+             </row>
+             <row>
+              <property name="text">
+               <string>Cooling Threshold Low (deg C)</string>
+              </property>
+             </row>
+             <row>
+              <property name="text">
+               <string>bms_curr_wa_error_rate</string>
+              </property>
+             </row>
+             <row>
+              <property name="text">
+               <string>bms_peak_wa_error_rate</string>
+              </property>
+             </row>
+             <row>
+              <property name="text">
+               <string>bms_curr_crc_error_rate</string>
+              </property>
+             </row>
+             <row>
+              <property name="text">
+               <string>bms_peak_crc_error_rate</string>
+              </property>
+             </row>
+             <row>
+              <property name="text">
+               <string>bms_curr_dis_error_rate</string>
+              </property>
+             </row>
+             <row>
+              <property name="text">
+               <string>bms_peak_dis_error_rate</string>
+              </property>
+             </row>
+             <row>
+              <property name="text">
+               <string>bms_curr_dev_errors</string>
+              </property>
+             </row>
+             <row>
+              <property name="text">
+               <string>bms_hold_dev_errors</string>
+              </property>
+             </row>
+             <column>
+              <property name="text">
+               <string>Value</string>
+              </property>
+             </column>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item>
+         <widget class="QWidget" name="widget_13" native="true">
+          <layout class="QVBoxLayout" name="verticalLayout_8">
+           <item>
+            <widget class="QLabel" name="label_6">
+             <property name="text">
+              <string>bms_batt_map</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QTableWidget" name="tableWidget_10">
+             <property name="accessibleDescription">
+              <string>colour</string>
+             </property>
+             <attribute name="horizontalHeaderStretchLastSection">
+              <bool>true</bool>
+             </attribute>
+             <attribute name="verticalHeaderStretchLastSection">
+              <bool>false</bool>
+             </attribute>
+             <row>
+              <property name="text">
+               <string>0.BATT EN</string>
+              </property>
+             </row>
+             <row>
+              <property name="text">
+               <string>1.BATT EN</string>
+              </property>
+             </row>
+             <row>
+              <property name="text">
+               <string>2.BATT EN</string>
+              </property>
+             </row>
+             <row>
+              <property name="text">
+               <string>3.BATT EN</string>
+              </property>
+             </row>
+             <row>
+              <property name="text">
+               <string>4.BATT EN</string>
+              </property>
+             </row>
+             <row>
+              <property name="text">
+               <string>5.BATT EN</string>
+              </property>
+             </row>
+             <row>
+              <property name="text">
+               <string>6.BATT EN</string>
+              </property>
+             </row>
+             <row>
+              <property name="text">
+               <string>7.BATT EN</string>
+              </property>
+             </row>
+             <row>
+              <property name="text">
+               <string>8.BATT EN</string>
+              </property>
+             </row>
+             <row>
+              <property name="text">
+               <string>9.BATT EN</string>
+              </property>
+             </row>
+             <row>
+              <property name="text">
+               <string>10.BATT EN</string>
+              </property>
+             </row>
+             <row>
+              <property name="text">
+               <string>11.BATT EN</string>
+              </property>
+             </row>
+             <column>
+              <property name="text">
+               <string>Value</string>
+              </property>
+             </column>
+             <item row="0" column="0">
+              <property name="text">
+               <string/>
+              </property>
+             </item>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="label_7">
+             <property name="text">
+              <string>bms_batt_map</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QTableWidget" name="tableWidget_11">
+             <property name="accessibleDescription">
+              <string>colour</string>
+             </property>
+             <attribute name="horizontalHeaderStretchLastSection">
+              <bool>true</bool>
+             </attribute>
+             <row>
+              <property name="text">
+               <string>12.BATT EN</string>
+              </property>
+             </row>
+             <row>
+              <property name="text">
+               <string>13.BATT EN</string>
+              </property>
+             </row>
+             <row>
+              <property name="text">
+               <string>14.BATT EN</string>
+              </property>
+             </row>
+             <row>
+              <property name="text">
+               <string>15.BATT EN</string>
+              </property>
+             </row>
+             <row>
+              <property name="text">
+               <string>16.BATT EN</string>
+              </property>
+             </row>
+             <row>
+              <property name="text">
+               <string>17.BATT EN</string>
+              </property>
+             </row>
+             <row>
+              <property name="text">
+               <string>18.BATT EN</string>
+              </property>
+             </row>
+             <row>
+              <property name="text">
+               <string>19.BATT EN</string>
+              </property>
+             </row>
+             <row>
+              <property name="text">
+               <string>20.BATT EN</string>
+              </property>
+             </row>
+             <row>
+              <property name="text">
+               <string>21.BATT EN</string>
+              </property>
+             </row>
+             <row>
+              <property name="text">
+               <string>22.BATT EN</string>
+              </property>
+             </row>
+             <row>
+              <property name="text">
+               <string>23.BATT EN</string>
+              </property>
+             </row>
+             <column>
+              <property name="text">
+               <string>Value</string>
+              </property>
+             </column>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item>
          <widget class="QWidget" name="widget_9" native="true">
           <layout class="QVBoxLayout" name="verticalLayout_7">
            <item>
@@ -958,7 +1256,7 @@
           </layout>
          </widget>
         </item>
-        <item row="0" column="3">
+        <item>
          <widget class="QWidget" name="widget_10" native="true">
           <layout class="QVBoxLayout" name="verticalLayout_9">
            <item>
@@ -1149,7 +1447,7 @@
           </layout>
          </widget>
         </item>
-        <item row="0" column="4">
+        <item>
          <widget class="QWidget" name="widget_12" native="true">
           <layout class="QVBoxLayout" name="verticalLayout_5">
            <item>
@@ -1340,107 +1638,101 @@
           </layout>
          </widget>
         </item>
-        <item row="0" column="0">
-         <widget class="QWidget" name="widget_11" native="true">
-          <layout class="QVBoxLayout" name="verticalLayout_6">
+       </layout>
+      </widget>
+      <widget class="QWidget" name="emA">
+       <attribute name="title">
+        <string>EM A</string>
+       </attribute>
+       <layout class="QHBoxLayout" name="horizontalLayout_3">
+        <item>
+         <widget class="QWidget" name="widget_14" native="true">
+          <layout class="QVBoxLayout" name="verticalLayout_11">
            <item>
-            <widget class="QTableWidget" name="tableWidget_8">
+            <widget class="QLabel" name="label_43">
+             <property name="text">
+              <string/>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QTableWidget" name="tableWidget_15">
              <attribute name="horizontalHeaderStretchLastSection">
               <bool>true</bool>
              </attribute>
              <row>
               <property name="text">
-               <string>bms_batt_map</string>
+               <string>Batt Curr Crit Up (A)</string>
               </property>
              </row>
              <row>
               <property name="text">
-               <string>bms_batt_map_1</string>
+               <string>Batt Curr Crit Down (A)</string>
               </property>
              </row>
              <row>
               <property name="text">
-               <string>bms_batt_map_2</string>
+               <string>Arr Curr Crit Up (A)</string>
               </property>
              </row>
              <row>
               <property name="text">
-               <string>bms_bal_word</string>
+               <string>Arr Curr Crit Down (A)</string>
               </property>
              </row>
              <row>
               <property name="text">
-               <string>bms_bal_word_2</string>
+               <string>Batt Curr Low (A)</string>
               </property>
              </row>
              <row>
               <property name="text">
-               <string>Critical Voltage High (V)</string>
+               <string>Batt Curr High (A)</string>
               </property>
              </row>
              <row>
               <property name="text">
-               <string>Critical Voltage Low (V)</string>
+               <string>Arr Curr Low (A)</string>
               </property>
              </row>
              <row>
               <property name="text">
-               <string>Balancing Threshold (V)</string>
+               <string>Batt Bus Voltage (V)</string>
               </property>
              </row>
              <row>
               <property name="text">
-               <string>Critical Temp (deg C)</string>
+               <string>Batt Bus Current (A)</string>
               </property>
              </row>
              <row>
               <property name="text">
-               <string>Cooling Threshold High (deg C)</string>
+               <string>Arr Bus Voltage (V)</string>
               </property>
              </row>
              <row>
               <property name="text">
-               <string>Cooling Threshold Low (deg C)</string>
+               <string>Arr Bus Current (A)</string>
               </property>
              </row>
              <row>
               <property name="text">
-               <string>bms_curr_wa_error_rate</string>
+               <string>Main LP Sys Current (A)</string>
               </property>
              </row>
              <row>
               <property name="text">
-               <string>bms_peak_wa_error_rate</string>
+               <string>PPT LP Sys Current (A)</string>
               </property>
              </row>
              <row>
               <property name="text">
-               <string>bms_curr_crc_error_rate</string>
+               <string>EM_BATT Temp (deg C)</string>
               </property>
              </row>
              <row>
               <property name="text">
-               <string>bms_peak_crc_error_rate</string>
-              </property>
-             </row>
-             <row>
-              <property name="text">
-               <string>bms_curr_dis_error_rate</string>
-              </property>
-             </row>
-             <row>
-              <property name="text">
-               <string>bms_peak_dis_error_rate</string>
-              </property>
-             </row>
-             <row>
-              <property name="text">
-               <string>bms_curr_dev_errors</string>
-              </property>
-             </row>
-             <row>
-              <property name="text">
-               <string>bms_hold_dev_errors</string>
+               <string>EM_ARR Temp (deg C)</string>
               </property>
              </row>
              <column>
@@ -1453,85 +1745,151 @@
           </layout>
          </widget>
         </item>
-        <item row="0" column="1">
-         <widget class="QWidget" name="widget_13" native="true">
-          <layout class="QVBoxLayout" name="verticalLayout_8">
+        <item>
+         <widget class="QWidget" name="widget_15" native="true">
+          <layout class="QVBoxLayout" name="verticalLayout_10">
            <item>
-            <widget class="QLabel" name="label_6">
+            <widget class="QLabel" name="name_4">
              <property name="text">
-              <string>bms_batt_map</string>
+              <string>Bus Voltages</string>
              </property>
             </widget>
            </item>
            <item>
-            <widget class="QTableWidget" name="tableWidget_10">
-             <property name="accessibleDescription">
-              <string>colour</string>
+            <widget class="PlotWidget" name="totalBusVoltage_2">
+             <property name="accessibleName">
+              <string>Batt Bus Voltage (V),Arr Bus Voltage (V)</string>
              </property>
+             <property name="accessibleDescription">
+              <string>Voltage,V</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="label_9">
+             <property name="text">
+              <string>LP Bus Currents</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="PlotWidget" name="moduleVoltages_2">
+             <property name="accessibleName">
+              <string>Main LP Sys Current (A),PPT LP Sys Current (A)</string>
+             </property>
+             <property name="accessibleDescription">
+              <string>Current,A</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item>
+         <widget class="QWidget" name="widget_16" native="true">
+          <layout class="QVBoxLayout" name="verticalLayout_15">
+           <item>
+            <widget class="QLabel" name="name_5">
+             <property name="text">
+              <string>HP Bus Currents</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="PlotWidget" name="totalBusVoltage_3">
+             <property name="accessibleName">
+              <string>Batt Bus Current (A),Arr Bus Current (A)</string>
+             </property>
+             <property name="accessibleDescription">
+              <string>Current,A</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="label_18">
+             <property name="text">
+              <string>Temperatures</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="PlotWidget" name="moduleVoltages_3">
+             <property name="accessibleName">
+              <string>EM_BATT Temp (deg C),EM_ARR Temp (deg C)</string>
+             </property>
+             <property name="accessibleDescription">
+              <string>Temperature,deg C</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="emB">
+       <attribute name="title">
+        <string>EM B</string>
+       </attribute>
+       <layout class="QHBoxLayout" name="horizontalLayout_10">
+        <item>
+         <widget class="QWidget" name="widget_34" native="true">
+          <layout class="QVBoxLayout" name="verticalLayout_31">
+           <item>
+            <widget class="QLabel" name="label_42">
+             <property name="text">
+              <string/>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QTableWidget" name="tableWidget_27">
              <attribute name="horizontalHeaderStretchLastSection">
               <bool>true</bool>
              </attribute>
-             <attribute name="verticalHeaderStretchLastSection">
-              <bool>false</bool>
-             </attribute>
              <row>
               <property name="text">
-               <string>0.BATT EN</string>
+               <string>Batt Power Front (W)</string>
               </property>
              </row>
              <row>
               <property name="text">
-               <string>1.BATT EN</string>
+               <string>Batt Transfer Eff (%)</string>
               </property>
              </row>
              <row>
               <property name="text">
-               <string>2.BATT EN</string>
+               <string>Batt Power Back (W)</string>
               </property>
              </row>
              <row>
               <property name="text">
-               <string>3.BATT EN</string>
+               <string>Arr Bus Power 1 (W)</string>
               </property>
              </row>
              <row>
               <property name="text">
-               <string>4.BATT EN</string>
+               <string>Arr Bus Power 2 (W)</string>
               </property>
              </row>
              <row>
               <property name="text">
-               <string>5.BATT EN</string>
+               <string>Motor Power (W)</string>
               </property>
              </row>
              <row>
               <property name="text">
-               <string>6.BATT EN</string>
+               <string>Main LP Sys Power (W)</string>
               </property>
              </row>
              <row>
               <property name="text">
-               <string>7.BATT EN</string>
+               <string>Misc Power (W)</string>
               </property>
              </row>
              <row>
               <property name="text">
-               <string>8.BATT EN</string>
-              </property>
-             </row>
-             <row>
-              <property name="text">
-               <string>9.BATT EN</string>
-              </property>
-             </row>
-             <row>
-              <property name="text">
-               <string>10.BATT EN</string>
-              </property>
-             </row>
-             <row>
-              <property name="text">
-               <string>11.BATT EN</string>
+               <string>PPT LP Sys Power (W)</string>
               </property>
              </row>
              <column>
@@ -1539,86 +1897,169 @@
                <string>Value</string>
               </property>
              </column>
-             <item row="0" column="0">
-              <property name="text">
-               <string/>
-              </property>
-             </item>
             </widget>
            </item>
            <item>
-            <widget class="QLabel" name="label_7">
+            <spacer name="verticalSpacer">
+             <property name="orientation">
+              <enum>Qt::Vertical</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>20</width>
+               <height>40</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item>
+         <widget class="QWidget" name="widget_35" native="true">
+          <layout class="QVBoxLayout" name="verticalLayout_32">
+           <item>
+            <widget class="QLabel" name="name_12">
              <property name="text">
-              <string>bms_batt_map</string>
+              <string>HP Sys Powers</string>
              </property>
             </widget>
            </item>
            <item>
-            <widget class="QTableWidget" name="tableWidget_11">
-             <property name="accessibleDescription">
-              <string>colour</string>
+            <widget class="PlotWidget" name="totalBusVoltage_8">
+             <property name="accessibleName">
+              <string>Batt Power Front (W),Arr Bus Power 1 (W),Motor Power (W)</string>
              </property>
+             <property name="accessibleDescription">
+              <string>Power,W</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="label_38">
+             <property name="text">
+              <string>Battery Power</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="PlotWidget" name="moduleVoltages_8">
+             <property name="accessibleName">
+              <string>Batt Power Front (W),Batt Power Back (W)</string>
+             </property>
+             <property name="accessibleDescription">
+              <string>Power,W</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item>
+         <widget class="QWidget" name="widget_33" native="true">
+          <layout class="QVBoxLayout" name="verticalLayout_30">
+           <item>
+            <widget class="QLabel" name="name_11">
+             <property name="text">
+              <string>LP Sys Powers</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="PlotWidget" name="totalBusVoltage_7">
+             <property name="accessibleName">
+              <string>Main LP Sys Power (W),Misc Power (W),PPT LP Sys Power (W)</string>
+             </property>
+             <property name="accessibleDescription">
+              <string>Power,W</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="label_37">
+             <property name="text">
+              <string>Battery Transfer Efficiency</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="PlotWidget" name="moduleVoltages_7">
+             <property name="accessibleName">
+              <string>Batt Transfer Eff (%)</string>
+             </property>
+             <property name="accessibleDescription">
+              <string>Percentage,%</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="emC">
+       <attribute name="title">
+        <string>EM C</string>
+       </attribute>
+       <layout class="QHBoxLayout" name="horizontalLayout_11">
+        <item>
+         <widget class="QWidget" name="widget_37" native="true">
+          <layout class="QVBoxLayout" name="verticalLayout_34">
+           <item>
+            <widget class="QLabel" name="label_41">
+             <property name="text">
+              <string/>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QTableWidget" name="tableWidget_28">
              <attribute name="horizontalHeaderStretchLastSection">
               <bool>true</bool>
              </attribute>
              <row>
               <property name="text">
-               <string>12.BATT EN</string>
+               <string>Batt En-Cnt Front (Wh)</string>
               </property>
              </row>
              <row>
               <property name="text">
-               <string>13.BATT EN</string>
+               <string>Batt En-Cnt Back (Wh)</string>
               </property>
              </row>
              <row>
               <property name="text">
-               <string>14.BATT EN</string>
+               <string>Arr En-Cnt 1 (Wh)</string>
               </property>
              </row>
              <row>
               <property name="text">
-               <string>15.BATT EN</string>
+               <string>Arr En-Cnt 2 (Wh)</string>
               </property>
              </row>
              <row>
               <property name="text">
-               <string>16.BATT EN</string>
+               <string>Batt Curr High (A)</string>
               </property>
              </row>
              <row>
               <property name="text">
-               <string>17.BATT EN</string>
+               <string>Motor En-Cnt (Wh)</string>
               </property>
              </row>
              <row>
               <property name="text">
-               <string>18.BATT EN</string>
+               <string>Main LP Sys En-Cnt (Wh)</string>
               </property>
              </row>
              <row>
               <property name="text">
-               <string>19.BATT EN</string>
+               <string>Misc En-Cnt (Wh)</string>
               </property>
              </row>
              <row>
               <property name="text">
-               <string>20.BATT EN</string>
-              </property>
-             </row>
-             <row>
-              <property name="text">
-               <string>21.BATT EN</string>
-              </property>
-             </row>
-             <row>
-              <property name="text">
-               <string>22.BATT EN</string>
-              </property>
-             </row>
-             <row>
-              <property name="text">
-               <string>23.BATT EN</string>
+               <string>PPT LP Sys En-Cnt (Wh)</string>
               </property>
              </row>
              <column>
@@ -1626,6 +2067,587 @@
                <string>Value</string>
               </property>
              </column>
+            </widget>
+           </item>
+           <item>
+            <spacer name="verticalSpacer_3">
+             <property name="orientation">
+              <enum>Qt::Vertical</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>20</width>
+               <height>40</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item>
+         <widget class="QWidget" name="widget_38" native="true">
+          <layout class="QVBoxLayout" name="verticalLayout_35">
+           <item>
+            <widget class="QLabel" name="name_14">
+             <property name="text">
+              <string>HP Sys Energy Counters</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="PlotWidget" name="totalBusVoltage_10">
+             <property name="accessibleName">
+              <string>Batt En-Cnt Front (Wh),Arr En-Cnt 1 (Wh),Motor En-Cnt (Wh)</string>
+             </property>
+             <property name="accessibleDescription">
+              <string>Energy,Wh</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="label_40">
+             <property name="text">
+              <string>Battery Energy Counters</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="PlotWidget" name="moduleVoltages_10">
+             <property name="accessibleName">
+              <string>Batt En-Cnt Front (Wh),Batt En-Cnt Back (Wh)</string>
+             </property>
+             <property name="accessibleDescription">
+              <string>Energy,Wh</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item>
+         <widget class="QWidget" name="widget_36" native="true">
+          <layout class="QVBoxLayout" name="verticalLayout_33">
+           <item>
+            <widget class="QLabel" name="name_13">
+             <property name="text">
+              <string>LP Sys Energy Counters</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="PlotWidget" name="totalBusVoltage_9">
+             <property name="accessibleName">
+              <string>Main LP Sys En-Cnt (Wh),Misc En-Cnt (Wh),PPT LP Sys En-Cnt (Wh)</string>
+             </property>
+             <property name="accessibleDescription">
+              <string>Energy,Wh</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="label_39">
+             <property name="text">
+              <string/>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <spacer name="verticalSpacer_2">
+             <property name="orientation">
+              <enum>Qt::Vertical</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>20</width>
+               <height>40</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+          </layout>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="MPPTs">
+       <attribute name="title">
+        <string>MPPTs</string>
+       </attribute>
+       <layout class="QHBoxLayout" name="horizontalLayout_12">
+        <item>
+         <widget class="QWidget" name="widget_40" native="true">
+          <layout class="QVBoxLayout" name="verticalLayout_16">
+           <item>
+            <widget class="QLabel" name="name_16">
+             <property name="text">
+              <string>MPPT0</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QTableWidget" name="DEV0_3">
+             <property name="accessibleName">
+              <string>MPPT0 </string>
+             </property>
+             <attribute name="horizontalHeaderStretchLastSection">
+              <bool>true</bool>
+             </attribute>
+             <row>
+              <property name="text">
+               <string>Panel Voltage (V)</string>
+              </property>
+             </row>
+             <row>
+              <property name="text">
+               <string>Panel Power (W)</string>
+              </property>
+             </row>
+             <row>
+              <property name="text">
+               <string>Battery Voltage (V)</string>
+              </property>
+             </row>
+             <row>
+              <property name="text">
+               <string>Battery Current (A)</string>
+              </property>
+             </row>
+             <column>
+              <property name="text">
+               <string>Value</string>
+              </property>
+             </column>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="label_19">
+             <property name="text">
+              <string>MPPT1</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QTableWidget" name="DEV0_4">
+             <property name="accessibleName">
+              <string>MPPT1 </string>
+             </property>
+             <attribute name="horizontalHeaderStretchLastSection">
+              <bool>true</bool>
+             </attribute>
+             <row>
+              <property name="text">
+               <string>Panel Voltage (V)</string>
+              </property>
+             </row>
+             <row>
+              <property name="text">
+               <string>Panel Power (W)</string>
+              </property>
+             </row>
+             <row>
+              <property name="text">
+               <string>Battery Voltage (V)</string>
+              </property>
+             </row>
+             <row>
+              <property name="text">
+               <string>Battery Current (A)</string>
+              </property>
+             </row>
+             <column>
+              <property name="text">
+               <string>Value</string>
+              </property>
+             </column>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="label_20">
+             <property name="text">
+              <string>MPPT2</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QTableWidget" name="DEV0_5">
+             <property name="accessibleName">
+              <string>MPPT2 </string>
+             </property>
+             <attribute name="horizontalHeaderStretchLastSection">
+              <bool>true</bool>
+             </attribute>
+             <row>
+              <property name="text">
+               <string>Panel Voltage (V)</string>
+              </property>
+             </row>
+             <row>
+              <property name="text">
+               <string>Panel Power (W)</string>
+              </property>
+             </row>
+             <row>
+              <property name="text">
+               <string>Battery Voltage (V)</string>
+              </property>
+             </row>
+             <row>
+              <property name="text">
+               <string>Battery Current (A)</string>
+              </property>
+             </row>
+             <column>
+              <property name="text">
+               <string>Value</string>
+              </property>
+             </column>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="label_46">
+             <property name="text">
+              <string>MPPT3</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QTableWidget" name="DEV0_6">
+             <property name="accessibleName">
+              <string>MPPT3 </string>
+             </property>
+             <attribute name="horizontalHeaderStretchLastSection">
+              <bool>true</bool>
+             </attribute>
+             <row>
+              <property name="text">
+               <string>Panel Voltage (V)</string>
+              </property>
+             </row>
+             <row>
+              <property name="text">
+               <string>Panel Power (W)</string>
+              </property>
+             </row>
+             <row>
+              <property name="text">
+               <string>Battery Voltage (V)</string>
+              </property>
+             </row>
+             <row>
+              <property name="text">
+               <string>Battery Current (A)</string>
+              </property>
+             </row>
+             <column>
+              <property name="text">
+               <string>Value</string>
+              </property>
+             </column>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item>
+         <widget class="QWidget" name="widget_39" native="true">
+          <layout class="QVBoxLayout" name="verticalLayout_17">
+           <item>
+            <widget class="QLabel" name="name_15">
+             <property name="text">
+              <string>MPPT4</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QTableWidget" name="DEV0_7">
+             <property name="accessibleName">
+              <string>MPPT4 </string>
+             </property>
+             <attribute name="horizontalHeaderStretchLastSection">
+              <bool>true</bool>
+             </attribute>
+             <row>
+              <property name="text">
+               <string>Panel Voltage (V)</string>
+              </property>
+             </row>
+             <row>
+              <property name="text">
+               <string>Panel Power (W)</string>
+              </property>
+             </row>
+             <row>
+              <property name="text">
+               <string>Battery Voltage (V)</string>
+              </property>
+             </row>
+             <row>
+              <property name="text">
+               <string>Battery Current (A)</string>
+              </property>
+             </row>
+             <column>
+              <property name="text">
+               <string>Value</string>
+              </property>
+             </column>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="label_45">
+             <property name="text">
+              <string>MPPT5</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QTableWidget" name="DEV0_8">
+             <property name="accessibleName">
+              <string>MPPT5 </string>
+             </property>
+             <attribute name="horizontalHeaderStretchLastSection">
+              <bool>true</bool>
+             </attribute>
+             <row>
+              <property name="text">
+               <string>Panel Voltage (V)</string>
+              </property>
+             </row>
+             <row>
+              <property name="text">
+               <string>Panel Power (W)</string>
+              </property>
+             </row>
+             <row>
+              <property name="text">
+               <string>Battery Voltage (V)</string>
+              </property>
+             </row>
+             <row>
+              <property name="text">
+               <string>Battery Current (A)</string>
+              </property>
+             </row>
+             <column>
+              <property name="text">
+               <string>Value</string>
+              </property>
+             </column>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="label_21">
+             <property name="text">
+              <string>MPPT6</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QTableWidget" name="DEV0_9">
+             <property name="accessibleName">
+              <string>MPPT6 </string>
+             </property>
+             <attribute name="horizontalHeaderStretchLastSection">
+              <bool>true</bool>
+             </attribute>
+             <row>
+              <property name="text">
+               <string>Panel Voltage (V)</string>
+              </property>
+             </row>
+             <row>
+              <property name="text">
+               <string>Panel Power (W)</string>
+              </property>
+             </row>
+             <row>
+              <property name="text">
+               <string>Battery Voltage (V)</string>
+              </property>
+             </row>
+             <row>
+              <property name="text">
+               <string>Battery Current (A)</string>
+              </property>
+             </row>
+             <column>
+              <property name="text">
+               <string>Value</string>
+              </property>
+             </column>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item>
+         <widget class="QWidget" name="widget_41" native="true">
+          <layout class="QVBoxLayout" name="verticalLayout_18">
+           <item>
+            <widget class="QLabel" name="label_47">
+             <property name="text">
+              <string>MPPT7</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QTableWidget" name="DEV0_10">
+             <property name="accessibleName">
+              <string>MPPT7 </string>
+             </property>
+             <attribute name="horizontalHeaderStretchLastSection">
+              <bool>true</bool>
+             </attribute>
+             <row>
+              <property name="text">
+               <string>Panel Voltage (V)</string>
+              </property>
+             </row>
+             <row>
+              <property name="text">
+               <string>Panel Power (W)</string>
+              </property>
+             </row>
+             <row>
+              <property name="text">
+               <string>Battery Voltage (V)</string>
+              </property>
+             </row>
+             <row>
+              <property name="text">
+               <string>Battery Current (A)</string>
+              </property>
+             </row>
+             <column>
+              <property name="text">
+               <string>Value</string>
+              </property>
+             </column>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="label_48">
+             <property name="text">
+              <string>MPPT8</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QTableWidget" name="DEV0_11">
+             <property name="accessibleName">
+              <string>MPPT8 </string>
+             </property>
+             <attribute name="horizontalHeaderStretchLastSection">
+              <bool>true</bool>
+             </attribute>
+             <row>
+              <property name="text">
+               <string>Panel Voltage (V)</string>
+              </property>
+             </row>
+             <row>
+              <property name="text">
+               <string>Panel Power (W)</string>
+              </property>
+             </row>
+             <row>
+              <property name="text">
+               <string>Battery Voltage (V)</string>
+              </property>
+             </row>
+             <row>
+              <property name="text">
+               <string>Battery Current (A)</string>
+              </property>
+             </row>
+             <column>
+              <property name="text">
+               <string>Value</string>
+              </property>
+             </column>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="label_49">
+             <property name="text">
+              <string>MPPT9</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QTableWidget" name="DEV0_12">
+             <property name="accessibleName">
+              <string>MPPT9 </string>
+             </property>
+             <attribute name="horizontalHeaderStretchLastSection">
+              <bool>true</bool>
+             </attribute>
+             <row>
+              <property name="text">
+               <string>Panel Voltage (V)</string>
+              </property>
+             </row>
+             <row>
+              <property name="text">
+               <string>Panel Power (W)</string>
+              </property>
+             </row>
+             <row>
+              <property name="text">
+               <string>Battery Voltage (V)</string>
+              </property>
+             </row>
+             <row>
+              <property name="text">
+               <string>Battery Current (A)</string>
+              </property>
+             </row>
+             <column>
+              <property name="text">
+               <string>Value</string>
+              </property>
+             </column>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item>
+         <widget class="QWidget" name="widget_42" native="true">
+          <layout class="QVBoxLayout" name="verticalLayout_39">
+           <item>
+            <widget class="QLabel" name="name_17">
+             <property name="text">
+              <string>Panel Voltages (V)</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="PlotWidget" name="totalBusVoltage_11">
+             <property name="accessibleName">
+              <string>Panel0 Voltage (V),Panel1 Voltage (V),Panel2 Voltage (V),Panel3 Voltage (V),Panel4 Voltage (V),Panel5 Voltage (V),Panel6 Voltage (V),Panel7 Voltage (V),Panel8 Voltage (V),Panel9 Voltage (V)</string>
+             </property>
+             <property name="accessibleDescription">
+              <string>Voltage,V</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="label_50">
+             <property name="text">
+              <string>Panel Powers (W)</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="PlotWidget" name="moduleVoltages_9">
+             <property name="accessibleName">
+              <string>Panel0 Power (W),Panel1 Power (W),Panel2 Power (W),Panel3 Power (W),Panel4 Power (W),Panel5 Power (W),Panel6 Power (W),Panel7 Power (W),Panel8 Power (W),Panel9 Power (W)</string>
+             </property>
+             <property name="accessibleDescription">
+              <string>Power,W</string>
+             </property>
             </widget>
            </item>
           </layout>
@@ -1679,7 +2701,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1319</width>
+     <width>1204</width>
      <height>21</height>
     </rect>
    </property>

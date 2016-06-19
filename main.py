@@ -28,19 +28,23 @@ class MainWindow(QtGui.QMainWindow, window_class):
         self.filename = None
         self.times = []
         self.tables = []
-
+        self.radio_port = ""
         self.pushButton.clicked.connect(self.start_listening)
         self.statusBar().showMessage("Not Connected")
 
         # set up plots by looping through widget items
         self.plots = []
         # ADD NEW TABS TO THIS LIST
-        tabs = [self.bmsA, self.bmsB, self.bmsC]
+        tabs = [self.bmsA, self.bmsB, self.bmsC, self.emA, self.emB,
+                self.emC, self.MPPTs]
         for tab in tabs:
             for child in tab.children():
                 for next_child in child.children():
                     if type(next_child) == pg.widgets.PlotWidget.PlotWidget:
-                        #initialize plots
+                        # initialize plots
+                        # The data to be plotted is defined in the accessibleName
+                        # value of the plot object, with multiple data names separated
+                        # by commas. The units of the data is defined in accessibleDescription 
                         names = next_child.accessibleName()
                         names = names.split(',')
                         units = next_child.accessibleDescription()
@@ -74,8 +78,9 @@ class MainWindow(QtGui.QMainWindow, window_class):
         time.start()
         
         # detect radio_port
-        radio_port = bti.get_radio_port()
-        temp = QtGui.QInputDialog.getText(self, 'Enter Serial Port', "Port:", text = radio_port)
+        if not self.radio_port:
+            self.radio_port = bti.get_radio_port()
+        temp = QtGui.QInputDialog.getText(self, 'Enter Serial Port', "Port:\n\n(Windows:COMx  Linux:/dev/ttyUSBx)", text = self.radio_port)
         if temp[1]:
             radio_port = temp[0]
         else:
@@ -103,7 +108,7 @@ class MainWindow(QtGui.QMainWindow, window_class):
                 temp = self.radio.ser.read_until(b'#')
                 text_file.write(self.radio.ser.read_until(b'#').decode("utf-8"))
             #######################
-            while self.radio.enabled:
+            while self.radio and self.radio.enabled:
                 self.update()
                 QtCore.QCoreApplication.processEvents()
         except KeyboardInterrupt:
@@ -134,9 +139,9 @@ class MainWindow(QtGui.QMainWindow, window_class):
                         plot.plot.plot(self.times, plot.data[i], pen=(i, len(plot.names)), name=plot.names[i])
                     else:
                         plot.plot.plot(self.times, plot.data[i], pen=(i, len(plot.names)))
-
                 else:
                     plot.data[i].append(0.0)
+
                     
         #go through each table and update the value corresponding to the row title
         for table in self.tables:
@@ -159,8 +164,10 @@ class MainWindow(QtGui.QMainWindow, window_class):
                     # we can use the accessibleName value in a table to
                     # access the unique keys of each value without changing the 
                     # original name (accessibleName should be blank for others)
-                    item = QtGui.QTableWidgetItem(str(data[table.accessibleName()+ 
-                                                       table.verticalHeaderItem(row).text()]))
+                    item_name = table.accessibleName()+table.verticalHeaderItem(row).text()
+                    item = QtGui.QTableWidgetItem(str(data[item_name]))
+                    if item_name not in dicts.name_dict:
+                        print(item_name, "value not found")
                     table.setItem(row,0,item)
             
     def closeEvent(self, *args, **kwargs):
