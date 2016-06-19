@@ -16,7 +16,7 @@ Git:
 ##### Getting Started
 Python 3 will be used. A virtual environment manager like [conda](http://conda.pydata.org/docs/download.html) may be helpful.
 
-###### On Windows, you can install [WinPython](http://winpython.github.io/), which will include all of the required modules.
+###### (On Windows, you can install [WinPython](http://winpython.github.io/), which will include all of the required modules.)
 1. Clone the repository:  `git clone https://github.com/BlueSkySolar/BTI.git`
 2. Install PySerial: `pip install pyserial`
 3. Install PyQt4 (The steps vary depending on operating system) (if using conda `conda install pyqt`)
@@ -25,7 +25,7 @@ Python 3 will be used. A virtual environment manager like [conda](http://conda.p
 ### How to run (temporary)
 1. Run main.py
 2. Press the button to start/stop receiving data while the radio is connected
-(Executables coming soon)
+
 ##### How BTI works
 
 The serial data sent to us from the radio on the car is received in the format displayed in [this format](radio_data.txt). The code in bti.py is able to parse this data into a dictionary as seen in [radio_example](radio_example.txt), but we still need to match all of the hex values with their corresponding data type by looking at the [workspace file](legacy_workspace_file.txt) in the old BTI program. We should then be able to display real-time data with proper labeling in the GUI.
