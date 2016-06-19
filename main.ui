@@ -2179,164 +2179,195 @@
          <widget class="QWidget" name="widget_40" native="true">
           <layout class="QVBoxLayout" name="verticalLayout_16">
            <item>
-            <widget class="QLabel" name="name_16">
-             <property name="text">
-              <string>MPPT0</string>
-             </property>
-            </widget>
-           </item>
-           <item>
             <widget class="QTableWidget" name="DEV0_3">
              <property name="accessibleName">
-              <string>MPPT0 </string>
+              <string/>
              </property>
              <attribute name="horizontalHeaderStretchLastSection">
               <bool>true</bool>
              </attribute>
              <row>
               <property name="text">
+               <string>MPPT0</string>
+              </property>
+              <property name="toolTip">
+               <string>i</string>
+              </property>
+              <property name="font">
+               <font>
+                <weight>75</weight>
+                <bold>true</bold>
+               </font>
+              </property>
+             </row>
+             <row>
+              <property name="text">
                <string>Panel Voltage (V)</string>
+              </property>
+              <property name="toolTip">
+               <string>MPPT0 </string>
               </property>
              </row>
              <row>
               <property name="text">
                <string>Panel Power (W)</string>
               </property>
+              <property name="toolTip">
+               <string>MPPT0 </string>
+              </property>
              </row>
              <row>
               <property name="text">
-               <string>Battery Voltage (V)</string>
+               <string extracomment="testtest">Battery Voltage (V)</string>
+              </property>
+              <property name="toolTip">
+               <string>MPPT0 </string>
               </property>
              </row>
              <row>
               <property name="text">
                <string>Battery Current (A)</string>
               </property>
-             </row>
-             <column>
-              <property name="text">
-               <string>Value</string>
+              <property name="toolTip">
+               <string>MPPT0 </string>
               </property>
-             </column>
-            </widget>
-           </item>
-           <item>
-            <widget class="QLabel" name="label_19">
-             <property name="text">
-              <string>MPPT1</string>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="QTableWidget" name="DEV0_4">
-             <property name="accessibleName">
-              <string>MPPT1 </string>
-             </property>
-             <attribute name="horizontalHeaderStretchLastSection">
-              <bool>true</bool>
-             </attribute>
+             </row>
+             <row>
+              <property name="text">
+               <string>MPPT1</string>
+              </property>
+              <property name="toolTip">
+               <string>i</string>
+              </property>
+              <property name="font">
+               <font>
+                <weight>75</weight>
+                <bold>true</bold>
+               </font>
+              </property>
+             </row>
              <row>
               <property name="text">
                <string>Panel Voltage (V)</string>
+              </property>
+              <property name="toolTip">
+               <string>MPPT1 </string>
               </property>
              </row>
              <row>
               <property name="text">
                <string>Panel Power (W)</string>
               </property>
+              <property name="toolTip">
+               <string>MPPT1 </string>
+              </property>
              </row>
              <row>
               <property name="text">
                <string>Battery Voltage (V)</string>
+              </property>
+              <property name="toolTip">
+               <string>MPPT1 </string>
               </property>
              </row>
              <row>
               <property name="text">
                <string>Battery Current (A)</string>
               </property>
-             </row>
-             <column>
-              <property name="text">
-               <string>Value</string>
+              <property name="toolTip">
+               <string>MPPT1 </string>
               </property>
-             </column>
-            </widget>
-           </item>
-           <item>
-            <widget class="QLabel" name="label_20">
-             <property name="text">
-              <string>MPPT2</string>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="QTableWidget" name="DEV0_5">
-             <property name="accessibleName">
-              <string>MPPT2 </string>
-             </property>
-             <attribute name="horizontalHeaderStretchLastSection">
-              <bool>true</bool>
-             </attribute>
+             </row>
+             <row>
+              <property name="text">
+               <string>MPPT2</string>
+              </property>
+              <property name="toolTip">
+               <string>i</string>
+              </property>
+              <property name="font">
+               <font>
+                <weight>75</weight>
+                <bold>true</bold>
+               </font>
+              </property>
+             </row>
              <row>
               <property name="text">
                <string>Panel Voltage (V)</string>
+              </property>
+              <property name="toolTip">
+               <string>MPPT2 </string>
               </property>
              </row>
              <row>
               <property name="text">
                <string>Panel Power (W)</string>
               </property>
+              <property name="toolTip">
+               <string>MPPT2 </string>
+              </property>
              </row>
              <row>
               <property name="text">
                <string>Battery Voltage (V)</string>
+              </property>
+              <property name="toolTip">
+               <string>MPPT2 </string>
               </property>
              </row>
              <row>
               <property name="text">
                <string>Battery Current (A)</string>
               </property>
-             </row>
-             <column>
-              <property name="text">
-               <string>Value</string>
+              <property name="toolTip">
+               <string>MPPT2 </string>
               </property>
-             </column>
-            </widget>
-           </item>
-           <item>
-            <widget class="QLabel" name="label_46">
-             <property name="text">
-              <string>MPPT3</string>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="QTableWidget" name="DEV0_6">
-             <property name="accessibleName">
-              <string>MPPT3 </string>
-             </property>
-             <attribute name="horizontalHeaderStretchLastSection">
-              <bool>true</bool>
-             </attribute>
+             </row>
+             <row>
+              <property name="text">
+               <string>MPPT3</string>
+              </property>
+              <property name="toolTip">
+               <string>i</string>
+              </property>
+              <property name="font">
+               <font>
+                <weight>75</weight>
+                <bold>true</bold>
+               </font>
+              </property>
+             </row>
              <row>
               <property name="text">
                <string>Panel Voltage (V)</string>
+              </property>
+              <property name="toolTip">
+               <string>MPPT3 </string>
               </property>
              </row>
              <row>
               <property name="text">
                <string>Panel Power (W)</string>
               </property>
+              <property name="toolTip">
+               <string>MPPT3 </string>
+              </property>
              </row>
              <row>
               <property name="text">
                <string>Battery Voltage (V)</string>
               </property>
+              <property name="toolTip">
+               <string>MPPT3 </string>
+              </property>
              </row>
              <row>
               <property name="text">
                <string>Battery Current (A)</string>
+              </property>
+              <property name="toolTip">
+               <string>MPPT3 </string>
               </property>
              </row>
              <column>
@@ -2351,124 +2382,151 @@
         </item>
         <item>
          <widget class="QWidget" name="widget_39" native="true">
-          <layout class="QVBoxLayout" name="verticalLayout_17">
-           <item>
-            <widget class="QLabel" name="name_15">
-             <property name="text">
-              <string>MPPT4</string>
-             </property>
-            </widget>
-           </item>
+          <layout class="QVBoxLayout" name="verticalLayout_18">
            <item>
             <widget class="QTableWidget" name="DEV0_7">
              <property name="accessibleName">
-              <string>MPPT4 </string>
+              <string/>
              </property>
              <attribute name="horizontalHeaderStretchLastSection">
               <bool>true</bool>
              </attribute>
              <row>
               <property name="text">
+               <string>MPPT4</string>
+              </property>
+              <property name="toolTip">
+               <string>i</string>
+              </property>
+              <property name="font">
+               <font>
+                <weight>75</weight>
+                <bold>true</bold>
+               </font>
+              </property>
+             </row>
+             <row>
+              <property name="text">
                <string>Panel Voltage (V)</string>
+              </property>
+              <property name="toolTip">
+               <string>MPPT4 </string>
               </property>
              </row>
              <row>
               <property name="text">
                <string>Panel Power (W)</string>
               </property>
+              <property name="toolTip">
+               <string>MPPT4 </string>
+              </property>
              </row>
              <row>
               <property name="text">
-               <string>Battery Voltage (V)</string>
+               <string extracomment="testtest">Battery Voltage (V)</string>
+              </property>
+              <property name="toolTip">
+               <string>MPPT4 </string>
               </property>
              </row>
              <row>
               <property name="text">
                <string>Battery Current (A)</string>
               </property>
-             </row>
-             <column>
-              <property name="text">
-               <string>Value</string>
+              <property name="toolTip">
+               <string>MPPT4 </string>
               </property>
-             </column>
-            </widget>
-           </item>
-           <item>
-            <widget class="QLabel" name="label_45">
-             <property name="text">
-              <string>MPPT5</string>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="QTableWidget" name="DEV0_8">
-             <property name="accessibleName">
-              <string>MPPT5 </string>
-             </property>
-             <attribute name="horizontalHeaderStretchLastSection">
-              <bool>true</bool>
-             </attribute>
+             </row>
+             <row>
+              <property name="text">
+               <string>MPPT5</string>
+              </property>
+              <property name="toolTip">
+               <string>i</string>
+              </property>
+              <property name="font">
+               <font>
+                <weight>75</weight>
+                <bold>true</bold>
+               </font>
+              </property>
+             </row>
              <row>
               <property name="text">
                <string>Panel Voltage (V)</string>
+              </property>
+              <property name="toolTip">
+               <string>MPPT5 </string>
               </property>
              </row>
              <row>
               <property name="text">
                <string>Panel Power (W)</string>
               </property>
+              <property name="toolTip">
+               <string>MPPT5 </string>
+              </property>
              </row>
              <row>
               <property name="text">
                <string>Battery Voltage (V)</string>
+              </property>
+              <property name="toolTip">
+               <string>MPPT5 </string>
               </property>
              </row>
              <row>
               <property name="text">
                <string>Battery Current (A)</string>
               </property>
-             </row>
-             <column>
-              <property name="text">
-               <string>Value</string>
+              <property name="toolTip">
+               <string>MPPT5 </string>
               </property>
-             </column>
-            </widget>
-           </item>
-           <item>
-            <widget class="QLabel" name="label_21">
-             <property name="text">
-              <string>MPPT6</string>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="QTableWidget" name="DEV0_9">
-             <property name="accessibleName">
-              <string>MPPT6 </string>
-             </property>
-             <attribute name="horizontalHeaderStretchLastSection">
-              <bool>true</bool>
-             </attribute>
+             </row>
+             <row>
+              <property name="text">
+               <string>MPPT6</string>
+              </property>
+              <property name="toolTip">
+               <string>i</string>
+              </property>
+              <property name="font">
+               <font>
+                <weight>75</weight>
+                <bold>true</bold>
+               </font>
+              </property>
+             </row>
              <row>
               <property name="text">
                <string>Panel Voltage (V)</string>
+              </property>
+              <property name="toolTip">
+               <string>MPPT6 </string>
               </property>
              </row>
              <row>
               <property name="text">
                <string>Panel Power (W)</string>
               </property>
+              <property name="toolTip">
+               <string>MPPT6 </string>
+              </property>
              </row>
              <row>
               <property name="text">
                <string>Battery Voltage (V)</string>
               </property>
+              <property name="toolTip">
+               <string>MPPT6 </string>
+              </property>
              </row>
              <row>
               <property name="text">
                <string>Battery Current (A)</string>
+              </property>
+              <property name="toolTip">
+               <string>MPPT6 </string>
               </property>
              </row>
              <column>
@@ -2483,124 +2541,151 @@
         </item>
         <item>
          <widget class="QWidget" name="widget_41" native="true">
-          <layout class="QVBoxLayout" name="verticalLayout_18">
-           <item>
-            <widget class="QLabel" name="label_47">
-             <property name="text">
-              <string>MPPT7</string>
-             </property>
-            </widget>
-           </item>
+          <layout class="QVBoxLayout" name="verticalLayout_17">
            <item>
             <widget class="QTableWidget" name="DEV0_10">
              <property name="accessibleName">
-              <string>MPPT7 </string>
+              <string/>
              </property>
              <attribute name="horizontalHeaderStretchLastSection">
               <bool>true</bool>
              </attribute>
              <row>
               <property name="text">
+               <string>MPPT7</string>
+              </property>
+              <property name="toolTip">
+               <string>i</string>
+              </property>
+              <property name="font">
+               <font>
+                <weight>75</weight>
+                <bold>true</bold>
+               </font>
+              </property>
+             </row>
+             <row>
+              <property name="text">
                <string>Panel Voltage (V)</string>
+              </property>
+              <property name="toolTip">
+               <string>MPPT7 </string>
               </property>
              </row>
              <row>
               <property name="text">
                <string>Panel Power (W)</string>
               </property>
+              <property name="toolTip">
+               <string>MPPT7 </string>
+              </property>
              </row>
              <row>
               <property name="text">
-               <string>Battery Voltage (V)</string>
+               <string extracomment="testtest">Battery Voltage (V)</string>
+              </property>
+              <property name="toolTip">
+               <string>MPPT7 </string>
               </property>
              </row>
              <row>
               <property name="text">
                <string>Battery Current (A)</string>
               </property>
-             </row>
-             <column>
-              <property name="text">
-               <string>Value</string>
+              <property name="toolTip">
+               <string>MPPT7 </string>
               </property>
-             </column>
-            </widget>
-           </item>
-           <item>
-            <widget class="QLabel" name="label_48">
-             <property name="text">
-              <string>MPPT8</string>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="QTableWidget" name="DEV0_11">
-             <property name="accessibleName">
-              <string>MPPT8 </string>
-             </property>
-             <attribute name="horizontalHeaderStretchLastSection">
-              <bool>true</bool>
-             </attribute>
+             </row>
+             <row>
+              <property name="text">
+               <string>MPPT8</string>
+              </property>
+              <property name="toolTip">
+               <string>i</string>
+              </property>
+              <property name="font">
+               <font>
+                <weight>75</weight>
+                <bold>true</bold>
+               </font>
+              </property>
+             </row>
              <row>
               <property name="text">
                <string>Panel Voltage (V)</string>
+              </property>
+              <property name="toolTip">
+               <string>MPPT8 </string>
               </property>
              </row>
              <row>
               <property name="text">
                <string>Panel Power (W)</string>
               </property>
+              <property name="toolTip">
+               <string>MPPT8 </string>
+              </property>
              </row>
              <row>
               <property name="text">
                <string>Battery Voltage (V)</string>
+              </property>
+              <property name="toolTip">
+               <string>MPPT8 </string>
               </property>
              </row>
              <row>
               <property name="text">
                <string>Battery Current (A)</string>
               </property>
-             </row>
-             <column>
-              <property name="text">
-               <string>Value</string>
+              <property name="toolTip">
+               <string>MPPT8 </string>
               </property>
-             </column>
-            </widget>
-           </item>
-           <item>
-            <widget class="QLabel" name="label_49">
-             <property name="text">
-              <string>MPPT9</string>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="QTableWidget" name="DEV0_12">
-             <property name="accessibleName">
-              <string>MPPT9 </string>
-             </property>
-             <attribute name="horizontalHeaderStretchLastSection">
-              <bool>true</bool>
-             </attribute>
+             </row>
+             <row>
+              <property name="text">
+               <string>MPPT9</string>
+              </property>
+              <property name="toolTip">
+               <string>i</string>
+              </property>
+              <property name="font">
+               <font>
+                <weight>75</weight>
+                <bold>true</bold>
+               </font>
+              </property>
+             </row>
              <row>
               <property name="text">
                <string>Panel Voltage (V)</string>
+              </property>
+              <property name="toolTip">
+               <string>MPPT9 </string>
               </property>
              </row>
              <row>
               <property name="text">
                <string>Panel Power (W)</string>
               </property>
+              <property name="toolTip">
+               <string>MPPT9 </string>
+              </property>
              </row>
              <row>
               <property name="text">
                <string>Battery Voltage (V)</string>
               </property>
+              <property name="toolTip">
+               <string>MPPT9 </string>
+              </property>
              </row>
              <row>
               <property name="text">
                <string>Battery Current (A)</string>
+              </property>
+              <property name="toolTip">
+               <string>MPPT9 </string>
               </property>
              </row>
              <column>
