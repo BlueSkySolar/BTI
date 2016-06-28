@@ -1,5 +1,6 @@
 #include <OneWire.h>
 #include <DallasTemperature.h>
+#include <ArduinoJson.h>
 
 const int TEMP = 2, PYRA = A0; // Input pins
 const int ON = 3, SETUP = 4; // Output pins
@@ -19,7 +20,7 @@ void setup()
   digitalWrite(SETUP, HIGH);  
   
   // Begin serial output and temp probes
-  Serial.begin(115200);
+  Serial.begin(9600);
   temps.begin();
 }
 
@@ -29,21 +30,29 @@ void loop()
   digitalWrite(SETUP, LOW);
   digitalWrite(ON, HIGH);
   
-  // Calculate values
-  temps.requestTemperatures();
-  // *(5/1023) for voltage, *5 for W/m^2
-  float radiation = (float)analogRead(PYRA)*5*500/1023;
+  // Init json objects
+  StaticJsonBuffer<200> jb;
+  JsonObject& tempData = jb.createObject();
+  JsonObject& radData = jb.createObject();
   
-  // Write values to serial
-  Serial.print(millis()); // System time
-  Serial.print(",");
+  // Temperatures
+  temps.requestTemperatures();
+  JsonArray& temp = tempData.createNestedArray("temp");
   for(int i = 0; i < 3; i++) // Temps
   {
-    Serial.print(temps.getTempCByIndex(i));
-    if(i != 3)
-      Serial.print(",");
+    temp.add(temps.getTempCByIndex(i), 6);
   }
-  Serial.println(radiation); // Radiation
+  tempData["time"] = millis();
+  tempData["sensor"] = "temp";
+  tempData.printTo(Serial);
+  Serial.println();
   
-  delay(200); // Necessary; outputs gibberish otherwise
+  // Radiation
+  // *(5/1023) for voltage, *5 for W/m^2
+  float radiation = (float)analogRead(PYRA)*5*500/1023;
+  radData["rad"] = radiation;
+  radData["time"] = millis();
+  radData["sensor"] = "rad";
+  radData.printTo(Serial);
+  Serial.println();
 }
