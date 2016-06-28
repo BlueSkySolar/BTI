@@ -278,6 +278,10 @@ def get_port_and_name():
     return
 
 def get_radio_port():
+    '''
+    Finds the port the radio is connected to by connecting to all available
+    ports and checking if the length of one line is 16 chars.
+    '''
     port = ""
     for el in list_ports.comports():
         try:
@@ -293,14 +297,46 @@ def get_radio_port():
             pass
     return port
 
+def get_json_sensor_ports():
+    '''
+    Finds all serial ports with sensors outputting in json.
+    Connects to all available ports and attempts to parse json. If the key
+    'sensor' is found, the port is added to the list.
+    '''
+    
+    ports = []
+    for el in list_ports.comports():
+        test = serial_device(el.device, baud_rate = 9600);
+        try:
+            test.open_port();
+
+            line = test.ser.readline().decode().strip()
+            if(line[0] != '{'): #Potentially incomplete line
+                line = test.ser.readline().decode().strip()
+            
+            if line:
+                try:
+                    res = json.loads(line)
+                    if 'sensor' in res:
+                        ports.append(el.device)
+                except:
+                    pass
+
+        except serial.SerialException:
+            pass
+        finally:
+            test.ser.close()
+            
+    return ports
 
 if __name__ == "__main__":
-    get_port_and_name()
-    # Create radio settings
-    if RADIO_PORT:
-        radio = serial_device(RADIO_PORT)
-        # Open radio port
-        radio.open_port()
-        # Start listening and displaying data
-        get_radio_data(radio)
+    print(get_json_sensor_ports())
+#    get_port_and_name()
+#    # Create radio settings
+#    if RADIO_PORT:
+#        radio = serial_device(RADIO_PORT)
+#        # Open radio port
+#        radio.open_port()
+#        # Start listening and displaying data
+#        get_radio_data(radio)
             
