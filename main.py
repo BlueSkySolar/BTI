@@ -36,7 +36,7 @@ class MainWindow(QtGui.QMainWindow, window_class):
         self.plots = []
         # ADD NEW TABS TO THIS LIST
         tabs = [self.bmsA, self.bmsB, self.bmsC, self.emA, self.emB,
-                self.emC, self.MPPTs]
+                self.emC, self.MPPTs, self.veh_controls]
         for tab in tabs:
             for child in tab.children():
                 for next_child in child.children():

@@ -178,6 +178,7 @@ name_dict = OrderedDict((
     ('Regen Brake Position (%)', '0AF81'),
     ('Bus Current Factor (%)', '0AF82'),
     ('Steering Angle (%)', '06F80'),
+    ('Driver Int Batt Level (%)', '00F42'),
     ('Panel0 Power (W)', '0BF61'),
     ('Panel1 Power (W)', '0BF65'),
     ('Panel2 Power (W)', '0BF69'),

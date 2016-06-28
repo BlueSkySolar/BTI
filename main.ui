@@ -18,7 +18,7 @@
     <item>
      <widget class="QTabWidget" name="tabWidget">
       <property name="currentIndex">
-       <number>6</number>
+       <number>7</number>
       </property>
       <widget class="QWidget" name="bmsA">
        <attribute name="title">
@@ -2732,6 +2732,191 @@
              </property>
              <property name="accessibleDescription">
               <string>Power,W</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="veh_controls">
+       <attribute name="title">
+        <string>Vehicle Controls</string>
+       </attribute>
+       <layout class="QHBoxLayout" name="horizontalLayout_6">
+        <item>
+         <widget class="QWidget" name="widget_43" native="true">
+          <layout class="QVBoxLayout" name="verticalLayout_19">
+           <item>
+            <widget class="QLabel" name="label_23">
+             <property name="text">
+              <string/>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QTableWidget" name="DEV0_4">
+             <property name="accessibleName">
+              <string/>
+             </property>
+             <attribute name="horizontalHeaderStretchLastSection">
+              <bool>true</bool>
+             </attribute>
+             <row>
+              <property name="text">
+               <string>Vehicle Speed (km/h)</string>
+              </property>
+              <property name="toolTip">
+               <string/>
+              </property>
+             </row>
+             <row>
+              <property name="text">
+               <string>Target1 Speed (km/h)</string>
+              </property>
+              <property name="toolTip">
+               <string/>
+              </property>
+             </row>
+             <row>
+              <property name="text">
+               <string>Target2 Speed (km/h)</string>
+              </property>
+              <property name="toolTip">
+               <string/>
+              </property>
+             </row>
+             <row>
+              <property name="text">
+               <string>Throttle Position (%)</string>
+              </property>
+              <property name="toolTip">
+               <string/>
+              </property>
+             </row>
+             <row>
+              <property name="text">
+               <string>dctrls_cc_throttle_lock (%)</string>
+              </property>
+             </row>
+             <row>
+              <property name="text">
+               <string>Regen Brake Position (%)</string>
+              </property>
+             </row>
+             <row>
+              <property name="text">
+               <string>Bus Current Factor (%)</string>
+              </property>
+             </row>
+             <row>
+              <property name="text">
+               <string>Driver Int Batt Level (%)</string>
+              </property>
+             </row>
+             <row>
+              <property name="text">
+               <string>Steering Angle (%)</string>
+              </property>
+             </row>
+             <column>
+              <property name="text">
+               <string>Value</string>
+              </property>
+             </column>
+            </widget>
+           </item>
+           <item>
+            <spacer name="verticalSpacer_4">
+             <property name="orientation">
+              <enum>Qt::Vertical</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>20</width>
+               <height>40</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item>
+         <widget class="QWidget" name="widget_19" native="true">
+          <layout class="QVBoxLayout" name="widget_20">
+           <item>
+            <widget class="QLabel" name="label_21">
+             <property name="text">
+              <string>Speeds</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="PlotWidget" name="auxTemp_3">
+             <property name="accessibleName">
+              <string>Vehicle Speed (km/h),Target1 Speed (km/h),Target2 Speed (km/h)</string>
+             </property>
+             <property name="accessibleDescription">
+              <string>Speed,km/h</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="label_22">
+             <property name="text">
+              <string>Driver Interface Batt Level</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="PlotWidget" name="moduleTemp_3">
+             <property name="accessibleName">
+              <string>Driver Int Batt Level (%)</string>
+             </property>
+             <property name="accessibleDescription">
+              <string>Percentage,%</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item>
+         <widget class="QWidget" name="widget_17" native="true">
+          <layout class="QVBoxLayout" name="widget_18">
+           <item>
+            <widget class="QLabel" name="label_19">
+             <property name="text">
+              <string>Throttle / Regen Brake Positions</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="PlotWidget" name="auxTemp_2">
+             <property name="accessibleName">
+              <string>Throttle Position (%),dctrls_cc_throttle_lock (%),Regen Brake Position (%)</string>
+             </property>
+             <property name="accessibleDescription">
+              <string>Percentage,%</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="label_20">
+             <property name="text">
+              <string>Steering Angle</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="PlotWidget" name="moduleTemp_2">
+             <property name="accessibleName">
+              <string>Steering Angle (%)</string>
+             </property>
+             <property name="accessibleDescription">
+              <string>Percentage,%</string>
              </property>
             </widget>
            </item>
