@@ -284,17 +284,19 @@ def get_radio_port():
     '''
     port = ""
     for el in list_ports.comports():
+        test = serial_device(el.device)
         try:
-            test = serial_device(el.device)
             test.open_port()
             if test.ser.readline():
                 line = test.ser.readline()
                 if len(line) == 16:
                     port = el.device
                     #print(len(test.ser.readline()))
-            test.ser.close()
         except serial.SerialException:
             pass
+        finally:
+            test.ser.close()
+            
     return port
 
 def get_json_sensor_ports():
