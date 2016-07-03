@@ -37,10 +37,10 @@ void loop()
   
   // Temperatures
   temps.requestTemperatures();
-  JsonArray& temp = tempData.createNestedArray("temp");
   for(int i = 0; i < 3; i++) // Temps
   {
-    temp.add(temps.getTempCByIndex(i), 6);
+    String tempKey = "temp" + String(i);
+    tempData[tempKey] = temps.getTempCByIndex(i);
   }
   tempData["time"] = millis();
   tempData["sensor"] = "temp";
@@ -48,7 +48,7 @@ void loop()
   Serial.println();
   
   // Radiation
-  // *(5/1023) for voltage, *5 for W/m^2
+  // *(5/1023) for voltage, *500 for W/m^2
   float radiation = (float)analogRead(PYRA)*5*500/1023;
   radData["rad"] = radiation;
   radData["time"] = millis();
