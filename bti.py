@@ -309,9 +309,9 @@ def get_ext_sensor_ports():
     
     ports = []
     for el in list_ports.comports():
-        test = serial_device(el.device, baud_rate = 9600);
+        test = serial_device(el.device, baud_rate=9600)
         try:
-            test.open_port();
+            test.open_port()
 
             test.ser.readline() #Potentially incomplete line
             line = test.ser.readline().decode("utf-8").strip()
@@ -331,10 +331,29 @@ def get_ext_sensor_ports():
             
     return ports
 
-def get_ext_dict(ports):
-    pass
-    
+def get_ext_dict(device):
+    try:
+        device.ser.readline() #temporary
+        return json.loads(device.ser.readline().decode("utf-8").strip())
+    except:
+        return {}
     
 if __name__ == "__main__":
-    print(get_ext_sensor_ports())
-            
+    ports = get_ext_sensor_ports()
+    devices = []
+
+    for port in ports:
+        device = serial_device(port, baud_rate=9600)
+        try:
+            device.open_port()
+            devices.append(device)
+        except:
+            pass
+    
+    for device in devices:
+        try:
+            print(get_ext_dict(device))
+        except:
+            pass
+        print(device.port)
+        device.ser.close()
