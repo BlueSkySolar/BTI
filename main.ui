@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>1204</width>
-    <height>877</height>
+    <height>777</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -18,7 +18,7 @@
     <item>
      <widget class="QTabWidget" name="tabWidget">
       <property name="currentIndex">
-       <number>10</number>
+       <number>12</number>
       </property>
       <widget class="QWidget" name="bmsA">
        <attribute name="title">
@@ -3656,6 +3656,160 @@
         </item>
        </layout>
       </widget>
+      <widget class="QWidget" name="MCc">
+       <attribute name="title">
+        <string>Motor Controller C</string>
+       </attribute>
+       <layout class="QHBoxLayout" name="horizontalLayout_14">
+        <item>
+         <layout class="QVBoxLayout" name="verticalLayout_24">
+          <item>
+           <widget class="QTableWidget" name="tableWidget_5">
+            <attribute name="horizontalHeaderStretchLastSection">
+             <bool>true</bool>
+            </attribute>
+            <row>
+             <property name="text">
+              <string>Serial Number (#)</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>Active Motor (#)</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>1.65V Supply (V)</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>1.65V Reference (V)</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>2.5V Supply (V)</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>15V Supply (V)</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>Fan Drive (%*)</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>Fan Speed (RPM)</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>Air Inlet Temp (deg C)</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>Processor Temp (deg C)</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>Capacitor Temp (deg C)</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>Heatsink Temp (deg C)</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>Air Outlet Temp (deg C)</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>Motor Temp (deg C)</string>
+             </property>
+            </row>
+            <column>
+             <property name="text">
+              <string>Value</string>
+             </property>
+            </column>
+           </widget>
+          </item>
+          <item>
+           <spacer name="verticalSpacer_9">
+            <property name="orientation">
+             <enum>Qt::Vertical</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>20</width>
+              <height>40</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <layout class="QVBoxLayout" name="verticalLayout_25">
+          <item>
+           <widget class="QLabel" name="label_53">
+            <property name="text">
+             <string>Low Power Voltages</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QGraphicsView" name="graphicsView"/>
+          </item>
+          <item>
+           <widget class="QLabel" name="label_54">
+            <property name="text">
+             <string>Fan Drive</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QGraphicsView" name="graphicsView_2"/>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <layout class="QVBoxLayout" name="verticalLayout_26">
+          <item>
+           <widget class="QLabel" name="label_55">
+            <property name="text">
+             <string>Temperatures</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QGraphicsView" name="graphicsView_3"/>
+          </item>
+          <item>
+           <widget class="QLabel" name="label_56">
+            <property name="text">
+             <string>Fan Speed</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QGraphicsView" name="graphicsView_4"/>
+          </item>
+         </layout>
+        </item>
+       </layout>
+      </widget>
      </widget>
     </item>
     <item>
@@ -3703,7 +3857,7 @@
      <x>0</x>
      <y>0</y>
      <width>1204</width>
-     <height>21</height>
+     <height>22</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuFile">
