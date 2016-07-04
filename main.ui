@@ -18,7 +18,7 @@
     <item>
      <widget class="QTabWidget" name="tabWidget">
       <property name="currentIndex">
-       <number>7</number>
+       <number>10</number>
       </property>
       <widget class="QWidget" name="bmsA">
        <attribute name="title">
@@ -2740,7 +2740,7 @@
         </item>
        </layout>
       </widget>
-      <widget class="QWidget" name="veh_controls">
+      <widget class="QWidget" name="VC">
        <attribute name="title">
         <string>Vehicle Controls</string>
        </attribute>
@@ -2917,6 +2917,737 @@
              </property>
              <property name="accessibleDescription">
               <string>Percentage,%</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="VDa">
+       <attribute name="title">
+        <string>Vehicle Dynamics A</string>
+       </attribute>
+       <layout class="QHBoxLayout" name="horizontalLayout_7">
+        <item>
+         <widget class="QWidget" name="widget_44" native="true">
+          <layout class="QVBoxLayout" name="verticalLayout_20">
+           <item>
+            <widget class="QLabel" name="label_26">
+             <property name="text">
+              <string/>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QTableWidget" name="DEV0_5">
+             <property name="accessibleName">
+              <string/>
+             </property>
+             <attribute name="horizontalHeaderStretchLastSection">
+              <bool>true</bool>
+             </attribute>
+             <row>
+              <property name="text">
+               <string>Set 1 Acc X (Gs)</string>
+              </property>
+             </row>
+             <row>
+              <property name="text">
+               <string>Set 1 Acc Y (Gs)</string>
+              </property>
+             </row>
+             <row>
+              <property name="text">
+               <string>Set 1 Acc Z (Gs)</string>
+              </property>
+             </row>
+             <row>
+              <property name="text">
+               <string>Set 1 Rot X (deg/S)</string>
+              </property>
+             </row>
+             <row>
+              <property name="text">
+               <string>Set 1 Rot Y (deg/S)</string>
+              </property>
+             </row>
+             <row>
+              <property name="text">
+               <string>Set 1 Rot Z (deg/S)</string>
+              </property>
+             </row>
+             <row>
+              <property name="text">
+               <string>Set 1 Mag X (mGauss)</string>
+              </property>
+             </row>
+             <row>
+              <property name="text">
+               <string>Set 1 Mag Y (mGauss)</string>
+              </property>
+             </row>
+             <row>
+              <property name="text">
+               <string>Set 1 Mag Z (mGauss)</string>
+              </property>
+             </row>
+             <row>
+              <property name="text">
+               <string>Set 1 Mag Heading (deg)</string>
+              </property>
+             </row>
+             <column>
+              <property name="text">
+               <string>Value</string>
+              </property>
+             </column>
+            </widget>
+           </item>
+           <item>
+            <spacer name="verticalSpacer_5">
+             <property name="orientation">
+              <enum>Qt::Vertical</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>20</width>
+               <height>40</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item>
+         <widget class="QWidget" name="widget_21" native="true">
+          <layout class="QVBoxLayout" name="widget_22">
+           <item>
+            <widget class="QLabel" name="label_24">
+             <property name="text">
+              <string>Set 1 Accelerometer</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="PlotWidget" name="auxTemp_4">
+             <property name="accessibleName">
+              <string>Set 1 Acc X (Gs),Set 1 Acc Y (Gs),Set 1 Acc Z (Gs)</string>
+             </property>
+             <property name="accessibleDescription">
+              <string>#,Gs</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="label_25">
+             <property name="text">
+              <string>Set 1 Magnetometer</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="PlotWidget" name="moduleTemp_4">
+             <property name="accessibleName">
+              <string>Set 1 Mag X (mGauss),Set 1 Mag Y (mGauss),Set 1 Mag Z (mGauss)</string>
+             </property>
+             <property name="accessibleDescription">
+              <string>#,mGauss</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item>
+         <widget class="QWidget" name="widget_23" native="true">
+          <layout class="QVBoxLayout" name="widget_24">
+           <item>
+            <widget class="QLabel" name="label_27">
+             <property name="text">
+              <string>Set 1 Gyroscope</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="PlotWidget" name="auxTemp_5">
+             <property name="accessibleName">
+              <string>Set 1 Rot X (deg/S),Set 1 Rot Y (deg/S),Set 1 Rot Z (deg/S)</string>
+             </property>
+             <property name="accessibleDescription">
+              <string>Rot,deg/S</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="label_28">
+             <property name="text">
+              <string>Set 1 Magnetic Heading</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="PlotWidget" name="moduleTemp_5">
+             <property name="accessibleName">
+              <string>Set 1 Mag Heading (deg)</string>
+             </property>
+             <property name="accessibleDescription">
+              <string>#,deg</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="VDb">
+       <attribute name="title">
+        <string>Vehicle Dynamics B</string>
+       </attribute>
+       <layout class="QHBoxLayout" name="horizontalLayout_8">
+        <item>
+         <widget class="QWidget" name="widget_45" native="true">
+          <layout class="QVBoxLayout" name="verticalLayout_21">
+           <item>
+            <widget class="QLabel" name="label_33">
+             <property name="text">
+              <string/>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QTableWidget" name="DEV0_6">
+             <property name="accessibleName">
+              <string/>
+             </property>
+             <attribute name="horizontalHeaderStretchLastSection">
+              <bool>true</bool>
+             </attribute>
+             <row>
+              <property name="text">
+               <string>Set 2 Acc X (Gs)</string>
+              </property>
+             </row>
+             <row>
+              <property name="text">
+               <string>Set 2 Acc Y (Gs)</string>
+              </property>
+             </row>
+             <row>
+              <property name="text">
+               <string>Set 2 Acc Z (Gs)</string>
+              </property>
+             </row>
+             <row>
+              <property name="text">
+               <string>Set 2 Rot X (deg/S)</string>
+              </property>
+             </row>
+             <row>
+              <property name="text">
+               <string>Set 2 Rot Y (deg/S)</string>
+              </property>
+             </row>
+             <row>
+              <property name="text">
+               <string>Set 2 Rot Z (deg/S)</string>
+              </property>
+             </row>
+             <row>
+              <property name="text">
+               <string>Set 2 Mag X (mGauss)</string>
+              </property>
+             </row>
+             <row>
+              <property name="text">
+               <string>Set 2 Mag Y (mGauss)</string>
+              </property>
+             </row>
+             <row>
+              <property name="text">
+               <string>Set 2 Mag Z (mGauss)</string>
+              </property>
+             </row>
+             <row>
+              <property name="text">
+               <string>Set 2 Mag Heading (deg)</string>
+              </property>
+             </row>
+             <column>
+              <property name="text">
+               <string>Value</string>
+              </property>
+             </column>
+            </widget>
+           </item>
+           <item>
+            <spacer name="verticalSpacer_6">
+             <property name="orientation">
+              <enum>Qt::Vertical</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>20</width>
+               <height>40</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item>
+         <widget class="QWidget" name="widget_27" native="true">
+          <layout class="QVBoxLayout" name="widget_28">
+           <item>
+            <widget class="QLabel" name="label_31">
+             <property name="text">
+              <string>Set 2 Accelerometer</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="PlotWidget" name="auxTemp_7">
+             <property name="accessibleName">
+              <string>Set 2 Acc X (Gs),Set 2 Acc Y (Gs),Set 2 Acc Z (Gs)</string>
+             </property>
+             <property name="accessibleDescription">
+              <string>#,Gs</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="label_32">
+             <property name="text">
+              <string>Set 2 Magnetometer</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="PlotWidget" name="moduleTemp_7">
+             <property name="accessibleName">
+              <string>Set 2 Mag X (mGauss),Set 2 Mag Y (mGauss),Set 2 Mag Z (mGauss)</string>
+             </property>
+             <property name="accessibleDescription">
+              <string>#,mGauss</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item>
+         <widget class="QWidget" name="widget_25" native="true">
+          <layout class="QVBoxLayout" name="widget_26">
+           <item>
+            <widget class="QLabel" name="label_29">
+             <property name="text">
+              <string>Set 2 Gyroscope</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="PlotWidget" name="auxTemp_6">
+             <property name="accessibleName">
+              <string>Set 2 Rot X (deg/S),Set 2 Rot Y (deg/S),Set 2 Rot Z (deg/S)</string>
+             </property>
+             <property name="accessibleDescription">
+              <string>Rot,deg/S</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="label_30">
+             <property name="text">
+              <string>Set 2 Magnetic Heading</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="PlotWidget" name="moduleTemp_6">
+             <property name="accessibleName">
+              <string>Set 2 Mag Heading (deg)</string>
+             </property>
+             <property name="accessibleDescription">
+              <string>#,deg</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="MCa">
+       <attribute name="title">
+        <string>Motor Controller A</string>
+       </attribute>
+       <layout class="QHBoxLayout" name="horizontalLayout_9">
+        <item>
+         <widget class="QWidget" name="widget_46" native="true">
+          <layout class="QVBoxLayout" name="verticalLayout_22">
+           <item>
+            <widget class="QLabel" name="label_36">
+             <property name="text">
+              <string/>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QTableWidget" name="DEV0_8">
+             <property name="accessibleName">
+              <string/>
+             </property>
+             <attribute name="horizontalHeaderStretchLastSection">
+              <bool>true</bool>
+             </attribute>
+             <row>
+              <property name="text">
+               <string>Motor Velocity (RPM)</string>
+              </property>
+              <property name="toolTip">
+               <string/>
+              </property>
+             </row>
+             <row>
+              <property name="text">
+               <string>Vehicle Velocity (m/s)</string>
+              </property>
+              <property name="toolTip">
+               <string/>
+              </property>
+             </row>
+             <row>
+              <property name="text">
+               <string>Motor Tourque Const (Nm/A)</string>
+              </property>
+              <property name="toolTip">
+               <string/>
+              </property>
+             </row>
+             <row>
+              <property name="text">
+               <string>Motor Thrust (N)</string>
+              </property>
+              <property name="toolTip">
+               <string/>
+              </property>
+             </row>
+             <row>
+              <property name="text">
+               <string>Mech Power (W)</string>
+              </property>
+             </row>
+             <row>
+              <property name="text">
+               <string>DC Bus AmpHours (Ah)</string>
+              </property>
+             </row>
+             <row>
+              <property name="text">
+               <string>Odometer (m)</string>
+              </property>
+             </row>
+             <row>
+              <property name="text">
+               <string>Odometer (km)</string>
+              </property>
+             </row>
+             <column>
+              <property name="text">
+               <string>Value</string>
+              </property>
+             </column>
+            </widget>
+           </item>
+           <item>
+            <spacer name="verticalSpacer_7">
+             <property name="orientation">
+              <enum>Qt::Vertical</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>20</width>
+               <height>40</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item>
+         <widget class="QWidget" name="widget_29" native="true">
+          <layout class="QVBoxLayout" name="widget_30">
+           <item>
+            <widget class="QLabel" name="label_34">
+             <property name="text">
+              <string>Motor Velocity</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="PlotWidget" name="auxTemp_8">
+             <property name="accessibleName">
+              <string>Motor Velocity (RPM)</string>
+             </property>
+             <property name="accessibleDescription">
+              <string> ,RPM</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="label_35">
+             <property name="text">
+              <string>Drivetrain Power</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="PlotWidget" name="moduleTemp_8">
+             <property name="accessibleName">
+              <string>Mech Power (W),Bus Power (W)</string>
+             </property>
+             <property name="accessibleDescription">
+              <string>Power,W</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item>
+         <widget class="QWidget" name="widget_31" native="true">
+          <layout class="QVBoxLayout" name="widget_32">
+           <item>
+            <widget class="QLabel" name="label_45">
+             <property name="text">
+              <string>Motor Thrust</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="PlotWidget" name="auxTemp_9">
+             <property name="accessibleName">
+              <string>Motor Thrust (N)</string>
+             </property>
+             <property name="accessibleDescription">
+              <string>Force,N</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="label_46">
+             <property name="text">
+              <string>DC Bus AmpHours</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="PlotWidget" name="moduleTemp_9">
+             <property name="accessibleName">
+              <string>DC Bus AmpHours (Ah)</string>
+             </property>
+             <property name="accessibleDescription">
+              <string>AmpHours,Ah</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="MCb">
+       <attribute name="title">
+        <string>Motor Controller B</string>
+       </attribute>
+       <layout class="QHBoxLayout" name="horizontalLayout_13">
+        <item>
+         <widget class="QWidget" name="widget_49" native="true">
+          <layout class="QVBoxLayout" name="verticalLayout_23">
+           <item>
+            <widget class="QLabel" name="label_49">
+             <property name="text">
+              <string/>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QTableWidget" name="DEV0_9">
+             <property name="accessibleName">
+              <string/>
+             </property>
+             <attribute name="horizontalHeaderStretchLastSection">
+              <bool>true</bool>
+             </attribute>
+             <row>
+              <property name="text">
+               <string>Bus Voltage (V)</string>
+              </property>
+              <property name="toolTip">
+               <string/>
+              </property>
+             </row>
+             <row>
+              <property name="text">
+               <string>Bus Current (A)</string>
+              </property>
+              <property name="toolTip">
+               <string/>
+              </property>
+             </row>
+             <row>
+              <property name="text">
+               <string>Bus Power (W)</string>
+              </property>
+              <property name="toolTip">
+               <string/>
+              </property>
+             </row>
+             <row>
+              <property name="text">
+               <string>Vd (V)</string>
+              </property>
+              <property name="toolTip">
+               <string/>
+              </property>
+             </row>
+             <row>
+              <property name="text">
+               <string>Vq (V)</string>
+              </property>
+             </row>
+             <row>
+              <property name="text">
+               <string>BEMFd (V)</string>
+              </property>
+             </row>
+             <row>
+              <property name="text">
+               <string>BEMFq (V)</string>
+              </property>
+             </row>
+             <row>
+              <property name="text">
+               <string>Id (A)</string>
+              </property>
+             </row>
+             <row>
+              <property name="text">
+               <string>Steering Angle (%)</string>
+              </property>
+             </row>
+             <row>
+              <property name="text">
+               <string>Phase A Current (Arms)</string>
+              </property>
+             </row>
+             <row>
+              <property name="text">
+               <string>Phase B Current (Arms)</string>
+              </property>
+             </row>
+             <column>
+              <property name="text">
+               <string>Value</string>
+              </property>
+             </column>
+            </widget>
+           </item>
+           <item>
+            <spacer name="verticalSpacer_8">
+             <property name="orientation">
+              <enum>Qt::Vertical</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>20</width>
+               <height>40</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item>
+         <widget class="QWidget" name="widget_47" native="true">
+          <layout class="QVBoxLayout" name="widget_48">
+           <item>
+            <widget class="QLabel" name="label_47">
+             <property name="text">
+              <string>Bus Voltage</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="PlotWidget" name="auxTemp_10">
+             <property name="accessibleName">
+              <string>Bus Voltage (V)</string>
+             </property>
+             <property name="accessibleDescription">
+              <string>Voltage,V</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="label_48">
+             <property name="text">
+              <string>Voltage Vectors / Back EMF</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="PlotWidget" name="moduleTemp_10">
+             <property name="accessibleName">
+              <string>Vd (V),Vq (V),BEMFd (V),BEMFq (V)</string>
+             </property>
+             <property name="accessibleDescription">
+              <string>Voltage,V</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item>
+         <widget class="QWidget" name="widget_50" native="true">
+          <layout class="QVBoxLayout" name="widget_51">
+           <item>
+            <widget class="QLabel" name="label_51">
+             <property name="text">
+              <string>Bus Current</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="PlotWidget" name="auxTemp_11">
+             <property name="accessibleName">
+              <string>Bus Current (A)</string>
+             </property>
+             <property name="accessibleDescription">
+              <string>Current,A</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="label_52">
+             <property name="text">
+              <string>Current Vectors / Phase Currents</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="PlotWidget" name="moduleTemp_11">
+             <property name="accessibleName">
+              <string>Id (A),Iq (A),Phase A Current (Arms),Phase B Current (Arms)</string>
+             </property>
+             <property name="accessibleDescription">
+              <string>Current,A</string>
              </property>
             </widget>
            </item>

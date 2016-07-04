@@ -68,6 +68,7 @@ class serial_device:
         self.stop_bits = stop_bits
         self.byte_size = byte_size
         self.enabled = enabled
+        self.ser = None
 
     def open_port(self):
         self.ser = serial.Serial(self.port, self.baud_rate, self.byte_size,
@@ -295,7 +296,8 @@ def get_radio_port():
         except serial.SerialException:
             pass
         finally:
-            test.ser.close()
+            if test.ser:
+                test.ser.close()
             
     return port
 
@@ -327,7 +329,8 @@ def get_json_sensor_ports():
         except serial.SerialException:
             pass
         finally:
-            test.ser.close()
+            if test.ser:
+                test.ser.close()
             
     return ports
 
