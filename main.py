@@ -25,10 +25,12 @@ class MainWindow(QtGui.QMainWindow, window_class):
         
         self.setupUi(self)
         self.radio = None
+        self.ext_devices = []
         self.filename = None
         self.times = []
         self.tables = []
         self.radio_port = ""
+        self.ext_ports = []
         self.pushButton.clicked.connect(self.start_listening)
         self.statusBar().showMessage("Not Connected")
 
@@ -69,6 +71,18 @@ class MainWindow(QtGui.QMainWindow, window_class):
             self.statusBar().showMessage("Not Connected")
             return
         
+        # detect external ports
+        self.ext_ports = bti.get_ext_sensor_ports()
+        
+        # connect to external ports
+        for port in self.ext_ports:
+            device = bti.serial_device(port, baud_rate=9600, timeout=2.5)
+            try:
+                device.open_port()
+                self.ext_devices.append(device)
+            except:
+                pass
+            
         # ask for filename
         self.filename = QtGui.QInputDialog.getText(self, 'Input', "Enter a filename for this session's saved data")
         if not self.filename:
@@ -103,6 +117,8 @@ class MainWindow(QtGui.QMainWindow, window_class):
         except:
             self.statusBar().showMessage("Radio Port Not Found")
         
+        self.update() # test setup for ext devices
+            
         try:
             ####################### temporarily saving raw data for testing
             with open("raw_data.txt", "a") as text_file:
@@ -120,6 +136,11 @@ class MainWindow(QtGui.QMainWindow, window_class):
     def update(self):
         '''update everything with up-to-date values'''
         data = bti.get_value_dict(bti.get_radio_dict(self.radio))
+        
+        # add external device values to data dict
+        for device in self.ext_devices:
+            data.update(bti.get_ext_dict(device))
+        
         bti.csv_output(data, self.filename[0])
         
         # update current time while
@@ -181,6 +202,9 @@ class MainWindow(QtGui.QMainWindow, window_class):
                 self.radio.enabled = False
                 self.radio.ser.close()
                 self.radio = None
+        for device in self.ext_devices:
+            if device.ser:
+                device.ser.close()
     
 class plot:
     '''Stores plot-related variables'''

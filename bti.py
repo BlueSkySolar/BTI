@@ -336,7 +336,6 @@ def get_ext_sensor_ports():
 
 def get_ext_dict(device):
     try:
-        device.ser.readline() #temporary
         return json.loads(device.ser.readline().decode("utf-8").strip())
     except:
         return {}
