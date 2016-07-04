@@ -14,6 +14,7 @@ import datetime
 import os
 import csv
 from collections import OrderedDict
+import json
 
 ########
 # DEFINE SERIAL PORT HERE
@@ -301,7 +302,7 @@ def get_radio_port():
             
     return port
 
-def get_json_sensor_ports():
+def get_ext_sensor_ports():
     '''
     Finds all serial ports with sensors outputting in json.
     Connects to all available ports and attempts to parse json. If the key
@@ -310,18 +311,17 @@ def get_json_sensor_ports():
     
     ports = []
     for el in list_ports.comports():
-        test = serial_device(el.device, baud_rate = 9600);
+        test = serial_device(el.device, baud_rate=9600)
         try:
-            test.open_port();
+            test.open_port()
 
-            line = test.ser.readline().decode().strip()
-            if(line[0] != '{'): #Potentially incomplete line
-                line = test.ser.readline().decode().strip()
+            test.ser.readline() #Potentially incomplete line
+            line = test.ser.readline().decode("utf-8").strip()
             
             if line:
                 try:
                     res = json.loads(line)
-                    if 'sensor' in res:
+                    if "sensor" in res:
                         ports.append(el.device)
                 except:
                     pass
@@ -334,14 +334,29 @@ def get_json_sensor_ports():
             
     return ports
 
+def get_ext_dict(device):
+    try:
+        device.ser.readline() #temporary
+        return json.loads(device.ser.readline().decode("utf-8").strip())
+    except:
+        return {}
+    
 if __name__ == "__main__":
-    print(get_json_sensor_ports())
-#    get_port_and_name()
-#    # Create radio settings
-#    if RADIO_PORT:
-#        radio = serial_device(RADIO_PORT)
-#        # Open radio port
-#        radio.open_port()
-#        # Start listening and displaying data
-#        get_radio_data(radio)
-            
+    ports = get_ext_sensor_ports()
+    devices = []
+
+    for port in ports:
+        device = serial_device(port, baud_rate=9600)
+        try:
+            device.open_port()
+            devices.append(device)
+        except:
+            pass
+    
+    for device in devices:
+        try:
+            print(get_ext_dict(device))
+        except:
+            pass
+        print(device.port)
+        device.ser.close()
