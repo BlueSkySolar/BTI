@@ -61,19 +61,20 @@ class serial_device:
 
     def __init__(self, port, baud_rate="115200", firstread=False, enabled=False,
                  parity=serial.PARITY_NONE, stop_bits=serial.STOPBITS_ONE,
-                 byte_size=serial.EIGHTBITS):
+                 byte_size=serial.EIGHTBITS, timeout=1.0):
         self.port = port
         self.baud_rate = baud_rate
         self.firstread = firstread
         self.parity = parity
         self.stop_bits = stop_bits
         self.byte_size = byte_size
+        self.timeout = timeout
         self.enabled = enabled
         self.ser = None
 
     def open_port(self):
         self.ser = serial.Serial(self.port, self.baud_rate, self.byte_size,
-                                 self.parity, self.stop_bits, timeout=1.0)
+                                 self.parity, self.stop_bits, self.timeout)
         '''
         buf = SYNCH_CMD.encode('ascii')
         print(buf)
@@ -311,13 +312,12 @@ def get_ext_sensor_ports():
     
     ports = []
     for el in list_ports.comports():
-        test = serial_device(el.device, baud_rate=9600)
+        test = serial_device(el.device, baud_rate=9600, timeout=2.5)
         try:
             test.open_port()
-
             test.ser.readline() #Potentially incomplete line
             line = test.ser.readline().decode("utf-8").strip()
-            
+
             if line:
                 try:
                     res = json.loads(line)
@@ -346,7 +346,7 @@ if __name__ == "__main__":
     devices = []
 
     for port in ports:
-        device = serial_device(port, baud_rate=9600)
+        device = serial_device(port, baud_rate=9600, timeout=2.5)
         try:
             device.open_port()
             devices.append(device)
@@ -358,5 +358,7 @@ if __name__ == "__main__":
             print(get_ext_dict(device))
         except:
             pass
-        print(device.port)
-        device.ser.close()
+        finally:
+            print(device.port)
+            if device.ser:
+                device.ser.close()
