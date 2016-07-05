@@ -444,7 +444,10 @@ name_dict = OrderedDict((
     ('27.BATT EN', ('03F10', '00000008')),
     ('26.BATT EN', ('03F10', '00000004')),
     ('25.BATT EN', ('03F10', '00000002')),
-    ('24.BATT EN', ('03F10', '00000001'))
+    ('24.BATT EN', ('03F10', '00000001')),
+    ('Serial Number (#)', ('0AF21', 'long')), 
+    ('Active Motor (#)', ('0AF23', 'long')),
+    ('Sample Cnt (# of sub-sampl.)',('06F60', 'long'))
 ))
 
 test_dict = {

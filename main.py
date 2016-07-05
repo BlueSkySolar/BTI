@@ -39,7 +39,7 @@ class MainWindow(QtGui.QMainWindow, window_class):
         # ADD NEW TABS TO THIS LIST
         tabs = [self.bmsA, self.bmsB, self.bmsC, self.emA, self.emB,
                 self.emC, self.MPPTs, self.VC, self.VDa, self.VDb, self.MCa,
-                self.MCb]
+                self.MCb, self.MCc]
         for tab in tabs:
             for child in tab.children():
                 for next_child in child.children():
@@ -57,6 +57,18 @@ class MainWindow(QtGui.QMainWindow, window_class):
                     elif type(next_child) == QtGui.QTableWidget:
                         #append each table widget to a list
                         self.tables.append(next_child)
+                    elif type(next_child) == QtGui.QWidget:
+                        #repeat for sub-sub-children
+                        for next_child2 in next_child.children():
+                            if type(next_child2) == pg.widgets.PlotWidget.PlotWidget:
+                                names = next_child2.accessibleName()
+                                names = names.split(',')
+                                units = next_child2.accessibleDescription()
+                                units = units.split(',')
+                                plot_item = plot(next_child2, len(names), names, units)
+                                self.plots.append(plot_item)
+                            elif type(next_child2) == QtGui.QTableWidget:
+                                self.tables.append(next_child2)
                         
         
     def start_listening(self):

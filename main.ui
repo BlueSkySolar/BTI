@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1204</width>
+    <width>1093</width>
     <height>777</height>
    </rect>
   </property>
@@ -18,7 +18,7 @@
     <item>
      <widget class="QTabWidget" name="tabWidget">
       <property name="currentIndex">
-       <number>12</number>
+       <number>8</number>
       </property>
       <widget class="QWidget" name="bmsA">
        <attribute name="title">
@@ -2995,6 +2995,11 @@
              </row>
              <row>
               <property name="text">
+               <string>Sample Cnt (# of sub-sampl.)</string>
+              </property>
+             </row>
+             <row>
+              <property name="text">
                <string>Set 1 Mag Heading (deg)</string>
               </property>
              </row>
@@ -3004,19 +3009,6 @@
               </property>
              </column>
             </widget>
-           </item>
-           <item>
-            <spacer name="verticalSpacer_5">
-             <property name="orientation">
-              <enum>Qt::Vertical</enum>
-             </property>
-             <property name="sizeHint" stdset="0">
-              <size>
-               <width>20</width>
-               <height>40</height>
-              </size>
-             </property>
-            </spacer>
            </item>
           </layout>
          </widget>
@@ -3173,6 +3165,11 @@
              </row>
              <row>
               <property name="text">
+               <string>Sample Cnt (# of sub-sampl.)</string>
+              </property>
+             </row>
+             <row>
+              <property name="text">
                <string>Set 2 Mag Heading (deg)</string>
               </property>
              </row>
@@ -3182,19 +3179,6 @@
               </property>
              </column>
             </widget>
-           </item>
-           <item>
-            <spacer name="verticalSpacer_6">
-             <property name="orientation">
-              <enum>Qt::Vertical</enum>
-             </property>
-             <property name="sizeHint" stdset="0">
-              <size>
-               <width>20</width>
-               <height>40</height>
-              </size>
-             </property>
-            </spacer>
            </item>
           </layout>
          </widget>
@@ -3364,17 +3348,176 @@
             </widget>
            </item>
            <item>
-            <spacer name="verticalSpacer_7">
-             <property name="orientation">
-              <enum>Qt::Vertical</enum>
-             </property>
-             <property name="sizeHint" stdset="0">
-              <size>
-               <width>20</width>
-               <height>40</height>
-              </size>
-             </property>
-            </spacer>
+            <widget class="QWidget" name="widget_52" native="true">
+             <layout class="QHBoxLayout" name="horizontalLayout_15">
+              <item>
+               <widget class="QTableWidget" name="tableWidget_14">
+                <property name="accessibleDescription">
+                 <string>colour</string>
+                </property>
+                <attribute name="horizontalHeaderStretchLastSection">
+                 <bool>true</bool>
+                </attribute>
+                <attribute name="verticalHeaderStretchLastSection">
+                 <bool>false</bool>
+                </attribute>
+                <row>
+                 <property name="text">
+                  <string>0.BATT EN</string>
+                 </property>
+                </row>
+                <row>
+                 <property name="text">
+                  <string>1.BATT EN</string>
+                 </property>
+                </row>
+                <row>
+                 <property name="text">
+                  <string>2.BATT EN</string>
+                 </property>
+                </row>
+                <row>
+                 <property name="text">
+                  <string>3.BATT EN</string>
+                 </property>
+                </row>
+                <row>
+                 <property name="text">
+                  <string>4.BATT EN</string>
+                 </property>
+                </row>
+                <row>
+                 <property name="text">
+                  <string>5.BATT EN</string>
+                 </property>
+                </row>
+                <row>
+                 <property name="text">
+                  <string>6.BATT EN</string>
+                 </property>
+                </row>
+                <row>
+                 <property name="text">
+                  <string>7.BATT EN</string>
+                 </property>
+                </row>
+                <row>
+                 <property name="text">
+                  <string>8.BATT EN</string>
+                 </property>
+                </row>
+                <row>
+                 <property name="text">
+                  <string>9.BATT EN</string>
+                 </property>
+                </row>
+                <row>
+                 <property name="text">
+                  <string>10.BATT EN</string>
+                 </property>
+                </row>
+                <row>
+                 <property name="text">
+                  <string>11.BATT EN</string>
+                 </property>
+                </row>
+                <column>
+                 <property name="text">
+                  <string>Value</string>
+                 </property>
+                </column>
+                <item row="0" column="0">
+                 <property name="text">
+                  <string/>
+                 </property>
+                </item>
+               </widget>
+              </item>
+              <item>
+               <widget class="QTableWidget" name="tableWidget_16">
+                <property name="accessibleDescription">
+                 <string>colour</string>
+                </property>
+                <attribute name="horizontalHeaderStretchLastSection">
+                 <bool>true</bool>
+                </attribute>
+                <attribute name="verticalHeaderStretchLastSection">
+                 <bool>false</bool>
+                </attribute>
+                <row>
+                 <property name="text">
+                  <string>0.BATT EN</string>
+                 </property>
+                </row>
+                <row>
+                 <property name="text">
+                  <string>1.BATT EN</string>
+                 </property>
+                </row>
+                <row>
+                 <property name="text">
+                  <string>2.BATT EN</string>
+                 </property>
+                </row>
+                <row>
+                 <property name="text">
+                  <string>3.BATT EN</string>
+                 </property>
+                </row>
+                <row>
+                 <property name="text">
+                  <string>4.BATT EN</string>
+                 </property>
+                </row>
+                <row>
+                 <property name="text">
+                  <string>5.BATT EN</string>
+                 </property>
+                </row>
+                <row>
+                 <property name="text">
+                  <string>6.BATT EN</string>
+                 </property>
+                </row>
+                <row>
+                 <property name="text">
+                  <string>7.BATT EN</string>
+                 </property>
+                </row>
+                <row>
+                 <property name="text">
+                  <string>8.BATT EN</string>
+                 </property>
+                </row>
+                <row>
+                 <property name="text">
+                  <string>9.BATT EN</string>
+                 </property>
+                </row>
+                <row>
+                 <property name="text">
+                  <string>10.BATT EN</string>
+                 </property>
+                </row>
+                <row>
+                 <property name="text">
+                  <string>11.BATT EN</string>
+                 </property>
+                </row>
+                <column>
+                 <property name="text">
+                  <string>Value</string>
+                 </property>
+                </column>
+                <item row="0" column="0">
+                 <property name="text">
+                  <string/>
+                 </property>
+                </item>
+               </widget>
+              </item>
+             </layout>
+            </widget>
            </item>
           </layout>
          </widget>
@@ -3558,19 +3701,6 @@
              </column>
             </widget>
            </item>
-           <item>
-            <spacer name="verticalSpacer_8">
-             <property name="orientation">
-              <enum>Qt::Vertical</enum>
-             </property>
-             <property name="sizeHint" stdset="0">
-              <size>
-               <width>20</width>
-               <height>40</height>
-              </size>
-             </property>
-            </spacer>
-           </item>
           </layout>
          </widget>
         </item>
@@ -3662,151 +3792,172 @@
        </attribute>
        <layout class="QHBoxLayout" name="horizontalLayout_14">
         <item>
-         <layout class="QVBoxLayout" name="verticalLayout_24">
-          <item>
-           <widget class="QTableWidget" name="tableWidget_5">
-            <attribute name="horizontalHeaderStretchLastSection">
-             <bool>true</bool>
-            </attribute>
-            <row>
+         <widget class="QWidget" name="widget" native="true">
+          <layout class="QVBoxLayout" name="verticalLayout_24">
+           <item>
+            <widget class="QTableWidget" name="tableWidget_5">
+             <attribute name="horizontalHeaderStretchLastSection">
+              <bool>true</bool>
+             </attribute>
+             <row>
+              <property name="text">
+               <string>Serial Number (#)</string>
+              </property>
+             </row>
+             <row>
+              <property name="text">
+               <string>Active Motor (#)</string>
+              </property>
+             </row>
+             <row>
+              <property name="text">
+               <string>1.2V supply (V)</string>
+              </property>
+             </row>
+             <row>
+              <property name="text">
+               <string>1.65V reference (V)</string>
+              </property>
+             </row>
+             <row>
+              <property name="text">
+               <string>2.5V supply (V)</string>
+              </property>
+             </row>
+             <row>
+              <property name="text">
+               <string>15V supply (V)</string>
+              </property>
+             </row>
+             <row>
+              <property name="text">
+               <string>Fan Drive (%*)</string>
+              </property>
+             </row>
+             <row>
+              <property name="text">
+               <string>Fan Speed (RPM)</string>
+              </property>
+             </row>
+             <row>
+              <property name="text">
+               <string>Air Inlet Temp (deg C)</string>
+              </property>
+             </row>
+             <row>
+              <property name="text">
+               <string>Processor Temp (deg C)</string>
+              </property>
+             </row>
+             <row>
+              <property name="text">
+               <string>Capacitor Temp (deg C)</string>
+              </property>
+             </row>
+             <row>
+              <property name="text">
+               <string>Heatsink Temp (deg C)</string>
+              </property>
+             </row>
+             <row>
+              <property name="text">
+               <string>Air Outlet Temp (deg C)</string>
+              </property>
+             </row>
+             <row>
+              <property name="text">
+               <string>Motor Temp (deg C)</string>
+              </property>
+             </row>
+             <column>
+              <property name="text">
+               <string>Value</string>
+              </property>
+             </column>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item>
+         <widget class="QWidget" name="widget" native="true">
+          <layout class="QVBoxLayout" name="verticalLayout_25">
+           <item>
+            <widget class="QLabel" name="label_53">
              <property name="text">
-              <string>Serial Number (#)</string>
+              <string>Low Power Voltages</string>
              </property>
-            </row>
-            <row>
-             <property name="text">
-              <string>Active Motor (#)</string>
+            </widget>
+           </item>
+           <item>
+            <widget class="PlotWidget" name="graphicsView">
+             <property name="accessibleName">
+              <string>1.2V supply (V),1.65V reference (V),2.5V supply (V),15V supply (V)</string>
              </property>
-            </row>
-            <row>
-             <property name="text">
-              <string>1.65V Supply (V)</string>
+             <property name="accessibleDescription">
+              <string>Voltage,V</string>
              </property>
-            </row>
-            <row>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="label_54">
              <property name="text">
-              <string>1.65V Reference (V)</string>
+              <string>Fan Drive</string>
              </property>
-            </row>
-            <row>
-             <property name="text">
-              <string>2.5V Supply (V)</string>
-             </property>
-            </row>
-            <row>
-             <property name="text">
-              <string>15V Supply (V)</string>
-             </property>
-            </row>
-            <row>
-             <property name="text">
+            </widget>
+           </item>
+           <item>
+            <widget class="PlotWidget" name="graphicsView_2">
+             <property name="accessibleName">
               <string>Fan Drive (%*)</string>
              </property>
-            </row>
-            <row>
+             <property name="accessibleDescription">
+              <string>Percentage,%</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item>
+         <widget class="QWidget" name="widget" native="true">
+          <layout class="QVBoxLayout" name="verticalLayout_26">
+           <item>
+            <widget class="QLabel" name="label_55">
              <property name="text">
+              <string>Temperatures</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="PlotWidget" name="graphicsView_3">
+             <property name="accessibleName">
+              <string>Air Inlet Temp (deg C),Processor Temp (deg C),Capacitor Temp (deg C),Heatsink Temp (deg C),Air Outlet Temp (deg C),Motor Temp (deg C)</string>
+             </property>
+             <property name="accessibleDescription">
+              <string>Temperature,deg C</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="label_56">
+             <property name="text">
+              <string>Fan Speed</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="PlotWidget" name="graphicsView_4">
+             <property name="accessibleName">
               <string>Fan Speed (RPM)</string>
              </property>
-            </row>
-            <row>
-             <property name="text">
-              <string>Air Inlet Temp (deg C)</string>
+             <property name="accessibleDescription">
+              <string> ,RPM</string>
              </property>
-            </row>
-            <row>
-             <property name="text">
-              <string>Processor Temp (deg C)</string>
-             </property>
-            </row>
-            <row>
-             <property name="text">
-              <string>Capacitor Temp (deg C)</string>
-             </property>
-            </row>
-            <row>
-             <property name="text">
-              <string>Heatsink Temp (deg C)</string>
-             </property>
-            </row>
-            <row>
-             <property name="text">
-              <string>Air Outlet Temp (deg C)</string>
-             </property>
-            </row>
-            <row>
-             <property name="text">
-              <string>Motor Temp (deg C)</string>
-             </property>
-            </row>
-            <column>
-             <property name="text">
-              <string>Value</string>
-             </property>
-            </column>
-           </widget>
-          </item>
-          <item>
-           <spacer name="verticalSpacer_9">
-            <property name="orientation">
-             <enum>Qt::Vertical</enum>
-            </property>
-            <property name="sizeHint" stdset="0">
-             <size>
-              <width>20</width>
-              <height>40</height>
-             </size>
-            </property>
-           </spacer>
-          </item>
-         </layout>
-        </item>
-        <item>
-         <layout class="QVBoxLayout" name="verticalLayout_25">
-          <item>
-           <widget class="QLabel" name="label_53">
-            <property name="text">
-             <string>Low Power Voltages</string>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QGraphicsView" name="graphicsView"/>
-          </item>
-          <item>
-           <widget class="QLabel" name="label_54">
-            <property name="text">
-             <string>Fan Drive</string>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QGraphicsView" name="graphicsView_2"/>
-          </item>
-         </layout>
-        </item>
-        <item>
-         <layout class="QVBoxLayout" name="verticalLayout_26">
-          <item>
-           <widget class="QLabel" name="label_55">
-            <property name="text">
-             <string>Temperatures</string>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QGraphicsView" name="graphicsView_3"/>
-          </item>
-          <item>
-           <widget class="QLabel" name="label_56">
-            <property name="text">
-             <string>Fan Speed</string>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QGraphicsView" name="graphicsView_4"/>
-          </item>
-         </layout>
+            </widget>
+           </item>
+          </layout>
+         </widget>
         </item>
        </layout>
       </widget>
@@ -3856,8 +4007,8 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1204</width>
-     <height>22</height>
+     <width>1093</width>
+     <height>21</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuFile">
