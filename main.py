@@ -7,6 +7,11 @@ from PyQt4 import QtGui, QtCore, uic
 import dicts
 import bti
 import pyqtgraph as pg
+import ctypes
+#import pyuic generated ui file
+from main_ui import Ui_MainWindow
+#import time
+import main
 
 pg.setConfigOption('background', 'w')
 pg.setConfigOption('foreground', 'k')
@@ -14,12 +19,39 @@ pg.setConfigOption('foreground', 'k')
 
 GRAPH_LIMIT = 100
 FILE_NAME = "test"
-time = None
+elap_time = QtCore.QTime()
+start_time = QtCore.QTime()
 
+#window_class = uic.loadUiType("main.ui")[0]
 
-window_class = uic.loadUiType("main.ui")[0]
+class timeAxisItem(pg.AxisItem):
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        #self.start = 0
+        self.start_time = QtCore.QTime().addSecs(-1)
+        #self.prev_time = QtCore.QTime().addSecs(-1)
 
-class MainWindow(QtGui.QMainWindow, window_class):
+    def tickStrings(self, values, scale, spacing):
+#        curr = QtCore.QTime().currentTime()
+#        print (curr.msecsTo(QtCore.QTime()))
+#        print(self.prev_time.msecsTo(QtCore.QTime()))
+#        if curr.msecsTo(QtCore.QTime()) - self.prev_time.msecsTo(QtCore.QTime()) > 2000:
+#            self.start = 0
+#        elif curr.msecsTo(QtCore.QTime()) - self.prev_time.msecsTo(QtCore.QTime()) > 0 and self.start == 0:
+#            self.start_time = curr
+#            self.start = 1
+        
+        ret = [self.start_time.addMSecs(value).toString('hh:mm:ss') for value in values]
+        #self.prev_time = curr 
+        return ret
+class timePlotWidget(pg.PlotWidget):
+    '''
+    Wrapper class which replaces the x-axis values with the current time
+    '''
+    def __init__(self, parent=None, **kargs):
+        super().__init__(axisItems={'bottom':timeAxisItem(orientation='bottom')})
+
+class MainWindow(QtGui.QMainWindow, Ui_MainWindow):
     def __init__(self, parent=None):
         QtGui.QMainWindow.__init__(self, parent)
         
@@ -40,45 +72,40 @@ class MainWindow(QtGui.QMainWindow, window_class):
         tabs = [self.bmsA, self.bmsB, self.bmsC, self.emA, self.emB,
                 self.emC, self.MPPTs, self.VC, self.VDa, self.VDb, self.MCa,
                 self.MCb, self.MCc]
-        for tab in tabs:
-            for child in tab.children():
-                for next_child in child.children():
-                    if type(next_child) == pg.widgets.PlotWidget.PlotWidget:
-                        # initialize plots
-                        # The data to be plotted is defined in the accessibleName
-                        # value of the plot object, with multiple data names separated
-                        # by commas. The units of the data is defined in accessibleDescription 
-                        names = next_child.accessibleName()
-                        names = names.split(',')
-                        units = next_child.accessibleDescription()
-                        units = units.split(',')
-                        plot_item = plot(next_child, len(names), names, units)
-                        self.plots.append(plot_item)
-                    elif type(next_child) == QtGui.QTableWidget:
-                        #append each table widget to a list
-                        self.tables.append(next_child)
-                    elif type(next_child) == QtGui.QWidget:
-                        #repeat for sub-sub-children
-                        for next_child2 in next_child.children():
-                            if type(next_child2) == pg.widgets.PlotWidget.PlotWidget:
-                                names = next_child2.accessibleName()
-                                names = names.split(',')
-                                units = next_child2.accessibleDescription()
-                                units = units.split(',')
-                                plot_item = plot(next_child2, len(names), names, units)
-                                self.plots.append(plot_item)
-                            elif type(next_child2) == QtGui.QTableWidget:
-                                self.tables.append(next_child2)
+        for key, value in self.__dict__.items():
+            print(type(value))
+            if type(value) == main.timePlotWidget:
+                print('hello')
+                # initialize plots
+                # The data to be plotted is defined in the accessibleName
+                # value of the plot object, with multiple data names separated
+                # by commas. The units of the data is defined in accessibleDescription
+                names = value.accessibleName()
+                names = names.split(',')
+                units = value.accessibleDescription()
+                units = units.split(',')
+#                parent = self.__dict__[key].parentWidget()
+#                print(self.__dict__[key])
+#                exec('self.'+key + "=pg.PlotWidget(parent,axisItems={'bottom':timeAxisItem(orientation='bottom')})")
+#                print(self.__dict__[key])
+                #self.__dict__[key] = 
+                plot_item = plot(value, len(names), names, units)
+                #print(next_child)
+                self.plots.append(plot_item)
+            elif type(value) == QtGui.QTableWidget:
+                #append each table widget to a list
+                self.tables.append(value)
                         
         
     def start_listening(self):
         '''start receiving data'''
-        global time
+        global elap_time, start_time
         if self.radio:
             # stop listening if button pressed while running
             self.radio.enabled = False
             self.radio.ser.close()
-            time = None
+            elap_time = QtCore.QTime()
+            start_time = QtCore.QTime()
             self.radio = None
             self.statusBar().showMessage("Not Connected")
             return
@@ -101,8 +128,11 @@ class MainWindow(QtGui.QMainWindow, window_class):
             return
             
         # start timer
-        time = QtCore.QTime()
-        time.start()
+        elap_time = QtCore.QTime()
+        elap_time.start()
+        start_time = QtCore.QTime().currentTime()
+        for plot in self.plots:
+            plot.plot.getAxis('bottom').start_time = start_time
         
         # detect radio_port
         if not self.radio_port:
@@ -159,8 +189,8 @@ class MainWindow(QtGui.QMainWindow, window_class):
         # keeping array under limit # of items
         if len(self.times) >= GRAPH_LIMIT:
             self.times = self.times[1:]
-        self.times.append(time.elapsed())
-
+        #self.times.append(time.elapsed())
+        self.times.append(elap_time.elapsed())
         # update all plots
         for plot in self.plots:
             plot.plot.clear()
@@ -235,8 +265,14 @@ class plot:
         self.plot = plot
         self.plot.addLegend()
         self.plot.setLabel('bottom', 'Time', units='s')
+        plot_item = self.plot.getPlotItem()
+        #print(id(plot_item.getAxis('bottom')))
+        #axis_mem = (ctypes.py_object).from_address(id(plot_item.getAxis('bottom')))
+        #time_axis = timeAxisItem('bottom')
+        #ctypes.memmove(id)
         if units:
-            self.plot.setLabel('left', units[0], units = units[1])
+            if units[0]:
+                self.plot.setLabel('left', units[0], units = units[1])
         self.hex_keys = []
         for el in names:
             self.hex_keys.append(dicts.name_dict[el])

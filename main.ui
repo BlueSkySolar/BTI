@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1440</width>
+    <width>1069</width>
     <height>777</height>
    </rect>
   </property>
@@ -481,7 +481,11 @@
             </widget>
            </item>
            <item>
-            <widget class="PlotWidget" name="graphicsView_5"/>
+            <widget class="timePlotWidget" name="graphicsView_5">
+             <property name="accessibleName">
+              <string>Current Mark Num (#),Current Stint Num (#)</string>
+             </property>
+            </widget>
            </item>
            <item>
             <widget class="QLabel" name="label_58">
@@ -491,7 +495,11 @@
             </widget>
            </item>
            <item>
-            <widget class="PlotWidget" name="graphicsView_6"/>
+            <widget class="timePlotWidget" name="graphicsView_6">
+             <property name="accessibleName">
+              <string>Current Stint Time (s),Previous Stint Time (s)</string>
+             </property>
+            </widget>
            </item>
           </layout>
          </widget>
@@ -919,7 +927,7 @@
             </widget>
            </item>
            <item>
-            <widget class="PlotWidget" name="totalBusVoltage">
+            <widget class="timePlotWidget" name="totalBusVoltage">
              <property name="accessibleName">
               <string>Total Bus Voltage (V)</string>
              </property>
@@ -936,7 +944,7 @@
             </widget>
            </item>
            <item>
-            <widget class="PlotWidget" name="moduleVoltages">
+            <widget class="timePlotWidget" name="moduleVoltages">
              <property name="accessibleName">
               <string>DEV0 Max Module Voltage (V),DEV0 Ave Module Voltage (V),DEV0 Min Module Voltage (V)</string>
              </property>
@@ -1312,7 +1320,7 @@
             </widget>
            </item>
            <item>
-            <widget class="PlotWidget" name="auxTemp">
+            <widget class="timePlotWidget" name="auxTemp">
              <property name="accessibleName">
               <string>DEV0 Aux Temp 0 (deg C),DEV0 Aux Temp 1 (deg C),DEV0 Aux Temp 2 (deg C),DEV0 Aux Temp 3 (deg C),DEV0 Aux Temp 4 (deg C)</string>
              </property>
@@ -1329,7 +1337,7 @@
             </widget>
            </item>
            <item>
-            <widget class="PlotWidget" name="moduleTemp">
+            <widget class="timePlotWidget" name="moduleTemp">
              <property name="accessibleName">
               <string>DEV0 Max Module Temp (deg C),DEV0 Ave Module Temp (deg C),DEV0 Min Module Temp (deg C)</string>
              </property>
@@ -2234,7 +2242,7 @@
             </widget>
            </item>
            <item>
-            <widget class="PlotWidget" name="totalBusVoltage_2">
+            <widget class="timePlotWidget" name="totalBusVoltage_2">
              <property name="accessibleName">
               <string>Batt Bus Voltage (V),Arr Bus Voltage (V)</string>
              </property>
@@ -2251,7 +2259,7 @@
             </widget>
            </item>
            <item>
-            <widget class="PlotWidget" name="moduleVoltages_2">
+            <widget class="timePlotWidget" name="moduleVoltages_2">
              <property name="accessibleName">
               <string>Main LP Sys Current (A),PPT LP Sys Current (A)</string>
              </property>
@@ -2274,7 +2282,7 @@
             </widget>
            </item>
            <item>
-            <widget class="PlotWidget" name="totalBusVoltage_3">
+            <widget class="timePlotWidget" name="totalBusVoltage_3">
              <property name="accessibleName">
               <string>Batt Bus Current (A),Arr Bus Current (A)</string>
              </property>
@@ -2291,7 +2299,7 @@
             </widget>
            </item>
            <item>
-            <widget class="PlotWidget" name="moduleVoltages_3">
+            <widget class="timePlotWidget" name="moduleVoltages_3">
              <property name="accessibleName">
               <string>EM_BATT Temp (deg C),EM_ARR Temp (deg C)</string>
              </property>
@@ -2404,7 +2412,7 @@
             </widget>
            </item>
            <item>
-            <widget class="PlotWidget" name="totalBusVoltage_8">
+            <widget class="timePlotWidget" name="totalBusVoltage_8">
              <property name="accessibleName">
               <string>Batt Power Front (W),Arr Bus Power 1 (W),Motor Power (W)</string>
              </property>
@@ -2421,7 +2429,7 @@
             </widget>
            </item>
            <item>
-            <widget class="PlotWidget" name="moduleVoltages_8">
+            <widget class="timePlotWidget" name="moduleVoltages_8">
              <property name="accessibleName">
               <string>Batt Power Front (W),Batt Power Back (W)</string>
              </property>
@@ -2444,7 +2452,7 @@
             </widget>
            </item>
            <item>
-            <widget class="PlotWidget" name="totalBusVoltage_7">
+            <widget class="timePlotWidget" name="totalBusVoltage_7">
              <property name="accessibleName">
               <string>Main LP Sys Power (W),Misc Power (W),PPT LP Sys Power (W)</string>
              </property>
@@ -2461,7 +2469,7 @@
             </widget>
            </item>
            <item>
-            <widget class="PlotWidget" name="moduleVoltages_7">
+            <widget class="timePlotWidget" name="moduleVoltages_7">
              <property name="accessibleName">
               <string>Batt Transfer Eff (%)</string>
              </property>
@@ -2574,7 +2582,7 @@
             </widget>
            </item>
            <item>
-            <widget class="PlotWidget" name="totalBusVoltage_10">
+            <widget class="timePlotWidget" name="totalBusVoltage_10">
              <property name="accessibleName">
               <string>Batt En-Cnt Front (Wh),Arr En-Cnt 1 (Wh),Motor En-Cnt (Wh)</string>
              </property>
@@ -2591,7 +2599,7 @@
             </widget>
            </item>
            <item>
-            <widget class="PlotWidget" name="moduleVoltages_10">
+            <widget class="timePlotWidget" name="moduleVoltages_10">
              <property name="accessibleName">
               <string>Batt En-Cnt Front (Wh),Batt En-Cnt Back (Wh)</string>
              </property>
@@ -2614,7 +2622,7 @@
             </widget>
            </item>
            <item>
-            <widget class="PlotWidget" name="totalBusVoltage_9">
+            <widget class="timePlotWidget" name="totalBusVoltage_9">
              <property name="accessibleName">
               <string>Main LP Sys En-Cnt (Wh),Misc En-Cnt (Wh),PPT LP Sys En-Cnt (Wh)</string>
              </property>
@@ -3187,7 +3195,7 @@
             </widget>
            </item>
            <item>
-            <widget class="PlotWidget" name="totalBusVoltage_11">
+            <widget class="timePlotWidget" name="totalBusVoltage_11">
              <property name="accessibleName">
               <string>Panel0 Voltage (V),Panel1 Voltage (V),Panel2 Voltage (V),Panel3 Voltage (V),Panel4 Voltage (V),Panel5 Voltage (V),Panel6 Voltage (V),Panel7 Voltage (V),Panel8 Voltage (V),Panel9 Voltage (V)</string>
              </property>
@@ -3204,7 +3212,7 @@
             </widget>
            </item>
            <item>
-            <widget class="PlotWidget" name="moduleVoltages_9">
+            <widget class="timePlotWidget" name="moduleVoltages_9">
              <property name="accessibleName">
               <string>Panel0 Power (W),Panel1 Power (W),Panel2 Power (W),Panel3 Power (W),Panel4 Power (W),Panel5 Power (W),Panel6 Power (W),Panel7 Power (W),Panel8 Power (W),Panel9 Power (W)</string>
              </property>
@@ -3332,7 +3340,7 @@
             </widget>
            </item>
            <item>
-            <widget class="PlotWidget" name="auxTemp_3">
+            <widget class="timePlotWidget" name="auxTemp_3">
              <property name="accessibleName">
               <string>Vehicle Speed (km/h),Target1 Speed (km/h),Target2 Speed (km/h)</string>
              </property>
@@ -3349,7 +3357,7 @@
             </widget>
            </item>
            <item>
-            <widget class="PlotWidget" name="moduleTemp_3">
+            <widget class="timePlotWidget" name="moduleTemp_3">
              <property name="accessibleName">
               <string>Driver Int Batt Level (%)</string>
              </property>
@@ -3372,7 +3380,7 @@
             </widget>
            </item>
            <item>
-            <widget class="PlotWidget" name="auxTemp_2">
+            <widget class="timePlotWidget" name="auxTemp_2">
              <property name="accessibleName">
               <string>Throttle Position (%),dctrls_cc_throttle_lock (%),Regen Brake Position (%)</string>
              </property>
@@ -3389,7 +3397,7 @@
             </widget>
            </item>
            <item>
-            <widget class="PlotWidget" name="moduleTemp_2">
+            <widget class="timePlotWidget" name="moduleTemp_2">
              <property name="accessibleName">
               <string>Steering Angle (%)</string>
              </property>
@@ -3502,7 +3510,7 @@
             </widget>
            </item>
            <item>
-            <widget class="PlotWidget" name="auxTemp_4">
+            <widget class="timePlotWidget" name="auxTemp_4">
              <property name="accessibleName">
               <string>Set 1 Acc X (Gs),Set 1 Acc Y (Gs),Set 1 Acc Z (Gs)</string>
              </property>
@@ -3519,7 +3527,7 @@
             </widget>
            </item>
            <item>
-            <widget class="PlotWidget" name="moduleTemp_4">
+            <widget class="timePlotWidget" name="moduleTemp_4">
              <property name="accessibleName">
               <string>Set 1 Mag X (mGauss),Set 1 Mag Y (mGauss),Set 1 Mag Z (mGauss)</string>
              </property>
@@ -3542,7 +3550,7 @@
             </widget>
            </item>
            <item>
-            <widget class="PlotWidget" name="auxTemp_5">
+            <widget class="timePlotWidget" name="auxTemp_5">
              <property name="accessibleName">
               <string>Set 1 Rot X (deg/S),Set 1 Rot Y (deg/S),Set 1 Rot Z (deg/S)</string>
              </property>
@@ -3559,7 +3567,7 @@
             </widget>
            </item>
            <item>
-            <widget class="PlotWidget" name="moduleTemp_5">
+            <widget class="timePlotWidget" name="moduleTemp_5">
              <property name="accessibleName">
               <string>Set 1 Mag Heading (deg)</string>
              </property>
@@ -3672,7 +3680,7 @@
             </widget>
            </item>
            <item>
-            <widget class="PlotWidget" name="auxTemp_7">
+            <widget class="timePlotWidget" name="auxTemp_7">
              <property name="accessibleName">
               <string>Set 2 Acc X (Gs),Set 2 Acc Y (Gs),Set 2 Acc Z (Gs)</string>
              </property>
@@ -3689,7 +3697,7 @@
             </widget>
            </item>
            <item>
-            <widget class="PlotWidget" name="moduleTemp_7">
+            <widget class="timePlotWidget" name="moduleTemp_7">
              <property name="accessibleName">
               <string>Set 2 Mag X (mGauss),Set 2 Mag Y (mGauss),Set 2 Mag Z (mGauss)</string>
              </property>
@@ -3712,7 +3720,7 @@
             </widget>
            </item>
            <item>
-            <widget class="PlotWidget" name="auxTemp_6">
+            <widget class="timePlotWidget" name="auxTemp_6">
              <property name="accessibleName">
               <string>Set 2 Rot X (deg/S),Set 2 Rot Y (deg/S),Set 2 Rot Z (deg/S)</string>
              </property>
@@ -3729,7 +3737,7 @@
             </widget>
            </item>
            <item>
-            <widget class="PlotWidget" name="moduleTemp_6">
+            <widget class="timePlotWidget" name="moduleTemp_6">
              <property name="accessibleName">
               <string>Set 2 Mag Heading (deg)</string>
              </property>
@@ -4011,7 +4019,7 @@
             </widget>
            </item>
            <item>
-            <widget class="PlotWidget" name="auxTemp_8">
+            <widget class="timePlotWidget" name="auxTemp_8">
              <property name="accessibleName">
               <string>Motor Velocity (RPM)</string>
              </property>
@@ -4028,7 +4036,7 @@
             </widget>
            </item>
            <item>
-            <widget class="PlotWidget" name="moduleTemp_8">
+            <widget class="timePlotWidget" name="moduleTemp_8">
              <property name="accessibleName">
               <string>Mech Power (W),Bus Power (W)</string>
              </property>
@@ -4051,7 +4059,7 @@
             </widget>
            </item>
            <item>
-            <widget class="PlotWidget" name="auxTemp_9">
+            <widget class="timePlotWidget" name="auxTemp_9">
              <property name="accessibleName">
               <string>Motor Thrust (N)</string>
              </property>
@@ -4068,7 +4076,7 @@
             </widget>
            </item>
            <item>
-            <widget class="PlotWidget" name="moduleTemp_9">
+            <widget class="timePlotWidget" name="moduleTemp_9">
              <property name="accessibleName">
               <string>DC Bus AmpHours (Ah)</string>
              </property>
@@ -4193,7 +4201,7 @@
             </widget>
            </item>
            <item>
-            <widget class="PlotWidget" name="auxTemp_10">
+            <widget class="timePlotWidget" name="auxTemp_10">
              <property name="accessibleName">
               <string>Bus Voltage (V)</string>
              </property>
@@ -4210,7 +4218,7 @@
             </widget>
            </item>
            <item>
-            <widget class="PlotWidget" name="moduleTemp_10">
+            <widget class="timePlotWidget" name="moduleTemp_10">
              <property name="accessibleName">
               <string>Vd (V),Vq (V),BEMFd (V),BEMFq (V)</string>
              </property>
@@ -4233,7 +4241,7 @@
             </widget>
            </item>
            <item>
-            <widget class="PlotWidget" name="auxTemp_11">
+            <widget class="timePlotWidget" name="auxTemp_11">
              <property name="accessibleName">
               <string>Bus Current (A)</string>
              </property>
@@ -4250,7 +4258,7 @@
             </widget>
            </item>
            <item>
-            <widget class="PlotWidget" name="moduleTemp_11">
+            <widget class="timePlotWidget" name="moduleTemp_11">
              <property name="accessibleName">
               <string>Id (A),Iq (A),Phase A Current (Arms),Phase B Current (Arms)</string>
              </property>
@@ -4368,7 +4376,7 @@
             </widget>
            </item>
            <item>
-            <widget class="PlotWidget" name="graphicsView">
+            <widget class="timePlotWidget" name="graphicsView">
              <property name="accessibleName">
               <string>1.2V supply (V),1.65V reference (V),2.5V supply (V),15V supply (V)</string>
              </property>
@@ -4385,7 +4393,7 @@
             </widget>
            </item>
            <item>
-            <widget class="PlotWidget" name="graphicsView_2">
+            <widget class="timePlotWidget" name="graphicsView_2">
              <property name="accessibleName">
               <string>Fan Drive (%*)</string>
              </property>
@@ -4408,7 +4416,7 @@
             </widget>
            </item>
            <item>
-            <widget class="PlotWidget" name="graphicsView_3">
+            <widget class="timePlotWidget" name="graphicsView_3">
              <property name="accessibleName">
               <string>Air Inlet Temp (deg C),Processor Temp (deg C),Capacitor Temp (deg C),Heatsink Temp (deg C),Air Outlet Temp (deg C),Motor Temp (deg C)</string>
              </property>
@@ -4425,7 +4433,7 @@
             </widget>
            </item>
            <item>
-            <widget class="PlotWidget" name="graphicsView_4">
+            <widget class="timePlotWidget" name="graphicsView_4">
              <property name="accessibleName">
               <string>Fan Speed (RPM)</string>
              </property>
@@ -4485,8 +4493,8 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1440</width>
-     <height>22</height>
+     <width>1069</width>
+     <height>21</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuFile">
@@ -4512,9 +4520,9 @@
  </widget>
  <customwidgets>
   <customwidget>
-   <class>PlotWidget</class>
+   <class>timePlotWidget</class>
    <extends>QGraphicsView</extends>
-   <header>pyqtgraph</header>
+   <header>main</header>
   </customwidget>
  </customwidgets>
  <resources/>
