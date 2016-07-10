@@ -205,6 +205,11 @@ def get_value_dict(in_dict):
                 output[tup[0]] = int(in_dict[tup[1][0]],16)
             else:
                 output[tup[0]] = None
+        elif tup[1][1] == "hex string":
+            if tup[1][0] in in_dict:
+                output[tup[0]] = in_dict[tup[1][0]]
+            else:
+                output[tup[0]] = None
         else:
             if tup[1][0] in in_dict:
                 if in_dict[tup[1][0]] == tup[1][1]:

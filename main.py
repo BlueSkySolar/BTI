@@ -73,9 +73,7 @@ class MainWindow(QtGui.QMainWindow, Ui_MainWindow):
                 self.emC, self.MPPTs, self.VC, self.VDa, self.VDb, self.MCa,
                 self.MCb, self.MCc]
         for key, value in self.__dict__.items():
-            print(type(value))
             if type(value) == main.timePlotWidget:
-                print('hello')
                 # initialize plots
                 # The data to be plotted is defined in the accessibleName
                 # value of the plot object, with multiple data names separated
@@ -221,7 +219,8 @@ class MainWindow(QtGui.QMainWindow, Ui_MainWindow):
                     if data[table.accessibleName() + 
                             table.verticalHeaderItem(row).text()] == True:
                         table.item(row,0).setBackground(QtGui.QColor(0,255,0))
-                    elif data[table.verticalHeaderItem(row).text()] == False:
+                    elif data[table.accessibleName() +
+                              table.verticalHeaderItem(row).text()] == False:
                         table.item(row,0).setBackground(QtGui.QColor(255,0,0))
                     else:
                         pass
