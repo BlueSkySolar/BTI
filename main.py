@@ -17,7 +17,7 @@ pg.setConfigOption('background', 'w')
 pg.setConfigOption('foreground', 'k')
 
 
-GRAPH_LIMIT = 100
+GRAPH_LIMIT = 50
 FILE_NAME = "test"
 elap_time = QtCore.QTime()
 start_time = QtCore.QTime()
@@ -199,6 +199,7 @@ class MainWindow(QtGui.QMainWindow, Ui_MainWindow):
                 if plot.names[i] in data and data[plot.names[i]]:
                     if len(plot.data[i]) >= GRAPH_LIMIT:
                         plot.data[i] = plot.data[i][1:]
+
                     plot.data[i].append(data[plot.names[i]])
                     if len(plot.plot.plotItem.legend.items) != len(plot.names):
                         plot.plot.plot(self.times, plot.data[i], pen=(i, len(plot.names)), name=plot.names[i])
@@ -222,11 +223,11 @@ class MainWindow(QtGui.QMainWindow, Ui_MainWindow):
                     if data[table.accessibleName() + 
                             table.verticalHeaderItem(row).text()] == True:
                         table.item(row,0).setBackground(QtGui.QColor(0,255,0))
-                    elif data[table.accessibleName() +
-                              table.verticalHeaderItem(row).text()] == False:
-                        table.item(row,0).setBackground(QtGui.QColor(255,0,0))
+#                    elif data[table.accessibleName() +
+#                              table.verticalHeaderItem(row).text()] == False:
+#                        table.item(row,0).setBackground(QtGui.QColor(255,0,0))
                     else:
-                        pass
+                        continue
                 else:        
                     # Since some values in the BTI have repeated names, 
                     # we can use the accessibleName value in a table to
@@ -266,7 +267,7 @@ class plot:
         self.names = names
         self.plot = plot
         self.plot.addLegend()
-        self.plot.setLabel('bottom', 'Time', units='s')
+        self.plot.setLabel('bottom', 'Time', units='hh:mm:ss')
         plot_item = self.plot.getPlotItem()
         #print(id(plot_item.getAxis('bottom')))
         #axis_mem = (ctypes.py_object).from_address(id(plot_item.getAxis('bottom')))

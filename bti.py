@@ -221,7 +221,7 @@ def get_value_dict(in_dict):
             if tup[1][0] in in_dict:
                     output[tup[0]] = hex_mask_check(in_dict[tup[1][0]], tup[1][1])
             else:
-                output[tup[0]] = none
+                output[tup[0]] = None
     return output
 
 def hex_mask_check(value, mask):
