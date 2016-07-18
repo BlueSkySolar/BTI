@@ -44,12 +44,15 @@ class timeAxisItem(pg.AxisItem):
         ret = [self.start_time.addMSecs(value).toString('hh:mm:ss') for value in values]
         #self.prev_time = curr 
         return ret
+        
+
 class timePlotWidget(pg.PlotWidget):
     '''
     Wrapper class which replaces the x-axis values with the current time
     '''
     def __init__(self, parent=None, **kargs):
         super().__init__(axisItems={'bottom':timeAxisItem(orientation='bottom')})
+
 
 class MainWindow(QtGui.QMainWindow, Ui_MainWindow):
     def __init__(self, parent=None):

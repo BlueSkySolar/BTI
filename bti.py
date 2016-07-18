@@ -336,7 +336,7 @@ def get_ext_sensor_ports():
                 except:
                     pass
 
-        except serial.SerialException:
+        except:
             pass
         finally:
             if test.ser:
