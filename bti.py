@@ -228,7 +228,7 @@ def hex_mask_check(value, mask):
     '''
      returns a boolean dependant on whether or not the error is active
     '''
-    return (hex_string_to_float(value) & hex_string_to_float(mask) > 0)
+    return (int(value,16) & int(mask,16) > 0)
 
 def file_output(input_dict, output_name):
     '''
