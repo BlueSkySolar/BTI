@@ -96,9 +96,12 @@ def hex_string_to_float(hex_string):
         hex_string - self explanatory
     '''
     try:
-        result = struct.unpack('!f', bytes.fromhex(hex_string))[0]
-    except:
         result = struct.unpack('!f', hex_string.decode('hex'))[0]
+    except:
+        try:
+            result = struct.unpack('!f', bytes.fromhex(hex_string))[0]
+        except:
+            result = None
     return result
 
 
@@ -117,7 +120,7 @@ def organize_data(data):
     for i in range(len(data)):
         temp = data[i].split(';')
         # print(data)
-        if len(data[i]) == MESSAGE_LENGTH:
+        if len(data[i]) == MESSAGE_LENGTH and len(temp) == 2:
             data_dict[temp[0]] = temp[1]
     #print(data_dict)
     return data_dict
@@ -182,10 +185,14 @@ def get_radio_dict(radio):
 
     if radio.enabled:
         data = radio.ser.read_until(b'#')
-        return organize_data(data.decode("utf-8"))
+        try:
+            result = organize_data(data.decode("utf-8"))
+        except UnicodeDecodeError:
+            result = {}
     else:
         print("Radio not enabled")
-        return {}
+        result = {}
+    return result
 
 
 def get_value_dict(in_dict):
