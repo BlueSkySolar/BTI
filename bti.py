@@ -96,9 +96,12 @@ def hex_string_to_float(hex_string):
         hex_string - self explanatory
     '''
     try:
-        result = struct.unpack('!f', bytes.fromhex(hex_string))[0]
-    except:
         result = struct.unpack('!f', hex_string.decode('hex'))[0]
+    except:
+        try:
+            result = struct.unpack('!f', bytes.fromhex(hex_string))[0]
+        except:
+            result = None
     return result
 
 
@@ -117,7 +120,7 @@ def organize_data(data):
     for i in range(len(data)):
         temp = data[i].split(';')
         # print(data)
-        if len(data[i]) == MESSAGE_LENGTH:
+        if len(data[i]) == MESSAGE_LENGTH and len(temp) == 2:
             data_dict[temp[0]] = temp[1]
     #print(data_dict)
     return data_dict
@@ -182,10 +185,14 @@ def get_radio_dict(radio):
 
     if radio.enabled:
         data = radio.ser.read_until(b'#')
-        return organize_data(data.decode("utf-8"))
+        try:
+            result = organize_data(data.decode("utf-8"))
+        except UnicodeDecodeError:
+            result = {}
     else:
         print("Radio not enabled")
-        return {}
+        result = {}
+    return result
 
 
 def get_value_dict(in_dict):
@@ -205,15 +212,23 @@ def get_value_dict(in_dict):
                 output[tup[0]] = int(in_dict[tup[1][0]],16)
             else:
                 output[tup[0]] = None
+        elif tup[1][1] == "hex string":
+            if tup[1][0] in in_dict:
+                output[tup[0]] = in_dict[tup[1][0]]
+            else:
+                output[tup[0]] = None
         else:
             if tup[1][0] in in_dict:
-                if in_dict[tup[1][0]] == tup[1][1]:
-                    output[tup[0]] = True
-                else:
-                    output[tup[0]] = False
+                    output[tup[0]] = hex_mask_check(in_dict[tup[1][0]], tup[1][1])
             else:
                 output[tup[0]] = None
     return output
+
+def hex_mask_check(value, mask):
+    '''
+     returns a boolean dependant on whether or not the error is active
+    '''
+    return (int(value,16) & int(mask,16) > 0)
 
 def file_output(input_dict, output_name):
     '''
@@ -242,7 +257,7 @@ def csv_output(input_dict, output_name):
     if not os.path.exists(os.getcwd() + folder_path):
         os.makedirs(os.getcwd() + folder_path)
     file_path = os.getcwd() + folder_path + "/" + "BTI_output_" + output_name + ".csv"
-    
+
     output_file = open(file_path, 'a', newline = '')
     csv_output = csv.writer(output_file)
 
@@ -258,7 +273,7 @@ def csv_output(input_dict, output_name):
 
 def get_port_and_name():
     global RADIO_PORT, OUTPUT_NAME, CSV_OUTPUT_TYPE
-    
+
     #Detect radio port
     for el in list_ports.comports():
         try:
@@ -282,7 +297,7 @@ def get_port_and_name():
     #    RADIO_PORT = "/dev/ttyUSB" + input("Specify port 1-8: ")
     #else:
     #    RADIO_PORT = "COM" + input("Specify port: ")
-    
+
     return
 
 def get_radio_port():
@@ -305,7 +320,7 @@ def get_radio_port():
         finally:
             if test.ser:
                 test.ser.close()
-            
+
     return port
 
 def get_ext_sensor_ports():
@@ -314,7 +329,7 @@ def get_ext_sensor_ports():
     Connects to all available ports and attempts to parse json. If the key
     'sensor' is found, the port is added to the list.
     '''
-    
+
     ports = []
     for el in list_ports.comports():
         test = serial_device(el.device, baud_rate=9600, timeout=2.5)
@@ -331,12 +346,12 @@ def get_ext_sensor_ports():
                 except:
                     pass
 
-        except serial.SerialException:
+        except:
             pass
         finally:
             if test.ser:
                 test.ser.close()
-            
+
     return ports
 
 def get_ext_dict(device):
@@ -344,7 +359,7 @@ def get_ext_dict(device):
         return json.loads(device.ser.readline().decode("utf-8").strip())
     except:
         return {}
-    
+
 if __name__ == "__main__":
     ports = get_ext_sensor_ports()
     devices = []
@@ -356,7 +371,7 @@ if __name__ == "__main__":
             devices.append(device)
         except:
             pass
-    
+
     for device in devices:
         try:
             print(get_ext_dict(device))
