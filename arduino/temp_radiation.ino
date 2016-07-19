@@ -32,27 +32,25 @@ void loop()
   
   // Init json objects
   StaticJsonBuffer<200> jb;
-  JsonObject& tempData = jb.createObject();
-  JsonObject& radData = jb.createObject();
+  JsonObject& data = jb.createObject();
   
-  // Temperatures
+  // Get data
   temps.requestTemperatures();
+  // *(5/1023) for voltage, *500 for W/m^2
+  float radiation = (float)analogRead(PYRA)*5*500/1023;
+  // area * panel efficiency * MPPT efficiency
+  float power = 6 * 0.239 * 0.95 * radiation;
+  
+  // Write data
   for(int i = 0; i < 3; i++) // Temps
   {
     String tempKey = "temp" + String(i);
-    tempData[tempKey] = temps.getTempCByIndex(i);
+    data[tempKey] = temps.getTempCByIndex(i);
   }
-  tempData["time"] = millis();
-  tempData["sensor"] = "temp";
-  tempData.printTo(Serial);
-  Serial.println();
-  
-  // Radiation
-  // *(5/1023) for voltage, *500 for W/m^2
-  float radiation = (float)analogRead(PYRA)*5*500/1023;
-  radData["rad"] = radiation;
-  radData["time"] = millis();
-  radData["sensor"] = "rad";
-  radData.printTo(Serial);
+  data["rad"] = radiation;
+  data["pow"] = power;
+  data["time"] = millis();
+
+  data.printTo(Serial);
   Serial.println();
 }
