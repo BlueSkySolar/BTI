@@ -326,7 +326,7 @@ def get_ext_sensor_ports():
             if line:
                 try:
                     res = json.loads(line)
-                    if "sensor" in res:
+                    if "time" in res:
                         ports.append(el.device)
                 except:
                     pass
