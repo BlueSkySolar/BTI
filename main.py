@@ -213,32 +213,33 @@ class MainWindow(QtGui.QMainWindow, Ui_MainWindow):
         for table in self.tables:
             for row in range(table.rowCount()):
                 # sometimes rows are used as titles, so those are skipped
-                if table.verticalHeaderItem(row).toolTip() == "i":
-                    continue
+                item_name = table.accessibleName()+table.verticalHeaderItem(row).toolTip()+\
+                            table.verticalHeaderItem(row).text()
+                if item_name in data:
                 # all bool tables in BMS C have the accessibleDescription 
                 # of 'colour', which is used to know whether or not to fill 
                 # the cell with colour indicators
-                elif table.accessibleDescription() == 'colour':
-                    table.setItem(row,0,QtGui.QTableWidgetItem(""))
-                    if data[table.accessibleName() + 
-                            table.verticalHeaderItem(row).text()] == True:
-                        table.item(row,0).setBackground(QtGui.QColor(0,255,0))
-#                    elif data[table.accessibleName() +
-#                              table.verticalHeaderItem(row).text()] == False:
-#                        table.item(row,0).setBackground(QtGui.QColor(255,0,0))
-                    else:
-                        continue
-                else:        
-                    # Since some values in the BTI have repeated names, 
-                    # we can use the accessibleName value in a table to
-                    # access the unique keys of each value without changing the 
-                    # original name (accessibleName should be blank for others)
-                    item_name = table.accessibleName()+table.verticalHeaderItem(row).toolTip()+\
-                                table.verticalHeaderItem(row).text()
-                    item = QtGui.QTableWidgetItem(str(data[item_name]))
-                    if item_name not in dicts.name_dict:
-                        print(item_name, "value not found")
-                    table.setItem(row,0,item)
+                    if table.accessibleDescription() == 'colour':
+                        table.setItem(row,0,QtGui.QTableWidgetItem(""))
+                        if data[item_name] == 'Green':
+                            table.item(row,0).setBackground(QtGui.QColor(0,255,0))
+                        elif data[item_name] == 'Red':
+                            table.item(row,0).setBackground(QtGui.QColor(255,0,0))
+                        elif data[item_name] == 'Yellow':
+                            table.item(row,0).setBackground(QtGui.QColor(255,255,0))
+    #                    elif data[table.accessibleName() +
+    #                              table.verticalHeaderItem(row).text()] == False:
+                        else:
+                            continue
+                    else:        
+                        # Since some values in the BTI have repeated names, 
+                        # we can use the accessibleName value in a table to
+                        # access the unique keys of each value without changing the 
+                        # original name (accessibleName should be blank for others)
+                        item = QtGui.QTableWidgetItem(str(data[item_name]))
+                        if item_name not in dicts.name_dict:
+                            print(item_name, "value not found")
+                        table.setItem(row,0,item)
             
     def closeEvent(self, *args, **kwargs):
         super(QtGui.QMainWindow, self).closeEvent(*args, **kwargs)

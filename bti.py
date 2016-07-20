@@ -219,7 +219,8 @@ def get_value_dict(in_dict):
                 output[tup[0]] = None
         else:
             if tup[1][0] in in_dict:
-                    output[tup[0]] = hex_mask_check(in_dict[tup[1][0]], tup[1][1])
+                    if hex_mask_check(in_dict[tup[1][0]], tup[1][1]):
+                        output[tup[0]] = tup[1][2]
             else:
                 output[tup[0]] = None
     return output
@@ -356,7 +357,8 @@ def get_ext_sensor_ports():
 
 def get_ext_dict(device):
     try:
-        return json.loads(device.ser.readline().decode("utf-8").strip())
+        return json.loads(device.ser.readline().decode("utf-8").strip(),
+                          object_pairs_hook=OrderedDict)
     except:
         return {}
 
