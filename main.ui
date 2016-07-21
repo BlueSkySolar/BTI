@@ -4504,6 +4504,17 @@
                 </attribute>
                 <row>
                  <property name="text">
+                  <string>Temperatures (deg C)</string>
+                 </property>
+                 <property name="font">
+                  <font>
+                   <weight>75</weight>
+                   <bold>true</bold>
+                  </font>
+                 </property>
+                </row>
+                <row>
+                 <property name="text">
                   <string>temp0</string>
                  </property>
                 </row>
@@ -4519,7 +4530,34 @@
                 </row>
                 <row>
                  <property name="text">
+                  <string>Radiation (W/m^2)</string>
+                 </property>
+                 <property name="font">
+                  <font>
+                   <weight>75</weight>
+                   <bold>true</bold>
+                  </font>
+                 </property>
+                </row>
+                <row>
+                 <property name="text">
                   <string>rad</string>
+                 </property>
+                </row>
+                <row>
+                 <property name="text">
+                  <string>Power (W)</string>
+                 </property>
+                 <property name="font">
+                  <font>
+                   <weight>75</weight>
+                   <bold>true</bold>
+                  </font>
+                 </property>
+                </row>
+                <row>
+                 <property name="text">
+                  <string>pow</string>
                  </property>
                 </row>
                 <column>
