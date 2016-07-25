@@ -12,6 +12,7 @@ import ctypes
 from main_ui import Ui_MainWindow
 #import time
 import main
+from collections import deque
 
 pg.setConfigOption('background', 'w')
 pg.setConfigOption('foreground', 'k')
@@ -196,15 +197,16 @@ class MainWindow(QtGui.QMainWindow, Ui_MainWindow):
         for plot in self.plots:
             plot.plot.clear()
             for i in range(len(plot.names)):
-                if plot.names[i] in data and data[plot.names[i]]:
-                    if len(plot.data[i]) >= GRAPH_LIMIT:
+                if len(plot.data[i]) >= GRAPH_LIMIT:
                         plot.data[i] = plot.data[i][1:]
+                if plot.names[i] in data and data[plot.names[i]]:
 
                     plot.data[i].append(data[plot.names[i]])
-                    if len(plot.plot.plotItem.legend.items) != len(plot.names):
-                        plot.plot.plot(self.times, plot.data[i], pen=(i, len(plot.names)), name=plot.names[i])
-                    else:
-                        plot.plot.plot(self.times, plot.data[i], pen=(i, len(plot.names)))
+                    if len(plot.data[i]) == len(self.times):
+                        if len(plot.plot.plotItem.legend.items) != len(plot.names):
+                            plot.plot.plot(self.times, plot.data[i], pen=(i, len(plot.names)), name=plot.names[i])
+                        else:
+                            plot.plot.plot(self.times, plot.data[i], pen=(i, len(plot.names)))
                 else:
                     plot.data[i].append(0.0)
 
