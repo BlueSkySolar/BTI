@@ -217,7 +217,7 @@ class MainWindow(QtGui.QMainWindow, Ui_MainWindow):
                 # sometimes rows are used as titles, so those are skipped
                 item_name = table.accessibleName()+table.verticalHeaderItem(row).toolTip()+\
                             table.verticalHeaderItem(row).text()
-                if item_name in data:
+                if item_name in data and data[item_name]:
                 # all bool tables in BMS C have the accessibleDescription 
                 # of 'colour', which is used to know whether or not to fill 
                 # the cell with colour indicators
