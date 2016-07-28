@@ -2205,6 +2205,11 @@
              </row>
              <row>
               <property name="text">
+               <string>Cal Batt Power (W)</string>
+              </property>
+             </row>
+             <row>
+              <property name="text">
                <string>Vehicle Speed (km/h)</string>
               </property>
              </row>
@@ -2387,17 +2392,7 @@
              </attribute>
              <row>
               <property name="text">
-               <string>Batt Power Front (W)</string>
-              </property>
-             </row>
-             <row>
-              <property name="text">
                <string>Batt Transfer Eff (%)</string>
-              </property>
-             </row>
-             <row>
-              <property name="text">
-               <string>Batt Power Back (W)</string>
               </property>
              </row>
              <row>
@@ -2408,11 +2403,6 @@
              <row>
               <property name="text">
                <string>Arr Bus Power 2 (W)</string>
-              </property>
-             </row>
-             <row>
-              <property name="text">
-               <string>Motor Power (W)</string>
               </property>
              </row>
              <row>
@@ -2557,27 +2547,12 @@
              </attribute>
              <row>
               <property name="text">
-               <string>Batt En-Cnt Front (Wh)</string>
-              </property>
-             </row>
-             <row>
-              <property name="text">
-               <string>Batt En-Cnt Back (Wh)</string>
-              </property>
-             </row>
-             <row>
-              <property name="text">
                <string>Arr En-Cnt 1 (Wh)</string>
               </property>
              </row>
              <row>
               <property name="text">
                <string>Arr En-Cnt 2 (Wh)</string>
-              </property>
-             </row>
-             <row>
-              <property name="text">
-               <string>Batt Curr High (A)</string>
               </property>
              </row>
              <row>

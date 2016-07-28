@@ -140,6 +140,7 @@ name_dict = OrderedDict((
     ('Batt Bus Current (A)', '0CF23'),
     ('Arr Bus Voltage (V)', '0BFE2'),
     ('Arr Bus Current (A)', '0BFE3'),
+    ('Cal Batt Power (W)', 'XXXXX'),
     ('Main LP Sys Current (A)', '0CF24'),
     ('PPT LP Sys Current (A)', '0BFE4'),
     ('EM_BATT Temp (deg C)', '0CF3A'),

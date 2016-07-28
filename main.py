@@ -180,7 +180,12 @@ class MainWindow(QtGui.QMainWindow, Ui_MainWindow):
     def update(self):
         '''update everything with up-to-date values'''
         data = bti.get_value_dict(bti.get_radio_dict(self.radio))
-        
+        # Add variable
+        if "Batt Curr Low (A)" in data and "Batt Bus Voltage (V)" in data:
+            if data["Batt Curr Low (A)"] and data["Batt Curr Low (A)"] < 16.0:
+                data['Cal Batt Power (W)'] = data["Batt Curr Low (A)"] * data["Batt Bus Voltage (V)"]
+            elif "Batt Curr High (A)" in data and data["Batt Curr High (A)"] and data["Batt Curr High (A)"] > 16.0:
+                data['Cal Batt Power (W)'] = data["Batt Curr High (A)"] * data["Batt Bus Voltage (V)"]
         # add external device values to data dict
         for device in self.ext_devices:
             data.update(bti.get_ext_dict(device))
