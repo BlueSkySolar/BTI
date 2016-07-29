@@ -267,7 +267,7 @@ def csv_output(input_dict, output_name):
         l.extend(input_dict.keys())
         csv_output.writerow(l)
 
-    l = [datetime.datetime.now()]
+    l = [datetime.datetime.now().strftime("%H:%M:%S")]
     l.extend(input_dict.values())
     csv_output.writerow(l)
     output_file.close()
