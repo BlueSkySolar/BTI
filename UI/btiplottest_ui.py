@@ -54,4 +54,3 @@ class Ui_MainWindow(object):
     def retranslateUi(self, MainWindow):
         MainWindow.setWindowTitle(_translate("MainWindow", "BTI Plot Test", None))
         self.pushButton.setText(_translate("MainWindow", "Start Listening (settings in bti.py)", None))
-

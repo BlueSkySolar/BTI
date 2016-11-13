@@ -1,18 +1,18 @@
 '''
 Main BTI GUI code will be in this file
 '''
-
 import sys
-from PyQt4 import QtGui, QtCore, uic
-import dicts
-import bti
 import pyqtgraph as pg
 import ctypes
-#import pyuic generated ui file
-from main_ui import Ui_MainWindow
-#import time
-import main
 from collections import deque
+from PyQt4 import QtGui, QtCore, uic
+
+from data_processing import dicts, bti
+
+# import pyuic generated ui file
+from UI.main_ui import Ui_MainWindow
+# time plot widgets
+from UI import main
 
 pg.setConfigOption('background', 'w')
 pg.setConfigOption('foreground', 'k')
@@ -24,6 +24,16 @@ elap_time = QtCore.QTime()
 start_time = QtCore.QTime()
 
 #window_class = uic.loadUiType("main.ui")[0]
+
+
+
+class timePlotWidget(pg.PlotWidget):
+    '''
+    Wrapper class which replaces the x-axis values with the current time
+    Basically, show current time of day on the plot instead of elapsed seconds
+    '''
+    def __init__(self, parent=None, **kargs):
+        super().__init__(axisItems={'bottom':timeAxisItem(orientation='bottom')})
 
 class timeAxisItem(pg.AxisItem):
     def __init__(self, *args, **kwargs):
@@ -41,24 +51,20 @@ class timeAxisItem(pg.AxisItem):
 #        elif curr.msecsTo(QtCore.QTime()) - self.prev_time.msecsTo(QtCore.QTime()) > 0 and self.start == 0:
 #            self.start_time = curr
 #            self.start = 1
-        
-        ret = [self.start_time.addMSecs(value).toString('hh:mm:ss') for value in values]
-        #self.prev_time = curr 
-        return ret
-        
 
-class timePlotWidget(pg.PlotWidget):
-    '''
-    Wrapper class which replaces the x-axis values with the current time
-    '''
-    def __init__(self, parent=None, **kargs):
-        super().__init__(axisItems={'bottom':timeAxisItem(orientation='bottom')})
+        ret = [self.start_time.addMSecs(value).toString('hh:mm:ss') for value in values]
+        #self.prev_time = curr
+        return ret
+
 
 
 class MainWindow(QtGui.QMainWindow, Ui_MainWindow):
+    '''
+    Main window of the GUI
+    '''
     def __init__(self, parent=None):
         QtGui.QMainWindow.__init__(self, parent)
-        
+
         self.setupUi(self)
         self.radio = None
         self.ext_devices = []
@@ -90,15 +96,15 @@ class MainWindow(QtGui.QMainWindow, Ui_MainWindow):
 #                print(self.__dict__[key])
 #                exec('self.'+key + "=pg.PlotWidget(parent,axisItems={'bottom':timeAxisItem(orientation='bottom')})")
 #                print(self.__dict__[key])
-                #self.__dict__[key] = 
+                #self.__dict__[key] =
                 plot_item = plot(value, len(names), names, units)
                 #print(next_child)
                 self.plots.append(plot_item)
             elif type(value) == QtGui.QTableWidget:
                 #append each table widget to a list
                 self.tables.append(value)
-                        
-        
+
+
     def start_listening(self):
         '''start receiving data'''
         global elap_time, start_time
@@ -111,10 +117,10 @@ class MainWindow(QtGui.QMainWindow, Ui_MainWindow):
             self.radio = None
             self.statusBar().showMessage("Not Connected")
             return
-        
+
         # detect external ports
         self.ext_ports = bti.get_ext_sensor_ports()
-        
+
         # connect to external ports
         for port in self.ext_ports:
             device = bti.serial_device(port, baud_rate=9600, timeout=2.5)
@@ -123,19 +129,19 @@ class MainWindow(QtGui.QMainWindow, Ui_MainWindow):
                 self.ext_devices.append(device)
             except:
                 pass
-            
+
         # ask for filename
         self.filename = QtGui.QInputDialog.getText(self, 'Input', "Enter a filename for this session's saved data")
         if not self.filename:
             return
-            
+
         # start timer
         elap_time = QtCore.QTime()
         elap_time.start()
         start_time = QtCore.QTime().currentTime()
         for plot in self.plots:
             plot.plot.getAxis('bottom').start_time = start_time
-        
+
         # detect radio_port
         if not self.radio_port:
             self.radio_port = bti.get_radio_port()
@@ -160,9 +166,9 @@ class MainWindow(QtGui.QMainWindow, Ui_MainWindow):
                 return
         except:
             self.statusBar().showMessage("Radio Port Not Found")
-        
+
         self.update() # test setup for ext devices
-            
+
         try:
             ####################### temporarily saving raw data for testing
             with open("raw_data.txt", "a") as text_file:
@@ -176,7 +182,7 @@ class MainWindow(QtGui.QMainWindow, Ui_MainWindow):
             self.radio.enabled = False
             self.radio.ser.close()
             self.radio = None
-    
+
     def update(self):
         '''update everything with up-to-date values'''
         data = bti.get_value_dict(bti.get_radio_dict(self.radio))
@@ -189,9 +195,9 @@ class MainWindow(QtGui.QMainWindow, Ui_MainWindow):
         # add external device values to data dict
         for device in self.ext_devices:
             data.update(bti.get_ext_dict(device))
-        
+
         bti.csv_output(data, self.filename[0])
-        
+
         # update current time while
         # keeping array under limit # of items
         if len(self.times) >= GRAPH_LIMIT:
@@ -215,7 +221,7 @@ class MainWindow(QtGui.QMainWindow, Ui_MainWindow):
                 else:
                     plot.data[i].append(0.0)
 
-                    
+
         #go through each table and update the value corresponding to the row title
         for table in self.tables:
             for row in range(table.rowCount()):
@@ -223,8 +229,8 @@ class MainWindow(QtGui.QMainWindow, Ui_MainWindow):
                 item_name = table.accessibleName()+table.verticalHeaderItem(row).toolTip()+\
                             table.verticalHeaderItem(row).text()
                 if item_name in data and data[item_name]:
-                # all bool tables in BMS C have the accessibleDescription 
-                # of 'colour', which is used to know whether or not to fill 
+                # all bool tables in BMS C have the accessibleDescription
+                # of 'colour', which is used to know whether or not to fill
                 # the cell with colour indicators
                     if table.accessibleDescription() == 'colour':
                         table.setItem(row,0,QtGui.QTableWidgetItem(""))
@@ -238,16 +244,16 @@ class MainWindow(QtGui.QMainWindow, Ui_MainWindow):
     #                              table.verticalHeaderItem(row).text()] == False:
                         else:
                             continue
-                    else:        
-                        # Since some values in the BTI have repeated names, 
+                    else:
+                        # Since some values in the BTI have repeated names,
                         # we can use the accessibleName value in a table to
-                        # access the unique keys of each value without changing the 
+                        # access the unique keys of each value without changing the
                         # original name (accessibleName should be blank for others)
                         item = QtGui.QTableWidgetItem(str(data[item_name]))
                         if item_name not in dicts.name_dict:
                             print(item_name, "value not found")
                         table.setItem(row,0,item)
-            
+
     def closeEvent(self, *args, **kwargs):
         super(QtGui.QMainWindow, self).closeEvent(*args, **kwargs)
         if self.radio:
@@ -258,13 +264,13 @@ class MainWindow(QtGui.QMainWindow, Ui_MainWindow):
         for device in self.ext_devices:
             if device.ser:
                 device.ser.close()
-    
+
 class plot:
     '''Stores plot-related variables'''
     def __init__(self, plot, num_values, names, units):
         '''
         Intialize plot object
-        
+
         Parameters:
             plot - pyqtgraph PlotWidget item
             num_values (int) - number of values to be plotted
@@ -290,10 +296,10 @@ class plot:
         self.data = []
         for i in range(len(self.names)):
             self.data.append([])
-            
-        
-    
-if __name__ == "__main__":
+
+
+
+def run_app():
     app = QtGui.QApplication(sys.argv)
     myWindow = MainWindow(None)
     myWindow.show()

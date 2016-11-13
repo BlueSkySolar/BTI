@@ -7,7 +7,7 @@
 # WARNING! All changes made in this file will be lost!
 
 from PyQt4 import QtCore, QtGui
-
+import pyqtgraph as pg
 try:
     _fromUtf8 = QtCore.QString.fromUtf8
 except AttributeError:
@@ -3319,4 +3319,31 @@ class Ui_MainWindow(object):
         self.actionAbout.setText(_translate("MainWindow", "About", None))
         self.actionSettings.setText(_translate("MainWindow", "Settings", None))
 
-from main import timePlotWidget
+class timePlotWidget(pg.PlotWidget):
+    '''
+    Wrapper class which replaces the x-axis values with the current time
+    Basically, show current time of day on the plot instead of elapsed seconds
+    '''
+    def __init__(self, parent=None, **kargs):
+        super().__init__(axisItems={'bottom':timeAxisItem(orientation='bottom')})
+
+class timeAxisItem(pg.AxisItem):
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        #self.start = 0
+        self.start_time = QtCore.QTime().addSecs(-1)
+        #self.prev_time = QtCore.QTime().addSecs(-1)
+
+    def tickStrings(self, values, scale, spacing):
+#        curr = QtCore.QTime().currentTime()
+#        print (curr.msecsTo(QtCore.QTime()))
+#        print(self.prev_time.msecsTo(QtCore.QTime()))
+#        if curr.msecsTo(QtCore.QTime()) - self.prev_time.msecsTo(QtCore.QTime()) > 2000:
+#            self.start = 0
+#        elif curr.msecsTo(QtCore.QTime()) - self.prev_time.msecsTo(QtCore.QTime()) > 0 and self.start == 0:
+#            self.start_time = curr
+#            self.start = 1
+
+        ret = [self.start_time.addMSecs(value).toString('hh:mm:ss') for value in values]
+        #self.prev_time = curr
+        return ret

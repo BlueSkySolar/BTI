@@ -1,4 +1,3 @@
-# we need to finish this
 from collections import OrderedDict
 
 
@@ -278,15 +277,15 @@ name_dict = OrderedDict((
     ('Garmin GPS Lon (deg)', '0EF01'),
     ('Wind Magnitude (m/s)', '0EF02'),
     ('Wind Direction (deg)', '0EF03'),
-    ('Serial Number (#)', ('0AF21', 'long')), 
+    ('Serial Number (#)', ('0AF21', 'long')),
     ('Active Motor (#)', ('0AF23', 'long')),
     ('Sample Cnt (# of sub-sampl.)',('06F60', 'long')),
-    ('coord_go_map', ('00F10', 'hex string')), 
-    ('coord_mod_timeout_map', ('00F20', 'hex string')), 
-    ('Frame Size (# of channels)',( '00F21', 'long')), 
-    ('Frame Time (s)', '00F22'), 
+    ('coord_go_map', ('00F10', 'hex string')),
+    ('coord_mod_timeout_map', ('00F20', 'hex string')),
+    ('Frame Size (# of channels)',( '00F21', 'long')),
+    ('Frame Time (s)', '00F22'),
     ('Sampling Rate (Hz)', '00F23'),
-    ('Current Mark Num (#)', ('00F26', 'long')), 
+    ('Current Mark Num (#)', ('00F26', 'long')),
     ('Current Stint Num (#)', ('00F24','long')),
     ('Current Stint Time (s)', '00F25'),
     ('Previous Stint Time (s)', '00F28'),

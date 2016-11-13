@@ -9,7 +9,7 @@ import serial
 from serial.tools import list_ports
 import time
 import struct
-import dicts
+from data_processing import dicts
 import datetime
 import os
 import csv
@@ -23,8 +23,8 @@ import json
 ########
 
 
-# This info is taken from the old BTI,
-# and will be used to interpret received data
+# This info is taken from the old BTI, may not be used further
+
 DATA_INDEX = 6
 INDEX_LENGTH = 5
 MESSAGE_LENGTH = 14

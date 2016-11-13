@@ -1,11 +1,11 @@
 # BTI (WORK IN PROGRESS)
 
 ##### What is this?
-This program reads and displays information sent to a computer's serial port from our solar car's radio. This allows us to view and store valuable information about the car's conditions during a race. 
+This program reads and displays information sent to a computer's serial port from our solar car's radio. This allows us to view and store valuable information about the car's conditions during a race.
 
 ##### Dependencies
 * PySerial
-* PyQt4 
+* PyQt4
 * PyQtGraph
 
 ### Contributing
@@ -23,12 +23,12 @@ Python 3 will be used. A virtual environment manager like [conda](http://conda.p
 4. Install PyQtGraph `pip install pyqtgraph`
 
 ### How to run (temporary)
-1. Run main.py
+1. Run run.py
 2. Press the button to start/stop receiving data while the radio is connected
 
 ##### How BTI works
 
-The serial data sent to us from the radio on the car is received in the format displayed in [this format](radio_data.txt). The code in bti.py is able to parse this data into a dictionary as seen in [radio_example](radio_example.txt), but we still need to match all of the hex values with their corresponding data type by looking at the [workspace file](legacy_workspace_file.txt) in the old BTI program. We should then be able to display real-time data with proper labeling in the GUI.
+The serial data sent to us from the radio on the car is received in the format displayed in [this format](radio_data.txt). The code in bti.py is able to parse this data into a dictionary as seen in [radio_example](radio_example.txt). We should then be able to display real-time data with proper labeling in the GUI, and also save it in CSV files for processing with the simulator and future optimizer programs.
 
 ### Status
 
@@ -36,8 +36,10 @@ The serial data sent to us from the radio on the car is received in the format d
 * Connect to a serial device and read the output
 * Parse the output from the radio (currently stored in a dictionary)
 * Saving parsed radio output dictionary to a text file or CSV file. (Formatting may change)
-* Structure and basic display functionality of the GUI
+* Structure and display functionality of the GUI
 
 ##### Currently Working on:
-* Completing the GUI
-* Fixing bugs with regards to how to deal with received non-float values
+* Improving the GUI
+* Implementing ability to receive multiple inputs, possibly through multithreading
+* Revamp data structures and processing patterns for the new car
+* Implement testing framework with simulated serial port input (important)
